@@ -1,0 +1,55 @@
+:root {
+    --trunk-color: #583928;
+    --branch-color: #155132;
+    --leaf-color: #2d6a3e;
+    --flower-color: #93d17a;
+    --logo-text-color: #35231B;
+    --background-color: #fff9e2;
+    --main-text-color: #593c1f;
+    --alt-text-color: #556B2F;
+    --head-text-color: #22551C;
+    --title-text-color: #228B22;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--main-text-color);
+    line-height: 1.6;
+    margin: 20px;
+    background-color: var(--background-color);
+    background-image: url("../img/watermark.png");
+    background-size: contain;
+    resize: both;
+    background-size: 1280px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2em;
+    color: var(--title-text-color);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: var(--title-text-color);
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* List styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+li::marker {
+    color: var(--title-text-color);
+}
