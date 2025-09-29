@@ -2,10 +2,13 @@
   "name": "branching-out-newquay.github.io",
   "version": "1.0.0",
   "description": "Website for Branching Out code and makers club",
-  "source": "index.ejs",
+  "source": "src/index.ejs",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel"
+    "start": "parcel",
+    "prebuild": "rm docs/*.* || true",
+    "build": "parcel build --dist-dir docs",
+    "postbuild":"touch docs/.nojekyll"
   },
   "keywords": [],
   "author": "",
