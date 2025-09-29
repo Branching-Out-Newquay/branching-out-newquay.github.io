@@ -17,10 +17,8 @@ body {
     font-family: Arial, sans-serif;
     color: var(--main-text-color);
     line-height: 1.6;
-    margin: 20px;
     background-color: var(--background-color);
     min-height: 100vh;
-    margin-bottom: 0;
 }
 
 /* Heading styles */
@@ -73,13 +71,11 @@ header {
 
     h1 {
         color: var(--logo-text-color);
-        font-size: 3em;
         margin: 0;
     }
 
     h2 {
         color: var(--title-text-color);
-        font-size: 2em;
         margin: 0;
     }
 }
