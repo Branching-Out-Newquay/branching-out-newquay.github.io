@@ -11,6 +11,10 @@
     --title-text-color: #228B22;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
