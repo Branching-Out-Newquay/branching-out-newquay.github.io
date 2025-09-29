@@ -1,0 +1,13 @@
+<%
+    let pages=["Home","Coding","Making","Supporting","About"]
+    const url=(p)=>{
+        if (p=="Home") {
+            return "index"
+        }
+        return p.toLowerCase()
+    }
+    const html=(p)=>`<a href="${url(p)}.ejs"${p==page?'class="disabled"':''}>${p}</a>`
+ %>
+<nav>
+    <%- pages.map(p=>html(p)).join('') %>
+</nav>

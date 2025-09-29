@@ -20,9 +20,7 @@ body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     color: var(--main-text-color);
-    line-height: 1.6;
     background-color: var(--background-color);
-    min-height: 100vh;
 }
 
 /* Heading styles */
@@ -36,6 +34,19 @@ h2 {
     color: var(--title-text-color);
 }
 
+h3 {
+    font-size: 1em;
+    color: var(--title-text-color);
+}
+
+a {
+    color: var(--title-text-color);
+}
+
+a:visited {
+    color: var(--alt-text-color);
+}
+
 /* Paragraph styles */
 p {
     font-size: 1em;
@@ -44,16 +55,26 @@ p {
 
 /* List styles */
 ul {
-    list-style-type: disc;
+    list-style-type: none;
     margin-left: 20px;
+    padding: 0;
 }
 
 li {
     margin-bottom: 5px;
 }
 
-li::marker {
+li::before {
+    content: '';
     color: var(--title-text-color);
+    display: inline-block;
+    padding: 4px;
+    border-radius: 100%;
+    border-width: 2px;
+    margin: 0px 5px;
+    background-color: var(--flower-color);
+    border-style: solid;
+    border-color: var(--branch-color);
 }
 
 header {
@@ -84,6 +105,26 @@ header {
     }
 }
 
+nav {
+    a {
+        display: inline-block;
+        margin: 0;
+        border-width: 2px;
+        padding: 1px 6px 1px;
+        border-color: var(--branch-color);
+        color: var(--branch-color);
+        background-color: var(--flower-color);
+        border-radius: 5px;
+        border-style: solid;
+        text-decoration: none;
+        line-height: normal;
+    }
+
+    a.disabled {
+        opacity: 0.5;
+    }
+}
+
 main {
     background-image: url("../img/watermark.png");
     background-size: contain;
@@ -93,6 +134,7 @@ main {
     flex: 1;
     max-width: 1280px;
     margin: auto;
+    line-height: 1.6;
 }
 
 footer {
