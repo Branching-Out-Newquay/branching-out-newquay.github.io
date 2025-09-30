@@ -13,6 +13,12 @@
 
 html {
     -webkit-text-size-adjust: 100%;
+
+    background-image: url("../img/watermark.png");
+    background-size: contain;
+    resize: both;
+    background-size: 320px;
+
 }
 
 body {
@@ -20,7 +26,15 @@ body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     color: var(--main-text-color);
-    background-color: var(--background-color);
+    max-width: 1024px;
+    margin: auto;
+    padding: 0 10px 0;
+    @media only screen and (max-width: 600px){
+        padding: 0;
+    }
+    @media only screen and (max-width: 1024px){
+        margin: 0 10px 0;
+    }
 }
 
 /* Heading styles */
@@ -66,15 +80,15 @@ li {
 
 li::before {
     content: '';
-    color: var(--title-text-color);
     display: inline-block;
-    padding: 4px;
+    padding: 2px;
     border-radius: 100%;
-    border-width: 2px;
     margin: 0px 5px;
     background-color: var(--flower-color);
-    border-style: solid;
-    border-color: var(--branch-color);
+    border: white 1px solid;
+    outline: var(--branch-color) 2px solid;
+    top: -3px;
+    position: relative;
 }
 
 header {
@@ -85,6 +99,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--background-color);
 
     aside {
         display: inline-block;
@@ -106,37 +121,42 @@ header {
 }
 
 nav {
+    border-bottom: var(--branch-color) 2px solid;
+    background-color: var(--background-color);
     a {
         display: inline-block;
-        margin: 0;
+        margin: 0 2px 0;
         border-width: 2px;
         padding: 1px 6px 1px;
         border-color: var(--branch-color);
         color: var(--branch-color);
-        background-color: var(--flower-color);
+        background-color: color-mix(in srgb, var(--flower-color), var(--background-color));
         border-radius: 5px;
         border-style: solid;
         text-decoration: none;
         line-height: normal;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        position: relative;
+        top: 2px;
     }
 
     a.disabled {
-        opacity: 0.5;
+        background-color: var(--background-color);
+        border-bottom-width: 0;
+        padding-bottom: 3px;
     }
 }
 
 main {
-    background-image: url("../img/watermark.png");
-    background-size: contain;
-    resize: both;
-    background-size: 1280px;
     height: 100%;
     flex: 1;
-    max-width: 1280px;
-    margin: auto;
+    margin: 0;
     line-height: 1.6;
+    background-color: var(--background-color);
 }
 
 footer {
     min-height: 50px;
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%)
 }
