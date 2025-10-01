@@ -91,6 +91,21 @@ li::before {
     position: relative;
 }
 
+address {
+    font-style: normal;
+}
+
+mark {
+    display: inline-block;
+    padding: 0 7px 0;
+    border-radius: 15px;
+    margin: 0 5px 5px;
+    background-color: var(--flower-color);
+    color: var(--logo-text-color);
+    border: white 1px solid;
+    outline: var(--branch-color) 4px solid;
+}
+
 header {
     background-color: var(--background-color);
     padding: 25px 0 25px;
@@ -107,6 +122,7 @@ header {
 
     img {
         width: 128px;
+        margin: 0 20px 0 0;
     }
 
     h1 {
@@ -129,7 +145,7 @@ nav {
         border-width: 2px;
         padding: 1px 6px 1px;
         border-color: var(--branch-color);
-        color: var(--branch-color);
+        color: var(--logo-text-color);
         background-color: color-mix(in srgb, var(--flower-color), var(--background-color));
         border-radius: 5px;
         border-style: solid;
@@ -140,12 +156,18 @@ nav {
         position: relative;
         top: 2px;
     }
-
+    a:visited {
+        color: var(--logo-text-color);
+    }
     a.disabled {
         background-color: var(--background-color);
         border-bottom-width: 0;
         padding-bottom: 3px;
     }
+    a:hover {
+        background-color: var(--background-color);
+    }
+    
     @media only screen and (max-width: 490px){
         a {
             margin: 0;
@@ -192,6 +214,7 @@ footer {
     min-height: 50px;
     background-color: color-mix(in srgb, var(--background-color), transparent 50%);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     div {
         width: 200px;

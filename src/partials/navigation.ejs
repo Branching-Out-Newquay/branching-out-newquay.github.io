@@ -6,7 +6,12 @@
         }
         return p.toLowerCase()
     }
-    const html=(p)=>`<a href="${url(p)}.ejs"${p==page?'class="disabled"':''}>${p}</a>`
+    const html=(p)=>{
+        if (p==page) {
+            return `<a class="disabled">${p}</a>`
+        }
+        return `<a href="${url(p)}.ejs">${p}</a>`
+    }
  %>
 <nav>
     <%- pages.map(p=>html(p)).join('') %>
