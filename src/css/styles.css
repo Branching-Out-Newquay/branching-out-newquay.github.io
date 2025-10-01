@@ -69,26 +69,13 @@ p {
 
 /* List styles */
 ul {
-    list-style-type: none;
+    list-style-image: url('../img/bullet.png');
     margin-left: 20px;
     padding: 0;
 }
 
 li {
     margin-bottom: 5px;
-}
-
-li::before {
-    content: '';
-    display: inline-block;
-    padding: 2px;
-    border-radius: 100%;
-    margin: 0px 5px;
-    background-color: var(--flower-color);
-    border: white 1px solid;
-    outline: var(--branch-color) 2px solid;
-    top: -3px;
-    position: relative;
 }
 
 address {
@@ -167,7 +154,7 @@ nav {
     a:hover {
         background-color: var(--background-color);
     }
-    
+
     @media only screen and (max-width: 490px){
         a {
             margin: 0;
