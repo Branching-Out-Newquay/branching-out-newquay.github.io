@@ -8,7 +8,7 @@
     --main-text-color: #593c1f;
     --alt-text-color: #556B2F;
     --head-text-color: #22551C;
-    --title-text-color: #228B22;
+    --title-text-color: var(--leaf-color);
 }
 
 html {
@@ -195,5 +195,8 @@ footer {
     justify-content: space-between;
     div {
         width: 200px;
+    }
+    h1 {
+        font-size: 1em;
     }
 }
