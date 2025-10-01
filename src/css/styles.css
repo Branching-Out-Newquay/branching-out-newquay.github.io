@@ -93,7 +93,7 @@ li::before {
 
 header {
     background-color: var(--background-color);
-    padding-bottom: 25px;
+    padding: 25px 0 25px;
     color: var(--alt-text-color);
     text-align: center;
     display: flex;
@@ -146,17 +146,57 @@ nav {
         border-bottom-width: 0;
         padding-bottom: 3px;
     }
+    @media only screen and (max-width: 490px){
+        a {
+            margin: 0;
+        }
+    }
+    @media only screen and (max-width: 460px){
+        a {
+    font-family: 'Arial Narrow', sans-serif;
+        }
+    }
 }
 
 main {
     height: 100%;
     flex: 1;
     margin: 0;
-    line-height: 1.6;
     background-color: var(--background-color);
+    p {
+            line-height: 1.6;
+    }
+}
+
+news {
+    height: 100%;
+    flex: 1;
+    margin: 0;
+    background-color: var(--background-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    p {
+            line-height: 1.6;
+    }
+    article {
+        border: var(--flower-color) 2px solid;
+        margin: 2px;
+        padding: 2px 5px 2px;
+        width: 400px;
+        border-radius: 15px;
+        p, h1, h2, h3 {
+            margin: 0 0 6px;
+        }
+    }
 }
 
 footer {
     min-height: 50px;
-    background-color: color-mix(in srgb, var(--background-color), transparent 50%)
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    display: flex;
+    justify-content: space-between;
+    div {
+        width: 200px;
+    }
 }
