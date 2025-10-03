@@ -1,0 +1,8 @@
+<% include("data/events.ejs") %>
+<%- include("partials/header.ejs", {page: "Events" }) -%>
+    <news>
+        <article>
+            <%- events.join('</article><article>') -%>
+        </article>
+    </news>
+    <%- include("partials/footer.ejs") -%>
