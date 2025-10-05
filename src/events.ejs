@@ -1,8 +1,15 @@
 <% include("data/events.ejs") %>
 <%- include("partials/header.ejs", {page: "Events" }) -%>
-    <news>
-        <article>
-            <%- events.join('</article><article>') -%>
-        </article>
-    </news>
+    <main>
+        <h1>Events</h1>
+        <p>We currently run open sessions once a month at the <a href="https://newquayorchard.co.uk/">Newquay Orchard</a>. These are free and no booking is required. If you are under 16 you need to bring a responsible adult with you but they can have a go at coding and making as well!</p>
+        <p>We have laptops, <a href="https://microbit.org/get-started/what-is-the-microbit/">micro:bits</a> and other equipment you can borrow but you can also bring along your own. If you are not sure where to start we have a range of fun exercises to work through. We've had all ages, from about 5 years to over 70, trying these and everyone comes away smiling. If you've got something particular you want to learn or have a project you are working through give us a challenge. You can also help us improve some of things we have been building for the club.</p>
+        <p>Check out our <a href="coding.ejs">coding</a> and <a href="making.ejs">making</a> pages to find out more.</p>
+        <h2>Future events</h2>
+        <news>
+            <article>
+                <%- events.join('</article><article>') -%>
+            </article>
+        </news>
+    </main>
     <%- include("partials/footer.ejs") -%>
