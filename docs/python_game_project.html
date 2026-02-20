@@ -13,6 +13,7 @@
     <a href=/index.html>Home</a><a href=/events.html>Events</a><a href=/about.html>About</a><a href=/coding.html>Coding</a><a href=/making.html>Making</a><a href=/supporting.html>Supporting</a><a href=/subscribe.html>Subscribe</a>
 </nav>    <main>
         <h2>Python Game Project</h2>
+
 <ul>
 <li><a href=#python-game-project>Python Game Project</a>
 <ul>
@@ -74,7 +75,26 @@
 <li><a href=#step-29-add-your-own-features-to-the-game>Step 29 - Add your own features to the game</a></li>
 </ul>
 </li>
-<li><a href=#chapter-8-s-n-a-k-e>Chapter 8 - S N A K E !</a></li>
+<li><a href=#chapter-8-s-n-a-k-e>Chapter 8 - S N A K E !</a>
+<ul>
+<li><a href=#step-30-get-a-new-game-template-ready>Step 30 - Get a new game template ready</a></li>
+<li><a href=#step-31-change-direction>Step 31 - Change direction</a></li>
+<li><a href=#step-32-a-longer-snake>Step 32 - A longer snake</a></li>
+<li><a href=#step-33-body-follow-head>Step 33 - Body follow head</a></li>
+<li><a href=#step-34-watch-out-don-t-crash>Step 34 - Watch out, don't crash!</a></li>
+<li><a href=#step-35-feed-the-snake>Step 35 - Feed the snake</a></li>
+</ul>
+</li>
+<li><a href=#chapter-9-a-more-realistic-snake>Chapter 9 - A more realistic snake</a>
+<ul>
+<li><a href=#step-36-generate-some-images>Step 36 - Generate some images</a></li>
+<li><a href=#step-37-use-a-single-head-and-body-image>Step 37 - Use a single head and body image</a></li>
+<li><a href=#step-38-get-the-head-moving-in-the-right-direction>Step 38 - Get the head  moving in the right direction</a></li>
+<li><a href=#step-39-draw-the-right-body-images>Step 39 - Draw the right body images</a></li>
+<li><a href=#step-40-draw-the-snake-corners>Step 40 - Draw the snake corners</a></li>
+<li><a href=#step-41-give-the-snake-a-tail>Step 41 - Give the snake a tail</a></li>
+</ul>
+</li>
 <li><a href=#examples-chapter-1>Examples – Chapter 1</a></li>
 <li><a href=#examples-chapter-2>Examples – Chapter 2</a></li>
 <li><a href=#examples-chapter-3>Examples – Chapter 3</a></li>
@@ -82,9 +102,17 @@
 <li><a href=#examples-chapter-5>Examples - Chapter 5</a></li>
 <li><a href=#examples-chapter-6>Examples - Chapter 6</a></li>
 <li><a href=#examples-chapter-7>Examples - Chapter 7</a></li>
+<li><a href=#examples-chapter-8>Examples - Chapter 8</a></li>
+<li><a href=#examples-chapter-9>Examples - Chapter 9</a>
+<ul>
+<li><a href=#part-1-a-snake-image-generator>Part 1 - A snake image generator</a></li>
+<li><a href=#part-2-snake-with-images>Part 2 - Snake with images</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
 <h1><a href=#python-game-project aria-hidden=true class=anchor id=python-game-project></a>Python Game Project</h1>
 <h2><a href=#what-are-we-making aria-hidden=true class=anchor id=what-are-we-making></a>What are we making?</h2>
 <p>In this project you’ll learn how to make your own game in Python. We’ll start with simple text games (like quizzes and adventures) and later you can move on to games with graphics.
@@ -903,22 +931,27 @@ player_pos.move_ip(snake_direction)
 </code></pre>
 <p><strong>Your turn:</strong> Make these changes and test the game. You should have a square you can move but it drifts across the screen on its own</p>
 <h3><a href=#step-31-change-direction aria-hidden=true class=anchor id=step-31-change-direction></a>Step 31 - Change direction</h3>
-<p>Now we will use keys to control the direction of the snake. We can setup some direction variables and use them to change the direction when the player presses the right keys. Lets start to use some more powerful parts of Python called classes. We can create a direction class like this:</p>
-<pre><code class=language-python>class Directions:
-    UP = pygame.Vector2(0,-step_size)
-    DOWN = pygame.Vector2(0, step_size)
-    LEFT = pygame.Vector2(-step_size,0)
-    RIGHT = pygame.Vector2(step_size,0)
+<p>Now we will use keys to control the direction of the snake. We can setup some direction variables and use them to change the direction when the player presses the right keys. A dictionary can do this:</p>
+<pre><code class=language-python>directions = {
+    "UP" : pygame.Vector2(0,-step_size)
+    "DOWN" : pygame.Vector2(0, step_size)
+    "LEFT" : pygame.Vector2(-step_size,0)
+    "RIGHT" : pygame.Vector2(step_size,0)
+}
 </code></pre>
 <p>We can use it like this:</p>
-<pre><code class=language-python>snake_direction = Directions.RIGHT
+<pre><code class=language-python>snake_direction = "RIGHT"
 
     ...
 
 if keys[pygame.K_UP]:
-    snake_direction = Directions.UP
+    snake_direction = "UP"
+
+    ...
+
+player_pos.move_ip(directions[snake_direction])
 </code></pre>
-<p><strong>Your turn:</strong> Add in a direction class and change the player controls to set the direction.</p>
+<p><strong>Your turn:</strong> Add in a direction dictionary and change the player controls to set the direction.</p>
 <h3><a href=#step-32-a-longer-snake aria-hidden=true class=anchor id=step-32-a-longer-snake></a>Step 32 - A longer snake</h3>
 <p>One square doesn't make a good snake so lets make a list of squares.</p>
 <pre><code class=language-python># Set the initial size of the snake and the position of its head
@@ -929,8 +962,8 @@ snake_head_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2, (step
 snake_body = []
 
 # Build a list of rectangles to store our snake
-for counter in range(initial_snake_length):
-    snake_body.append(snake_head_pos.move(-snake_direction*counter))
+for counter in range(1,initial_snake_length+1):
+    snake_body.append(snake_head_pos.move(-snake_direction*counter)
 
     ...
 
@@ -942,7 +975,8 @@ for body_part_rect in snake_body:
 <ul>
 <li>Sometimes we use the move_ip() function to change the position of a rectangle. This time we have used the move() function. This leaves the original rectangle where it is but gives us a new rectangle at the moved position.</li>
 <li>We've used -snake_direction so the body extends out behind the head. You can remove the - to see what happens if we didn't do this.</li>
-<li>Out loop counts up to the length of snake. Using *counter means we move each body part further out so they form a line.</li>
+<li>Our loop counts up to the length of snake. Using *counter means we move each body part further out so they form a line.</li>
+<li>range() will normally count from 0 and stop before reaching initial_snake_length. We've adjusted the range so we get the right number of items and make sure the first body part doesn't sit on top of the head.</li>
 </ul>
 <p><strong>Your turn:</strong> Make these changes and get them working in your game. You game may still be moving and drawing player_pos so you should also make changes so that you are moving and drawing snake_head_pos. Now we have a body but the head leaves it behind when it moves! Lets fix that next.</p>
 <h3><a href=#step-33-body-follow-head aria-hidden=true class=anchor id=step-33-body-follow-head></a>Step 33 - Body follow head</h3>
@@ -951,7 +985,7 @@ for body_part_rect in snake_body:
     snake_body.insert(0, snake_head_pos.copy())
     snake_body.pop()
 </code></pre>
-<p><strong>Your turn:</strong> Find the right place to add in the new code and get the body to follow the head.</p>
+<p><strong>Your turn:</strong> Find the right place to add in the new code and get the body to follow the head. Take care where this code goes. If you move the body after moving the head the body will overlap with the head.</p>
 <h3><a href=#step-34-watch-out-dont-crash aria-hidden=true class=anchor id=step-34-watch-out-dont-crash></a>Step 34 - Watch out, don't crash!</h3>
 <p>In the snake game you will lose if you crash into yourself or the sides of the screen. Lets add that to our game using the pygame rectangle helper functions.</p>
 <pre><code class=language-python>    # detect crash with your own body
@@ -982,11 +1016,19 @@ import random
 
 # Function to get a safe place for the food
 def find_food_pos():
+    # Make a rectangle of the right size
     try_pos = pygame.Rect((0,0),(step_size, step_size))
     while True:
-        try_pos.topleft = (random.randint(0, screen.get_width()-step_size), random.randint(0, screen.get_height()-step_size))
+        # Set the rectangle to a random position
+        try_pos.topleft = (
+            random.randint(0, screen.get_width()-step_size),
+            random.randint(0, screen.get_height()-step_size)
+        )
+        # Check for a collision
         if try_pos.collidelist(snake_body) == -1:
+            # No collision so return this rectangle 
             return try_pos
+    # We keep going around the loop trying random positions until we find one that doesn't collide
 
     ...
 
@@ -1011,13 +1053,185 @@ player_score = 0
     # Draw the food
     pygame.draw.rect(screen, "green", food_pos)
 </code></pre>
+<p>Here are some things to notice. These are often good ideas when you are making your own programs:</p>
+<ul>
+<li>We've made a function to find a safe space to place the food so that we can use it in two places in our game.</li>
+<li>In some places we have long lines of code inside brackets and we have split these out over several lines to make them easier to read.</li>
+<li>Look at the structure of the function and how we have used the return statement to break out of the loop.</li>
+<li>Look at how we have copied the rectangle at the end of the list. Normally we use [0], [1] to count forward through a list. We can also use [-1], [-2] to count back from the end of the list.</li>
+</ul>
 <p><strong>Your turn:</strong> Work out how to add in this new code and test your game.</p>
 <p><strong>Bonus challenge:</strong> Add in some more features to your game as you did in the earlier chapters. You could:</p>
 <ul>
 <li>Show the score on the screen</li>
 <li>Build a high score table</li>
 </ul>
-<h3><a href=#step-36-a-more-realistic-snake aria-hidden=true class=anchor id=step-36-a-more-realistic-snake></a>Step 36 - A more realistic snake</h3>
+<h2><a href=#chapter-9-a-more-realistic-snake aria-hidden=true class=anchor id=chapter-9-a-more-realistic-snake></a>Chapter 9 - A more realistic snake</h2>
+<p>Now we are going to change our rectangles into images. This will seem complicated but it is worth learning as you can use similar ideas if you want to make other types of games.</p>
+<h3><a href=#step-36-generate-some-images aria-hidden=true class=anchor id=step-36-generate-some-images></a>Step 36 - Generate some images</h3>
+<p>First we need some images to use. In the <a href=#part-1-a-snake-image-generator>examples</a> there is a program to which uses pygame to draw some images for our snake and save them to some files: one for the head and another for the body.</p>
+<p><strong>Your turn:</strong> Use the example program to generate the two image files. Open the files in a photo or image viewer so see what we have</p>
+<p><strong>Bonus challenge:</strong> Modify the progam to change the images. For example you can use different colours.</p>
+<h3><a href=#step-37-use-a-single-head-and-body-image aria-hidden=true class=anchor id=step-37-use-a-single-head-and-body-image></a>Step 37 - Use a single head and body image</h3>
+<p>I this step we will replace the head and body rectangles with images. At first, this won't look great as the head and body won't turn around as the snake moves but we can fix that later.</p>
+<p>At the beginning of our program we can load our image and make any changes we need</p>
+<pre><code class=language-python># Load the images from the image file
+head_image=pygame.image.load("headimage.png")
+body_image=pygame.image.load("bodyimage.png")
+
+# Resize the images to the size we need. The files contain several tiles so we need to make room for these
+head_image=pygame.transform.scale(head_image, (4 * step_size, step_size)) # Head has one row of 4 tiles
+body_image=pygame.tramsform.scale(body_image, (3 * step_size, 2 * step_size)) # Body has two rows of 3 tiles
+
+# Tell pygame about the background colour so it can remove this when we use the images
+head_image.set_colorkey("white")
+body_image.set_colorkey("white")
+</code></pre>
+<p>In our game loop we can replace our rectangles with images like this:</p>
+<pre><code class=language-python>
+    ...
+
+        screen.blit(head_image, snake_head_pos, pygame.Rect((0,0),(step_size,step_size)))
+
+    ...
+
+        screen.blit(body_image, body_part_rect, pygame.Rect((0,0),(step_size,step_size)))
+
+    ...
+
+</code></pre>
+<p><strong>Your turn:</strong> Add the image code into your program and test to check your game is now using images.
+<strong>Bonus challenge:</strong> Find or make a background image for the game, load it, scale it and draw it in place of the purple background. The <a href=#examples-chapter-6>example for Chapter 6</a> includes some code you can use to help you.</p>
+<h3><a href=#step-38-get-the-head-moving-in-the-right-direction aria-hidden=true class=anchor id=step-38-get-the-head-moving-in-the-right-direction></a>Step 38 - Get the head  moving in the right direction</h3>
+<p>Let's get the head of the snake to turn in the right direction. The head_image contains 4 tiles for the four directions. We can use the direction to pick the right tile. One way to do this is with a dictionary that stores the position of the tile we want against the four directions.</p>
+<pre><code class=language-python>head_tiles = {
+    "UP": (0,0),
+    "LEFT": (step_size,0),
+    "DOWN": (step_size*2,0),
+    "RIGHT": (step_size*3,0)
+}
+</code></pre>
+<p>We can use this to pick the right tile to show on the screen. We can change the code that draws the head to this:</p>
+<pre><code class=language-python>        tile_pos = head_tiles[snake_direction]
+        screen.blit(head_image, snake_head_rect, pygame.Rect(tile_pos,(step_size,step_size)))
+</code></pre>
+<p><strong>Your turn:</strong> Add in the code to show the right head tile and test your game. It might be quite hard to see what is going on. You can change the step_size = 40 and clock.tick(5) to have bigger images that change slowly.</p>
+<h3><a href=#step-39-draw-the-right-body-images aria-hidden=true class=anchor id=step-39-draw-the-right-body-images></a>Step 39 - Draw the right body images</h3>
+<p>We will draw the body sections in the same way. The body is a bit more complicated because there are
+more tiles. First lets try to get the body right when the snake moves in a straight line. We can use another dictionary to hold the tile positions and change the body list to hold the body part position and the tile position together.</p>
+<pre><code class=language-python>body_tiles = {
+    "UP": (0,0),
+    "LEFT": (0,step_size),
+    "DOWN": (0,0),
+    "RIGHT": (0,step_size)
+}
+    ...
+
+# List to hold the snake
+snake_body = []
+snake_tiles = []
+
+# Build a list of rectangles to store our snake
+for counter in range(1, initial_snake_length+1):
+    snake_body.append(snake_head_pos.move(directions[snake_direction]*-counter))
+    snake_tiles.append(body_tiles[snake_direction])
+
+    ...
+
+# Shift snake body
+snake_body.insert(0, snake_head_pos.copy())
+snake_tiles.insert(0, body_tiles[snake_direction]) 
+snake_body.pop()
+snake_tiles.pop()
+
+    ...
+
+# Copy the last part of the snake to make it longer
+for counter in range(5):
+    snake_body.append(snake_body[-1].copy())
+    snake_tiles.append(snake_tiles[-1])
+
+    ...
+
+# Draw the body with the right tiles
+for counter in range(len(snake_body)):
+    screen.blit(body_image, snake_body[counter], pygame.Rect(snake_tiles[counter],(step_size,step_size)))
+
+</code></pre>
+<p><strong>Your turn:</strong> Make the changes to pick better body image tiles and test your game
+<strong>Bonus Challenge:</strong> Find or make an image to use for the snake's food. Load and scale the image and use it in place of the food rectangle.</p>
+<h3><a href=#step-40-draw-the-snake-corners aria-hidden=true class=anchor id=step-40-draw-the-snake-corners></a>Step 40 - Draw the snake corners</h3>
+<p>Finally we need to add in the corners. To pick the right tiles we need two bits of information - the direction of the snake body and the direction of the snake head. There are 16 combinations (4 body directions x 4 head directions) so we can make a bigger dictionary to store these.</p>
+<pre><code class=language-python># Store combinations of body and head direction to pick the correct body tile
+body_tiles = {
+    "UP": {
+        "UP":(0,0),
+        "LEFT": (step_size*2,0),
+        "DOWN": (0,0),
+        "RIGHT":(step_size,0)
+    },
+    "LEFT": {
+        "UP":(step_size, step_size),
+        "LEFT": (0,step_size),
+        "DOWN": (step_size,0),
+        "RIGHT": (0,step_size)
+    },
+    "DOWN": {
+        "UP":(0,0),
+        "LEFT": (step_size*2,step_size),
+        "DOWN": (0,0),
+        "RIGHT": (step_size,step_size)
+    },
+    "RIGHT": {
+        "UP":(step_size*2,step_size),
+        "LEFT": (0,step_size),
+        "DOWN": (step_size*2,0),
+        "RIGHT": (0,step_size)
+    }
+}
+</code></pre>
+<p>We know what tile to pick at the start as the snake is in a line</p>
+<pre><code class=language-python>
+    ...
+
+    snake_tiles.append(body_tiles[snake_direction][snake_direction])
+
+    ...
+
+</code></pre>
+<p>As we play the game we can keep a note of the old directions and use that to pick the right tile</p>
+<pre><code class=language-python># Setup the start position for the game
+snake_direction = "RIGHT"
+old_direction = snake_direction
+
+    ...
+
+# Save the old direction before we check which keys are pressed
+old_direction = snake_direction
+
+    ...
+
+# Use the old and new directions to pick the tile
+snake_tiles.insert(0, body_tiles[old_direction][snake_direction]) 
+
+    ...
+
+</code></pre>
+<p><strong>Your turn:</strong> Find the right places to change your code and check the snake curves around the corners in the right places</p>
+<p><strong>Bonus challenge:</strong> Find or make an image of the food which has several tiles, e.g. a bug with moving legs. Keep changing the food tiles to make it look like the bug is wriggling!</p>
+<h3><a href=#step-41-give-the-snake-a-tail aria-hidden=true class=anchor id=step-41-give-the-snake-a-tail></a>Step 41 - Give the snake a tail</h3>
+<p>This whole step is a kind of <strong>bonus challenge</strong>. You have all the building blocks needed in your code but you will need to work out what to change. Here are some suggestions for how to add the tail.</p>
+<ul>
+<li>Find or make an image for the tail. You could borrow the code from <a href=#step-36-generate-some-images>step 36</a>. You could use an image with four tiles like the head (the tail will always be straight) or eight images (to curve the tail as it goes through the corners)</li>
+<li>Load and prepare the image just like the others</li>
+<li>Show the right tail tile at the end of the snake body.</li>
+</ul>
+<p>You might have to change some other things along the way.</p>
+<ul>
+<li>We keep lists of body rectangle and body tiles at the moment. You will also need to keep a list of the old and new direction pairs so that you can look them up when you need to find the right tail tile.</li>
+<li>When eat some food we add one or more parts by copying the last part of the snake. For a short while, before the snake moves on, these news parts fill the same space. That wasn't a problem as they all had the same image. If we add the tail we may have to hide those overlapping parts. You can use the colliderect helper function in pygame and only draw parts of the body that don't collide with the tail.</li>
+</ul>
+<p><strong>Your turn:</strong> Use what you have learnt to add the tail to the snake</p>
 <h2><a href=#examples-chapter-1 aria-hidden=true class=anchor id=examples-chapter-1></a>Examples – Chapter 1</h2>
 <pre><code class=language-python># Make a quiz list
 quiz = [
@@ -1559,14 +1773,15 @@ running = True
 
 step_size = 20
 
-class directions:
-    up = pygame.Vector2(0,-step_size)
-    down = pygame.Vector2(0, step_size)
-    left = pygame.Vector2(-step_size,0)
-    right = pygame.Vector2(step_size,0)
+directions={
+    "UP": pygame.Vector2(0,-step_size),
+    "DOWN": pygame.Vector2(0, step_size),
+    "LEFT": pygame.Vector2(-step_size,0),
+    "RIGHT": pygame.Vector2(step_size,0)
+}
     
 # Setup the start position for the game
-snake_direction = directions.right
+snake_direction = "RIGHT"
 
 # Set the initial size of the snake and the position of its head
 initial_snake_length = 5
@@ -1576,13 +1791,16 @@ snake_head_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2), (ste
 snake_body = []
 
 # Build a list of rectangles to store our snake
-for counter in range(initial_snake_length):
-    snake_body.append(snake_head_pos.move(snake_direction*-counter))
+for counter in range(1,initial_snake_length+1):
+    snake_body.append(snake_head_pos.move(directions[snake_direction]*-counter))
     
 def find_food_pos():
     try_pos = pygame.Rect((0,0),(step_size, step_size))
     while True:
-        try_pos.topleft = (random.randint(0, screen.get_width()-step_size), random.randint(0, screen.get_height()-step_size))
+        try_pos.topleft = (
+            random.randint(0, screen.get_width()-step_size),
+            random.randint(0, screen.get_height()-step_size)
+        )
         if try_pos.collidelist(snake_body) == -1:
             return try_pos
 
@@ -1601,16 +1819,21 @@ while running:
     # Handle any user input
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
-        snake_direction = directions.up
+        snake_direction = "UP"
     if keys[pygame.K_DOWN]:
-        snake_direction = directions.down
+        snake_direction = "DOWN"
     if keys[pygame.K_LEFT]:
-        snake_direction = directions.left
+        snake_direction = "LEFT"
     if keys[pygame.K_RIGHT]:
-        snake_direction = directions.right
+        snake_direction = "RIGHT"
 
     # Perform other work such as game effects or non-player characters
-    snake_head_pos.move_ip(snake_direction)
+        
+    # Shift snake body
+    snake_body.insert(0, snake_head_pos.copy())
+    snake_body.pop()
+    
+    snake_head_pos.move_ip(directions[snake_direction])
     
     # detect crash with your own body
     if snake_head_pos.collidelist(snake_body) == -1:
@@ -1630,10 +1853,6 @@ while running:
         for counter in range(5):
             snake_body.append(snake_body[-1].copy())
         food_pos = find_food_pos()
-        
-    # Shift snake body
-    snake_body.insert(0, snake_head_pos.copy())
-    snake_body.pop()
 
     # Fill the screen with a colour to wipe away anything from last frame
     screen.fill("purple")
@@ -1657,6 +1876,8 @@ while running:
 
 pygame.quit()
 </code></pre>
+<h2><a href=#examples-chapter-9 aria-hidden=true class=anchor id=examples-chapter-9></a>Examples - Chapter 9</h2>
+<h3><a href=#part-1-a-snake-image-generator aria-hidden=true class=anchor id=part-1-a-snake-image-generator></a>Part 1 - A snake image generator</h3>
 <pre><code class=language-python>import pygame
 from math import pi
 
@@ -1664,8 +1885,9 @@ from math import pi
 pygame.init()
 
 # Set the height and width of the screen
-size = [200, 200]
-screen = pygame.display.set_mode(size)
+tile_size=200
+screen_size = [tile_size*4, tile_size*3]
+screen = pygame.display.set_mode(screen_size)
 
 pygame.display.set_caption("Example code for the draw module")
 
@@ -1673,39 +1895,46 @@ pygame.display.set_caption("Example code for the draw module")
 done = False
 clock = pygame.time.Clock()
 
-def make_head_images():
-    img = pygame.Surface((20,20))
+def make_head_images(size):
+    img = pygame.Surface((size,size))
     img.fill("white")
-    pygame.draw.ellipse(img, "green", [5,5,10,30])
-    pygame.draw.polygon(img, "yellow", [[9,20],[10,10],[11,20]])
-    pygame.draw.ellipse(img, "red", [6,10,3,6])
-    pygame.draw.ellipse(img, "red", [11,10,3,6])
-    pygame.draw.arc(img, "black", [0,0,10,10], 0, pi/2, 1)
-    pygame.draw.arc(img, "black", [10,0,10,10], pi/2, pi, 1)
-    imgs = pygame.Surface((80,20))
+    pygame.draw.ellipse(img, "green", [size/4,size/4,size/2,size/2*3])
+    pygame.draw.polygon(img, "yellow", [[size*(.5-.05),size],[size/2,size/2],[size*(.5+.05),size]])
+    pygame.draw.ellipse(img, "red", [size/20*6,size/2,size/20*3,size/20*6])
+    pygame.draw.ellipse(img, "red", [size/20*11,size/2,size/20*3,size/20*6])
+    pygame.draw.arc(img, "black", [0,0,size/2,size/2], 0, pi/2, int(size/20))
+    pygame.draw.arc(img, "black", [size/2,0,size/2,size/2], pi/2, pi, int(size/20))
+    imgs = pygame.Surface((size*4,size))
     imgs.blit(img,[0,0])
-    imgs.blit(pygame.transform.rotate(img, 90), [20,0])
-    imgs.blit(pygame.transform.rotate(img, 180), [40,0])
-    imgs.blit(pygame.transform.rotate(img, 270), [60,0])
+    imgs.blit(pygame.transform.rotate(img, 90), [size,0])
+    imgs.blit(pygame.transform.rotate(img, 180), [size*2,0])
+    imgs.blit(pygame.transform.rotate(img, 270), [size*3,0])
     imgs.set_colorkey("white")
     return imgs
 
-def make_body_images():
-    imgs = pygame.Surface((60,40))
+def make_body_images(size):
+    imgs = pygame.Surface((size*3,size*2))
     imgs.fill("white")
-    pygame.draw.circle(imgs, "green", [40,20], 15, 10)
-    pygame.draw.circle(imgs, "yellow", [40,20], 11, 2)
     
-    pygame.draw.rect(imgs, "green", [5,0, 10, 20])
-    pygame.draw.rect(imgs, "yellow", [9,0, 2, 20])
     
-    pygame.draw.rect(imgs, "green", [0,25, 20, 10])
-    pygame.draw.rect(imgs, "yellow", [0,29, 20, 2])
+    pygame.draw.circle(imgs, "green", [size*2,size], int(size/4)*3, int(size/2))
+    
+    
+    pygame.draw.circle(imgs, "yellow", [size*2,size], int(size/2+int(size/20)), int(size/10))
+    
+    pygame.draw.rect(imgs, "green", [size/4,0, size/2, size])
+    pygame.draw.rect(imgs, "yellow", [size/2-int(size/20),0, size/10, size])
+    
+    pygame.draw.rect(imgs, "green", [0,size+size/4, size, size/2])
+    pygame.draw.rect(imgs, "yellow", [0,size+size/2-int(size/20), size, size/10])
     imgs.set_colorkey("white")
     return imgs
 
-head_images = make_head_images()
-body_images = make_body_images()
+head_images = make_head_images(tile_size)
+body_images = make_body_images(tile_size)
+
+pygame.image.save(head_images, "headimages.png")
+pygame.image.save(body_images, "bodyimages.png")
 
 while not done:
     # This limits the while loop to a max of 60 times per second.
@@ -1721,11 +1950,225 @@ while not done:
 
     # This draws a triangle using the polygon command
     screen.blit(head_images, (0,0))
-    screen.blit(body_images, (0,20))
+    screen.blit(body_images, (0,head_images.get_rect().height))
     
     pygame.display.flip()
 
 # Be IDLE friendly
+pygame.quit()
+</code></pre>
+<h3><a href=#part-2-snake-with-images aria-hidden=true class=anchor id=part-2-snake-with-images></a>Part 2 - Snake with images</h3>
+<pre><code class=language-python>import pygame
+import random
+
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+running = True
+
+step_size = 20
+
+# Load the images from the image file
+head_image=pygame.image.load("headimages.png")
+body_image=pygame.image.load("bodyimages.png")
+
+# Resize the images to the size we need. The files contain several tiles so we need to make room for these
+head_image=pygame.transform.scale(head_image, (4 * step_size, step_size)) # Head has one row of 4 tiles
+body_image=pygame.transform.scale(body_image, (3 * step_size, 2 * step_size)) # Body has two rows of 3 tiles
+
+# Tell pygame about the background colour so it can remove this when we use the images
+head_image.set_colorkey("white")
+body_image.set_colorkey("white")
+
+score_font = pygame.font.SysFont(None, 48)
+
+directions={
+    "UP": pygame.Vector2(0,-step_size),
+    "DOWN": pygame.Vector2(0, step_size),
+    "LEFT": pygame.Vector2(-step_size,0),
+    "RIGHT": pygame.Vector2(step_size,0)
+}
+
+head_tiles = {
+    "UP": (0,0),
+    "LEFT": (step_size,0),
+    "DOWN": (step_size*2,0),
+    "RIGHT": (step_size*3,0)
+}
+
+body_tiles = {
+    "UP": {
+        "UP":(0,0),
+        "LEFT": (step_size*2,0),
+        "DOWN": (0,0),
+        "RIGHT":(step_size,0)
+    },
+    "LEFT": {
+        "UP":(step_size, step_size),
+        "LEFT": (0,step_size),
+        "DOWN": (step_size,0),
+        "RIGHT": (0,step_size)
+    },
+    "DOWN": {
+        "UP":(0,0),
+        "LEFT": (step_size*2,step_size),
+        "DOWN": (0,0),
+        "RIGHT": (step_size,step_size)
+    },
+    "RIGHT": {
+        "UP":(step_size*2,step_size),
+        "LEFT": (0,step_size),
+        "DOWN": (step_size*2,0),
+        "RIGHT": (0,step_size)
+    }
+}
+
+def find_food_pos(snake_body):
+    try_pos = pygame.Rect((0,0),(step_size, step_size))
+    while True:
+        try_pos.topleft = (
+            random.randint(0, screen.get_width()-step_size),
+            random.randint(0, screen.get_height()-step_size)
+        )
+        if try_pos.collidelist(snake_body) == -1:
+            return try_pos
+
+def play_game():
+    # Setup the start position for the game
+    snake_direction = "RIGHT"
+    old_direction = snake_direction
+
+    # Set the initial size of the snake and the position of its head
+    initial_snake_length = 5
+    snake_head_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2), (step_size, step_size))
+
+    # List to hold the snake
+    snake_body = []
+    snake_tiles = []
+
+    # Build a list of rectangles to store our snake
+    for counter in range(1, initial_snake_length+1):
+        snake_body.append(snake_head_pos.move(directions[snake_direction]*-counter))
+        snake_tiles.append(body_tiles[snake_direction][snake_direction])
+        
+    food_pos = find_food_pos(snake_body)
+
+    player_score = 0
+
+    running = True
+    while running:
+        # poll for events
+        # pygame.QUIT event means the user clicked X to close your window
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # Save the old direction before we check which keys are pressed
+        old_direction = snake_direction
+        
+        # Handle any user input
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_UP]:
+            snake_direction = "UP"
+        if keys[pygame.K_DOWN]:
+            snake_direction = "DOWN"
+        if keys[pygame.K_LEFT]:
+            snake_direction = "LEFT"
+        if keys[pygame.K_RIGHT]:
+            snake_direction = "RIGHT"
+
+        # Perform other work such as game effects or non-player characters
+        # Shift snake body
+        snake_body.insert(0, snake_head_pos.copy())
+        snake_tiles.insert(0, body_tiles[old_direction][snake_direction]) 
+        snake_body.pop()
+        snake_tiles.pop()
+
+        snake_head_pos.move_ip(directions[snake_direction])
+        
+        # detect crash with your own body
+        if snake_head_pos.collidelist(snake_body) == -1:
+            pass
+        else:
+            running = False
+        
+        # detect crash with the edge of the screen
+        if screen.get_rect().contains(snake_head_pos):
+            pass
+        else:
+            running = False
+
+        if snake_head_pos.colliderect(food_pos):
+            player_score+=1
+            # Copy the last part of the snake to make it longer
+            for counter in range(5):
+                snake_body.append(snake_body[-1].copy())
+                snake_tiles.append(snake_tiles[-1])
+            food_pos = find_food_pos(snake_body)
+
+        # Fill the screen with a colour to wipe away anything from last frame
+        screen.fill("purple")
+
+        # Draw your game screen
+        for counter in range(len(snake_body)):
+            screen.blit(body_image, snake_body[counter], pygame.Rect(snake_tiles[counter],(step_size,step_size)))
+        tile_pos = head_tiles[snake_direction]
+        screen.blit(head_image, snake_head_pos, pygame.Rect(tile_pos,(step_size,step_size)))
+        pygame.draw.rect(screen, "green", food_pos)
+        
+        score_message = "Score: "+str(player_score)
+        score_image=score_font.render(score_message, True, "black")
+        screen.blit(score_image, (10,0))
+
+
+        # flip() the display to put your work on screen
+        pygame.display.flip()
+
+        # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+        clock.tick(20)
+    return player_score
+
+def create_text_image(message_list):
+    max_width = 0
+    total_height = 0
+    image_list = []
+    for message,colour in message_list:
+        next_image = score_font.render(message, True, colour)
+        image_list.append(next_image)
+        max_width = max(max_width, next_image.get_rect().width)
+        total_height+=next_image.get_rect().height + 10
+    whole_image = pygame.Surface((max_width, total_height), flags=pygame.SRCALPHA)
+    whole_image.fill((0,0,0,0))
+    current_y=0
+    for image in image_list:
+        whole_image.blit(image, ((max_width - image.get_rect().width)/2,current_y))
+        current_y+=image.get_rect().height + 10
+    return whole_image
+    
+def show_final_screen(score):        
+    over_image = create_text_image([("GAME OVER", "black"), ("Final Score: "+str(score), "blue"), ("Play Again? Y/N", "red")])
+    screen.blit(over_image, ((screen.get_width()-over_image.get_rect().width)/2, (screen.get_height()-over_image.get_rect().height)/2))
+    pygame.display.flip()
+        
+running = True
+while running:
+    final_score = play_game()
+    show_final_screen(final_score)
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                 running = False
+                 waiting = False
+             
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_q] or keys[pygame.K_ESCAPE] or keys[pygame.K_n]:
+            running = False
+            waiting = False
+        if keys[pygame.K_y]:
+            waiting = False
+
 pygame.quit()
 </code></pre>
     </main>
