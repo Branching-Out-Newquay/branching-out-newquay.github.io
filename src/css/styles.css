@@ -174,7 +174,7 @@ main {
     }
     code {
         font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
-        font-size: 0.9em;
+        font-size: 1.0em;
         padding: 0.2em 0.4em;
         border-radius: 4px;
     }
@@ -192,17 +192,18 @@ main {
         padding: 0;
         background: transparent;
         border-radius: 0;
-        font-size: 0.875em;
+        font-size: 1.0em;
     }
 
     code {
-    background-color: rgb(245, 245, 245);
-    color: rgb(70, 70, 70);
+        background-color: color-mix(in srgb, white, var(--background-color));
+        color: var(--alt-text-color);
     }
 
     pre {
-        background-color: rgb(243, 244, 246);
-        border: 1px solid rgb(175, 180, 190);
+        background-color: color-mix(in srgb, white, var(--background-color));
+        outline: white 2px solid;
+        border: var(--branch-color) 2px solid;
     }
 
     /* Syntax highlighting */
@@ -215,6 +216,25 @@ main {
     pre code .variable { color: rgb(50, 50, 50); }
     pre code .operator { color: rgb(80, 80, 80); }
     pre code .punctuation { color: rgb(100, 100, 100); }
+
+    blockquote {
+        margin: 0 0 16px 0;
+        padding: 0 1em;
+        border-left: 4px solid;
+    }
+
+    blockquote > :first-child {
+        margin-top: 0;
+    }
+
+    blockquote > :last-child {
+        margin-bottom: 0;
+    }
+    
+    blockquote {
+        color: var(--alt-text-color);
+        border-left-color: var(--title-text-color);
+    }
 
 }
 
