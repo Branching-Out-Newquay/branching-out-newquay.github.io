@@ -12,25 +12,24 @@
 <nav>
     <a href=/index.html>Home</a><a href=/events.html>Events</a><a href=/about.html>About</a><a href=/coding.html>Coding</a><a href=/making.html>Making</a><a href=/supporting.html>Supporting</a><a href=/subscribe.html>Subscribe</a>
 </nav>    <main>
-        <h2>Python Game Project</h2>
-
+        <h2>Build your own games with Python</h2>
 <ul>
-<li><a href=#python-game-project>Python Game Project</a>
+<li><a href=#build-your-own-games-with-python>Build your own games with Python</a>
 <ul>
 <li><a href=#what-are-we-making>What are we making?</a></li>
-<li><a href=#chapter-1-a-basic-quiz-game>Chapter 1 – A basic quiz game</a>
+<li><a href=#chapter-1-a-basic-quiz-game>Chapter 1 - A basic quiz game</a>
 <ul>
-<li><a href=#step-1-ask-a-question-and-remember-the-answer>Step 1 – Ask a question (and remember the answer)</a></li>
-<li><a href=#step-2-check-the-answer-right-or-wrong>Step 2 – Check the answer (right or wrong)</a></li>
-<li><a href=#step-3-keep-score>Step 3 – keep score</a></li>
-<li><a href=#step-4-tidy-up-stop-writing-the-same-code-over-and-over>Step 4 – Tidy up (stop writing the same code over and over)</a></li>
-<li><a href=#step-5-keep-your-questions-in-a-list-super-organised>Step 5 – Keep your questions in a list (Super organised)</a></li>
+<li><a href=#step-1-ask-a-question-and-remember-the-answer>Step 1 - Ask a question (and remember the answer)</a></li>
+<li><a href=#step-2-check-the-answer-right-or-wrong>Step 2 - Check the answer (right or wrong)</a></li>
+<li><a href=#step-3-keep-score>Step 3 - keep score</a></li>
+<li><a href=#step-4-tidy-up-stop-writing-the-same-code-over-and-over>Step 4 - Tidy up (stop writing the same code over and over)</a></li>
+<li><a href=#step-5-keep-your-questions-in-a-list-super-organised>Step 5 - Keep your questions in a list (Super organised)</a></li>
 </ul>
 </li>
 <li><a href=#chapter-2-give-the-player-more-control>Chapter 2 - Give the player more control</a>
 <ul>
-<li><a href=#step-6-get-instructions-from-the-player>Step 6 – Get instructions from the player</a></li>
-<li><a href=#step-7-allow-valid-instructions>Step 7 – Allow valid instructions</a></li>
+<li><a href=#step-6-get-instructions-from-the-player>Step 6 - Get instructions from the player</a></li>
+<li><a href=#step-7-allow-valid-instructions>Step 7 - Allow valid instructions</a></li>
 <li><a href=#step-8-leave-the-game>Step 8 - Leave the game</a></li>
 </ul>
 </li>
@@ -95,9 +94,9 @@
 <li><a href=#step-41-give-the-snake-a-tail>Step 41 - Give the snake a tail</a></li>
 </ul>
 </li>
-<li><a href=#examples-chapter-1>Examples – Chapter 1</a></li>
-<li><a href=#examples-chapter-2>Examples – Chapter 2</a></li>
-<li><a href=#examples-chapter-3>Examples – Chapter 3</a></li>
+<li><a href=#examples-chapter-1>Examples - Chapter 1</a></li>
+<li><a href=#examples-chapter-2>Examples - Chapter 2</a></li>
+<li><a href=#examples-chapter-3>Examples - Chapter 3</a></li>
 <li><a href=#examples-chapter-4>Examples - Chapter 4</a></li>
 <li><a href=#examples-chapter-5>Examples - Chapter 5</a></li>
 <li><a href=#examples-chapter-6>Examples - Chapter 6</a></li>
@@ -112,25 +111,33 @@
 </ul>
 </li>
 </ul>
-
-<h1><a href=#python-game-project aria-hidden=true class=anchor id=python-game-project></a>Python Game Project</h1>
+<h1><a href=#build-your-own-games-with-python aria-hidden=true class=anchor id=build-your-own-games-with-python></a>Build your own games with Python</h1>
 <h2><a href=#what-are-we-making aria-hidden=true class=anchor id=what-are-we-making></a>What are we making?</h2>
-<p>In this project you’ll learn how to make your own game in Python. We’ll start with simple text games (like quizzes and adventures) and later you can move on to games with graphics.
-You’ll learn how to:</p>
+<p>In this project you’ll learn how to make your own game in Python. We’ll start with simple text games (like quizzes and adventures) and later you can move on to games with graphics like the famous Snake! game.</p>
+<p>You’ll learn how to:</p>
 <ul>
 <li>Ask the player questions</li>
 <li>Check their answers</li>
 <li>Keep score</li>
 <li>Make your code easier to expand with functions and lists</li>
+<li>Follow player commands and instructions</li>
+<li>Draw graphics</li>
+<li>Move things around the screen</li>
 </ul>
-<p>To make this game you will need some kind of Python app. If you are not sure get someone to help you set up <a href=https://github.com/thonny/thonny/releases>Thonny</a> or another Python app on your computer. You can use a website like <a href=https://editor.raspberrypi.org/en-US/projects/blank-python-starter>the raspberry pi editor</a> to get started but some of the exercises won't work in an online editor.</p>
+<p>Along the way you will also learn how to:</p>
+<ul>
+<li>take your game ideas and turn them into a design that you can make in code</li>
+<li>investigate and solve problems</li>
+<li>search for help and ideas - even professional programers do this every day</li>
+</ul>
+<p>To make these games you will need some kind of Python app. If you are not sure get someone to help you set up <a href=https://github.com/thonny/thonny/releases>Thonny</a> or another Python app on your computer. You can use a website like <a href=https://editor.raspberrypi.org/en-US/projects/blank-python-starter>the raspberry pi editor</a> to get started but some of the exercises won't work in an online editor.</p>
 <p>There are also some other great <a href=https://projects.raspberrypi.org/en/interests/games>Python game projects on the raspberry pi website</a></p>
-<h2><a href=#chapter-1-a-basic-quiz-game aria-hidden=true class=anchor id=chapter-1-a-basic-quiz-game></a>Chapter 1 – A basic quiz game</h2>
-<h3><a href=#step-1-ask-a-question-and-remember-the-answer aria-hidden=true class=anchor id=step-1-ask-a-question-and-remember-the-answer></a>Step 1 – Ask a question (and remember the answer)</h3>
+<h2><a href=#chapter-1-a-basic-quiz-game aria-hidden=true class=anchor id=chapter-1-a-basic-quiz-game></a>Chapter 1 - A basic quiz game</h2>
+<h3><a href=#step-1-ask-a-question-and-remember-the-answer aria-hidden=true class=anchor id=step-1-ask-a-question-and-remember-the-answer></a>Step 1 - Ask a question (and remember the answer)</h3>
 <p>Try this:</p>
 <pre><code class=language-python>input("What is your favourite colour?  &gt; ")
 </code></pre>
-<p>This asks a question – but it doesn’t save the answer anywhere.
+<p>This asks a question - but it doesn’t save the answer anywhere.
 This is better:</p>
 <pre><code class=language-python>player_answer =input("What is your favourite colour?  &gt; ")
 print("Your favourite colour is", player_answer)
@@ -141,7 +148,7 @@ print("Your favourite colour is", player_answer)
 <li>What is your favourite animal?</li>
 <li>What is your favourite food?</li>
 </ul>
-<h3><a href=#step-2-check-the-answer-right-or-wrong aria-hidden=true class=anchor id=step-2-check-the-answer-right-or-wrong></a>Step 2 – Check the answer (right or wrong)</h3>
+<h3><a href=#step-2-check-the-answer-right-or-wrong aria-hidden=true class=anchor id=step-2-check-the-answer-right-or-wrong></a>Step 2 - Check the answer (right or wrong)</h3>
 <p>Games need to react to what the player types. We do this with if and else.</p>
 <p>How if and else work.</p>
 <pre><code class=language-python>if player_answer==correct_answer:
@@ -169,7 +176,7 @@ else:
 <li>“How many legs does a spider have?”</li>
 <li>“What sound does a cow make?”</li>
 </ul>
-<h3><a href=#step-3-keep-score aria-hidden=true class=anchor id=step-3-keep-score></a>Step 3 – keep score</h3>
+<h3><a href=#step-3-keep-score aria-hidden=true class=anchor id=step-3-keep-score></a>Step 3 - keep score</h3>
 <p>Now let’s give the player points for correct answers:</p>
 <pre><code class=language-python># Start with the score at 0
 total_score=0
@@ -190,9 +197,10 @@ print(“Your points: ”, total_score)
 <li>Code which starts with # are comments for programers to read and Python ignores them. As your game gets bigger and more complicated comments can help you remember how the code works.</li>
 <li>The blocks of code for if and else can have lots of lines in them. The indentations tell Python where the blocks start and finish.</li>
 <li>The print("Game Over!") line isn't part of the else block because it isn't indented the same as the other lines.</li>
+<li>We have a line that says <code>total_score = total_score + 0</code>. In this game that won't make any difference and we could miss it out. If you wanted to give the player a penalty for a wrong answer you could change this line to reduce their score.</li>
 </ul>
-<p><strong>Your turn:</strong> Add scores into your quiz game</p>
-<h3><a href=#step-4-tidy-up-stop-writing-the-same-code-over-and-over aria-hidden=true class=anchor id=step-4-tidy-up-stop-writing-the-same-code-over-and-over></a>Step 4 – Tidy up (stop writing the same code over and over)</h3>
+<p><strong>Your turn:</strong> Add scores into your quiz game. If the score isn't changing the way you expect, you can add in prints to see what Python is actually doing <code>print("Score is now:" total_score)</code></p>
+<h3><a href=#step-4-tidy-up-stop-writing-the-same-code-over-and-over aria-hidden=true class=anchor id=step-4-tidy-up-stop-writing-the-same-code-over-and-over></a>Step 4 - Tidy up (stop writing the same code over and over)</h3>
 <p>If you add more questions to your quiz you will keep writing similar code again and again. It is better to get Python to do the boring things for you. A function is a way to make a mini-program you can use several times.</p>
 <pre><code class=language-python># A function to ask a question and give points
 def quiz_question( question, correct_answer):
@@ -222,7 +230,7 @@ print("You got", total_score, "points")
 <li>the way we use the function for our questions. We fill in the parameters and use the returned points.</li>
 </ul>
 <p><strong>Your turn:</strong> Add your own questions using the function (much less typing)</p>
-<h3><a href=#step-5-keep-your-questions-in-a-list-super-organised aria-hidden=true class=anchor id=step-5-keep-your-questions-in-a-list-super-organised></a>Step 5 – Keep your questions in a list (Super organised)</h3>
+<h3><a href=#step-5-keep-your-questions-in-a-list-super-organised aria-hidden=true class=anchor id=step-5-keep-your-questions-in-a-list-super-organised></a>Step 5 - Keep your questions in a list (Super organised)</h3>
 <p>A list can store all your questions and answers together:</p>
 <pre><code class=language-python># Make a quiz list
 quiz = [
@@ -247,11 +255,11 @@ print(“You got”, total_score, “points”)
 <h2><a href=#chapter-2-give-the-player-more-control aria-hidden=true class=anchor id=chapter-2-give-the-player-more-control></a>Chapter 2 - Give the player more control</h2>
 <p>We will let the player give us special instructions as well as answers. Here are the instructions:</p>
 <ul>
-<li>“leave” – stops the game</li>
-<li>“pass” – skips the question</li>
+<li>“leave” - stops the game</li>
+<li>“pass” - skips the question</li>
 </ul>
-<p>We will have to make several changes to out quiz game. You can do this in one go (see the <a href=#examples-chapter-1>examples</a> at the end of this project) but you will learn more and be a more successful games programmer if you do this bit by bit and keep checking things work. Make sure you keep saving your program so you don't lose what you are doing.</p>
-<h3><a href=#step-6-get-instructions-from-the-player aria-hidden=true class=anchor id=step-6-get-instructions-from-the-player></a>Step 6 – Get instructions from the player</h3>
+<p>We will have to make several changes to our quiz game. You can do this in one go (see the <a href=#examples-chapter-1>examples</a> at the end of this project) but you will learn more and be a more successful games programmer if you do this bit by bit and keep checking things work. Make sure you keep saving your program so you don't lose what you are doing.</p>
+<h3><a href=#step-6-get-instructions-from-the-player aria-hidden=true class=anchor id=step-6-get-instructions-from-the-player></a>Step 6 - Get instructions from the player</h3>
 <p>Change the program so our quiz_question function can give back more information.
 In the function there is code to return the number of points like this</p>
 <pre><code class=language-python>        return 1
@@ -268,12 +276,12 @@ In the function there is code to return the number of points like this</p>
 </code></pre>
 <p>Things to notice:</p>
 <ul>
-<li>How we use () (backets) and , (commas) to send and receive the information back from the function.</li>
+<li>How we use () (brackets) and , (commas) to send and receive the information back from the function. If you want to check this is work you can add in prints <code>print("Points:", points, " Instructions:", instructions")</code>.</li>
 </ul>
 <p><strong>Your turn:</strong> We aren’t doing anything with the instruction yet but test your quiz now and check it works just as before</p>
-<h3><a href=#step-7-allow-valid-instructions aria-hidden=true class=anchor id=step-7-allow-valid-instructions></a>Step 7 – Allow valid instructions</h3>
+<h3><a href=#step-7-allow-valid-instructions aria-hidden=true class=anchor id=step-7-allow-valid-instructions></a>Step 7 - Allow valid instructions</h3>
 <p>In our quiz_question function we can have two results (or branches): right or wrong. Now we are going to need four results: right, wrong, pass or leave. Let’s change our function to allow this.</p>
-<pre><code class=language-python>    If player_answer==”leave”:
+<pre><code class=language-python>    if player_answer==”leave”:
         print("OK. Come back and play another time.")
         return (0,"leave")
     elif player_answer=="pass":
@@ -346,7 +354,7 @@ while keep_playing==True:
 <ul>
 <li>The way we use the keep_playing variable to continue or stop the game. Can you see how this works?</li>
 <li>The double indent inside the if block of code. Can you work out why we need that?</li>
-<li>When we us = to set a value and when we use == to check a value</li>
+<li>When we use = to set a value and when we use == to check a value</li>
 </ul>
 <p><strong>Your turn:</strong> We are not keeping a score board yet but check your game works for several players now</p>
 <h3><a href=#step-11-add-in-score-board aria-hidden=true class=anchor id=step-11-add-in-score-board></a>Step 11 - Add in score board</h3>
@@ -411,7 +419,7 @@ def show_scoreboard():
 </ul>
 <p><strong>Your turn:</strong> Try this small change and check it works.</p>
 <p>Now let's fix the order. Python knows how to sort lists so we can add in:</p>
-<pre><code class=language-python>        scoreboard.sort():
+<pre><code class=language-python>        scoreboard.sort()
 </code></pre>
 <p>Things to notice:</p>
 <ul>
@@ -483,7 +491,9 @@ def show_scoreboard():
 <pre><code class=language-python>        load_scoreboard()
 </code></pre>
 <p><strong>Your turn:</strong> Put these bits of code in the right places and check they work. If you get stuck look at the <a href=#examples-chapter-4>examples</a>.</p>
-<p><strong>Watch out</strong> We made the save function first so we already had a scoreboard file when we added the load. The program won't work if the file is not there. The <a href=#examples-chapter-4>example</a> code at the end of the project adds some extra code, a try except block, to fix this if you really need it.</p>
+<blockquote>
+<p><strong>Watch out</strong> We made the save function first so we already had a scoreboard file when we added the load. The program won't work if the file is not there. The <a href=#examples-chapter-4>example</a> code at the end of the project adds some extra code, a try except block, to fix this if you really need it. A try except block lets your program cope with problems instead of stopping - in this case it lets us carry on if the file is missing.</p>
+</blockquote>
 <h2><a href=#chapter-5-an-adventure-game aria-hidden=true class=anchor id=chapter-5-an-adventure-game></a>Chapter 5 - An adventure game</h2>
 <p>Let's use what we have learnt to make a new game. This is going to be a text adventure game. It is up to you what sort of adventure it will be. It could be a dungeon adventure with wizards, knights and dragons. It could be a wildlife adventure with animals and scientists. Use your own hobbies, interests and imagination.</p>
 <h3><a href=#step-15-the-game-world aria-hidden=true class=anchor id=step-15-the-game-world></a>Step 15 - The game world</h3>
@@ -548,6 +558,7 @@ game_world = {
 </code></pre>
 <p><strong>Your turn:</strong> Make your own game_world and add in a few places and events that fit your story. Add in actions to link them together.</p>
 <h3><a href=#step-16-the-game-loop aria-hidden=true class=anchor id=step-16-the-game-loop></a>Step 16 - The game loop</h3>
+<p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
 <p>Next, we will program our game loop. Although the loop will be short and simple we can create exciting, complex adventures just by putting more into the game_world dictionary.</p>
 <pre><code class=language-python># Set the player position to the beginning of adventure
 player_position = "wilderness"
@@ -574,8 +585,9 @@ while keep_playing:
         for action_number in range(len(actions)):
             # actions is our list of available actions.
             # actions[action_number] picks out one action
-            # actions[action_number][0] picks out the first part of the pair which will be the action description
-            print(action_number, ":", actions[action_number][0])
+            # each actions has two parts.            
+            (description, destination) = actions[action_number]
+            print(action_number, ":", description)
         # Convert the player input into a number. The text "1" becomes the number 1
         choice = int(input("Type the action number &gt;"))
         print()
@@ -597,9 +609,12 @@ print("Game over. Good luck!")
 <li>We've borrowed code from the quiz game. For example, the keep_playing variable and loop.</li>
 <li>We want to use the player's input as a number so we use the int() function to change the input</li>
 <li>How we are using the action list and the action_number loop</li>
+<li>An action contains two parts so we can access those with <code>(description, destination) = actions[action_number]</code>. At this point we don't use destination so we could have missed it out <code>(description, _) = actions[action_number]</code> or accessed just the description with an index <code>description = actions\[action_number][0]</code></li>
 </ul>
-<p><strong>Your turn:</strong> Try your game world with this game loop</p>
+<p><strong>Your turn:</strong> Try your game world with this game loop. If your player ends up in the wrong place, try adding prints to check player_position and actions at the start of each loop.</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> Have you noticed what happens if you don't type one of the valid action numbers? Can you design a helper function to fix these problems. The function will keep asking the player for an input until they enter something valid. It will then return the value as an integer. There are many different ways to do this in Python. You can use an internet search to find some examples and use these as clues to help you define the function and use it.</p>
+</blockquote>
 <h3><a href=#step-17-finding-and-using-items-in-the-adventure aria-hidden=true class=anchor id=step-17-finding-and-using-items-in-the-adventure></a>Step 17 - Finding and using items in the adventure</h3>
 <p>The game is quite fixed at the moment. Each time you visit a place or get into a situation the actions and results will be the same. We can make the game more interesting by placing things in the game_world that the player can collect and use to change how the adventure unfolds. For example, a magic sword might help the player defeat the dragon and reach the next part of the adventure. Maybe we can make friends with the dragon with some food.</p>
 <p>First, lets re-organise our game_world to include items. We can add in items and provide special actions if a player has an item.</p>
@@ -656,6 +671,7 @@ print("Game over. Good luck!")
 else:
 </code></pre>
 <p><strong>Your turn:</strong> Find the right places to add in this new code and try your game. You should be able to take the items and then they are no longer there. If you get stuck, you can look at the <a href=#examples-chapter-5>examples</a> for some clues. You can't use the items yet, but we will do that next.</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> You might notice that the first player gets the items. If you play again the items have gone. See if you can fix this. There are several ways you could try:</p>
 <ul>
 <li>Find a way to take a copy of the whole game_world so you can reset everything for the next game</li>
@@ -664,6 +680,7 @@ else:
 <li>Don't delete the items but instead add a <code>"taken" :True</code>. You can check for this to make sure you can't take something twice, but it is easy to remove all of these to reset the game.</li>
 <li>Some other trick that you invent</li>
 </ul>
+</blockquote>
 <h3><a href=#step-19-use-the-items aria-hidden=true class=anchor id=step-19-use-the-items></a>Step 19 - Use the items</h3>
 <p>Now we need to check if the items we have give us new possibilities.</p>
 <pre><code class=language-python>for carried_item in player_items:
@@ -687,7 +704,8 @@ else:
 <li>Load the game_world from a file and create an editor programme to make it easier to create new worlds</li>
 </ul>
 <h2><a href=#chapter-6-graphics aria-hidden=true class=anchor id=chapter-6-graphics></a>Chapter 6 - Graphics</h2>
-<p>In this chapter we will start making games with graphics. We will make use of a beginner's game library called pygame. There are many games libraries you can use which are good at different things. pygame is good at helping you to learn basic game skills and python coding. These are good skills you can keep using if you move on to more advanced game libraries or game engines like Unity.</p>
+<p>In this chapter we will start making games with graphics. This will be the hardest chapter so far - don't worry it it takes longer. That just means you are learning more!</p>
+<p>We will make use of a beginner's game library called pygame. There are many games libraries you can use which are good at different things. pygame is good at helping you to learn basic game skills and python coding. These are good skills you can keep using if you move on to more advanced game libraries or game engines like Unity.</p>
 <p>Your python editor will have instructions for how to install libraries like pygame and or you can search for help and guides online. If you are using <a href=https://github.com/thonny/thonny/releases>Thonny</a> there is a package manager under the tools menu so you can search for pygame and install it.</p>
 <h3><a href=#step-21-a-simple-game-template aria-hidden=true class=anchor id=step-21-a-simple-game-template></a>Step 21 - A simple game template</h3>
 <p>Let's start with a basic game template. This project uses the example in the <a href=https://www.pygame.org/docs/>pygame documents</a>.</p>
@@ -852,6 +870,7 @@ pygame.draw.rect(screen, "yellow", target_pos)
 <li>The target starts again when it touches the edge of the screen. If you want it to leave the screen entirely you can check for <code>target_pos.right</code> instead of <code>target_pos.x</code></li>
 <li>Sometime the target will start too low so it is not entirely on the screen. You can fix this by adjusting the randomint parameters. <em>Clue:</em> Think about how far down the screen the target can go before it touches the bottom.</li>
 <li>We have the same complicated code to set the target_pos in two different places. It would be neater to define a function which returns the position rectangle. Define and use a function to do this.</li>
+<li>If you want to check what is going on inside the program you can add in some prints so that you can see the values but take care. The game loops runs really fast so the prints might be too fast to read. Prints will work best where specific things happen like when rectangles collide or you can check for a special key and only print when the key is pressed.</li>
 </ul>
 <h3><a href=#step-27-catch-the-target-and-score-points aria-hidden=true class=anchor id=step-27-catch-the-target-and-score-points></a>Step 27 - Catch the target and score points</h3>
 <p>Let's create a variable for our score.</p>
@@ -885,7 +904,9 @@ if target_pos.colliderect(player_pos):
 <li>If the hazard hits the player the game is over.</li>
 </ul>
 <p><strong>Your turn:</strong> Add in a hazard piece. Perhaps it moves faster than the target. Check if it hits the player and end the games.</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> At the end of the game display a message and wait for the player to close the window.</p>
+</blockquote>
 <h3><a href=#step-29-add-your-own-features-to-the-game aria-hidden=true class=anchor id=step-29-add-your-own-features-to-the-game></a>Step 29 - Add your own features to the game</h3>
 <p>With the building blocks in this chapter, you can make almost any 2D or flat screen game. In the next chapter we will work through a snake game but almost anything is possible.</p>
 <p><strong>Your turn:</strong> Here are some things you could try yourself before we move on:</p>
@@ -907,18 +928,18 @@ if target_pos.colliderect(player_pos):
 <li>Mix in the text style games from the earlier chapters. Setup a game_world as before but use the pygame graphics to show the player and the surroundings and pygame controls to move around the world and overcome the challenges.</li>
 </ul>
 <h2><a href=#chapter-8-s-n-a-k-e- aria-hidden=true class=anchor id=chapter-8-s-n-a-k-e-></a>Chapter 8 - S N A K E !</h2>
-<p>In this chapter we will use the building blocks from our first simple game and make our own version of Snake - it is one of the first video games and is so old that your grand-parents may have played it!</p>
+<p>In this chapter we will use the building blocks from our first simple game and make our own version of Snake - it is one of the first video games and is so old that your parents, or even your grand-parents, may have played it!</p>
 <h3><a href=#step-30-get-a-new-game-template-ready aria-hidden=true class=anchor id=step-30-get-a-new-game-template-ready></a>Step 30 - Get a new game template ready</h3>
 <p>Go back to the first graphics game in <a href=#step-22-our-first-graphics-game>Step 22</a>. We will just have a circle that moves around with the keys.</p>
 <p>Next use the instructions in <a href=#step-25-get-the-player-ready>Step 25</a> to switch to using rectangles.</p>
 <p>Now is a good time to tidy up some things. The code has lots of copies of numbers like 40 and 80. We will probably need to change the scale and speed of the game later. This is hard to do because we have to change the numbers in lots of places. We can set size variable and use that for graphics sizes and movements.</p>
 <p>We can set and use the size like this. This is just a sample and there are several other places where you should swap out a number for our new variable:</p>
 <pre><code class=language-python>step_size = 20
-player_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2, (step_size, step_size)))
+player_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2), (step_size, step_size))
 
     ...
 
-if kets[pygame.K_UP]:
+if keys[pygame.K_UP]:
     player_pos.y -= step_size
 </code></pre>
 <p>The first thing we will change is to make the circle keep moving in a direction. We will setup a direction variable and use it to move the circle.</p>
@@ -963,7 +984,7 @@ snake_body = []
 
 # Build a list of rectangles to store our snake
 for counter in range(1,initial_snake_length+1):
-    snake_body.append(snake_head_pos.move(-snake_direction*counter)
+    snake_body.append(snake_head_pos.move(-snake_direction*counter))
 
     ...
 
@@ -980,12 +1001,13 @@ for body_part_rect in snake_body:
 </ul>
 <p><strong>Your turn:</strong> Make these changes and get them working in your game. You game may still be moving and drawing player_pos so you should also make changes so that you are moving and drawing snake_head_pos. Now we have a body but the head leaves it behind when it moves! Lets fix that next.</p>
 <h3><a href=#step-33-body-follow-head aria-hidden=true class=anchor id=step-33-body-follow-head></a>Step 33 - Body follow head</h3>
+<p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
 <p>Now we move the body along behind the head. Every time the head moves we will add a copy of it to the front of the body and remove the end of the tail. We can use Python list functions like insert() and pop() to do this.</p>
 <pre><code class=language-python>    # Shift snake body
     snake_body.insert(0, snake_head_pos.copy())
     snake_body.pop()
 </code></pre>
-<p><strong>Your turn:</strong> Find the right place to add in the new code and get the body to follow the head. Take care where this code goes. If you move the body after moving the head the body will overlap with the head.</p>
+<p><strong>Your turn:</strong> Find the right place to add in the new code and get the body to follow the head. Take care where this code goes. If you move the body after moving the head the body will overlap with the head. If you want to check what is going on you can add prints and you can also slow down the game <code>clock.tick(2)</code> to make it easier to spot problems</p>
 <h3><a href=#step-34-watch-out-dont-crash aria-hidden=true class=anchor id=step-34-watch-out-dont-crash></a>Step 34 - Watch out, don't crash!</h3>
 <p>In the snake game you will lose if you crash into yourself or the sides of the screen. Lets add that to our game using the pygame rectangle helper functions.</p>
 <pre><code class=language-python>    # detect crash with your own body
@@ -1006,7 +1028,9 @@ for body_part_rect in snake_body:
 <li>contains() will return True if the head is inside the screen. In that case we pass and carry on. If not we stop the game.</li>
 </ul>
 <p><strong>Your turn:</strong> Make the changes to game and test the game finishes correctly.</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> Add a game over screen like you did for your previous game and give the player a chance to play again.</p>
+</blockquote>
 <h3><a href=#step-35-feed-the-snake aria-hidden=true class=anchor id=step-35-feed-the-snake></a>Step 35 - Feed the snake</h3>
 <p>In this step we can add in some food for the snake to eat. We will place the food in a random place, making sure we don't drop it on top of the snake! If the snakes head reaches the food we will place some new food at another location, give the player a point and make the snake grow longer.</p>
 <pre><code class=language-python># Make sure we import the random library
@@ -1041,7 +1065,7 @@ player_score = 0
 
 
     # Check for food
-    if snake_head_pos.collide(food_pos):
+    if snake_head_pos.colliderect(food_pos):
         player_score+=1
         # Copy the last part of the snake to make it longer
         snake_body.append(snake_body[-1].copy())
@@ -1061,17 +1085,21 @@ player_score = 0
 <li>Look at how we have copied the rectangle at the end of the list. Normally we use [0], [1] to count forward through a list. We can also use [-1], [-2] to count back from the end of the list.</li>
 </ul>
 <p><strong>Your turn:</strong> Work out how to add in this new code and test your game.</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> Add in some more features to your game as you did in the earlier chapters. You could:</p>
 <ul>
 <li>Show the score on the screen</li>
 <li>Build a high score table</li>
 </ul>
+</blockquote>
 <h2><a href=#chapter-9-a-more-realistic-snake aria-hidden=true class=anchor id=chapter-9-a-more-realistic-snake></a>Chapter 9 - A more realistic snake</h2>
 <p>Now we are going to change our rectangles into images. This will seem complicated but it is worth learning as you can use similar ideas if you want to make other types of games.</p>
 <h3><a href=#step-36-generate-some-images aria-hidden=true class=anchor id=step-36-generate-some-images></a>Step 36 - Generate some images</h3>
 <p>First we need some images to use. In the <a href=#part-1-a-snake-image-generator>examples</a> there is a program to which uses pygame to draw some images for our snake and save them to some files: one for the head and another for the body.</p>
 <p><strong>Your turn:</strong> Use the example program to generate the two image files. Open the files in a photo or image viewer so see what we have</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> Modify the progam to change the images. For example you can use different colours.</p>
+</blockquote>
 <h3><a href=#step-37-use-a-single-head-and-body-image aria-hidden=true class=anchor id=step-37-use-a-single-head-and-body-image></a>Step 37 - Use a single head and body image</h3>
 <p>I this step we will replace the head and body rectangles with images. At first, this won't look great as the head and body won't turn around as the snake moves but we can fix that later.</p>
 <p>At the beginning of our program we can load our image and make any changes we need</p>
@@ -1081,7 +1109,7 @@ body_image=pygame.image.load("bodyimage.png")
 
 # Resize the images to the size we need. The files contain several tiles so we need to make room for these
 head_image=pygame.transform.scale(head_image, (4 * step_size, step_size)) # Head has one row of 4 tiles
-body_image=pygame.tramsform.scale(body_image, (3 * step_size, 2 * step_size)) # Body has two rows of 3 tiles
+body_image=pygame.transform.scale(body_image, (3 * step_size, 2 * step_size)) # Body has two rows of 3 tiles
 
 # Tell pygame about the background colour so it can remove this when we use the images
 head_image.set_colorkey("white")
@@ -1100,8 +1128,10 @@ body_image.set_colorkey("white")
     ...
 
 </code></pre>
-<p><strong>Your turn:</strong> Add the image code into your program and test to check your game is now using images.
-<strong>Bonus challenge:</strong> Find or make a background image for the game, load it, scale it and draw it in place of the purple background. The <a href=#examples-chapter-6>example for Chapter 6</a> includes some code you can use to help you.</p>
+<p><strong>Your turn:</strong> Add the image code into your program and test to check your game is now using images.</p>
+<blockquote>
+<p><strong>Bonus challenge:</strong> Find or make a background image for the game, load it, scale it and draw it in place of the purple background. The <a href=#examples-chapter-6>example for Chapter 6</a> includes some code you can use to help you.</p>
+</blockquote>
 <h3><a href=#step-38-get-the-head-moving-in-the-right-direction aria-hidden=true class=anchor id=step-38-get-the-head-moving-in-the-right-direction></a>Step 38 - Get the head  moving in the right direction</h3>
 <p>Let's get the head of the snake to turn in the right direction. The head_image contains 4 tiles for the four directions. We can use the direction to pick the right tile. One way to do this is with a dictionary that stores the position of the tile we want against the four directions.</p>
 <pre><code class=language-python>head_tiles = {
@@ -1158,10 +1188,59 @@ for counter in range(len(snake_body)):
     screen.blit(body_image, snake_body[counter], pygame.Rect(snake_tiles[counter],(step_size,step_size)))
 
 </code></pre>
-<p><strong>Your turn:</strong> Make the changes to pick better body image tiles and test your game
-<strong>Bonus Challenge:</strong> Find or make an image to use for the snake's food. Load and scale the image and use it in place of the food rectangle.</p>
+<p><strong>Your turn:</strong> Make the changes to pick better body image tiles and test your game</p>
+<blockquote>
+<p><strong>Bonus Challenge:</strong> Find or make an image to use for the snake's food. Load and scale the image and use it in place of the food rectangle.</p>
+</blockquote>
 <h3><a href=#step-40-draw-the-snake-corners aria-hidden=true class=anchor id=step-40-draw-the-snake-corners></a>Step 40 - Draw the snake corners</h3>
+<p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
 <p>Finally we need to add in the corners. To pick the right tiles we need two bits of information - the direction of the snake body and the direction of the snake head. There are 16 combinations (4 body directions x 4 head directions) so we can make a bigger dictionary to store these.</p>
+<p>The table below shows what each body segment should look like depending on the two directions. When both directions are the same the segment is straight. When they differ it needs to be a corner:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align=center><strong>Head → UP</strong></th>
+<th align=center><strong>Head → DOWN</strong></th>
+<th align=center><strong>Head → LEFT</strong></th>
+<th align=center><strong>Head → RIGHT</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Body was going UP</strong></td>
+<td align=center>│ straight</td>
+<td align=center>│ straight</td>
+<td align=center>┐ corner</td>
+<td align=center>┌ corner</td>
+</tr>
+<tr>
+<td><strong>Body was going DOWN</strong></td>
+<td align=center>│ straight</td>
+<td align=center>│ straight</td>
+<td align=center>┘ corner</td>
+<td align=center>└ corner</td>
+</tr>
+<tr>
+<td><strong>Body was going LEFT</strong></td>
+<td align=center>└ corner</td>
+<td align=center>┌ corner</td>
+<td align=center>─ straight</td>
+<td align=center>─ straight</td>
+</tr>
+<tr>
+<td><strong>Body was going RIGHT</strong></td>
+<td align=center>┘ corner</td>
+<td align=center>┐ corner</td>
+<td align=center>─ straight</td>
+<td align=center>─ straight</td>
+</tr>
+</tbody>
+</table>
+<p>Each corner shape shows which two sides of the square the snake enters and exits from. For example, ┘ connects the <strong>top</strong> and <strong>left</strong> sides — so if the snake was going down (entering from the top) and then turns left (exiting to the left), ┘ is the right tile to use.</p>
+<blockquote>
+<p><strong>Note:</strong> The <code>body_tiles</code> dictionary maps these combinations to pixel positions inside the body image file. If the corners look wrong when you run your game, check which tile is at which position in your image and adjust the pixel offsets to match.</p>
+</blockquote>
 <pre><code class=language-python># Store combinations of body and head direction to pick the correct body tile
 body_tiles = {
     "UP": {
@@ -1218,7 +1297,9 @@ snake_tiles.insert(0, body_tiles[old_direction][snake_direction])
 
 </code></pre>
 <p><strong>Your turn:</strong> Find the right places to change your code and check the snake curves around the corners in the right places</p>
+<blockquote>
 <p><strong>Bonus challenge:</strong> Find or make an image of the food which has several tiles, e.g. a bug with moving legs. Keep changing the food tiles to make it look like the bug is wriggling!</p>
+</blockquote>
 <h3><a href=#step-41-give-the-snake-a-tail aria-hidden=true class=anchor id=step-41-give-the-snake-a-tail></a>Step 41 - Give the snake a tail</h3>
 <p>This whole step is a kind of <strong>bonus challenge</strong>. You have all the building blocks needed in your code but you will need to work out what to change. Here are some suggestions for how to add the tail.</p>
 <ul>
@@ -1232,7 +1313,7 @@ snake_tiles.insert(0, body_tiles[old_direction][snake_direction])
 <li>When eat some food we add one or more parts by copying the last part of the snake. For a short while, before the snake moves on, these news parts fill the same space. That wasn't a problem as they all had the same image. If we add the tail we may have to hide those overlapping parts. You can use the colliderect helper function in pygame and only draw parts of the body that don't collide with the tail.</li>
 </ul>
 <p><strong>Your turn:</strong> Use what you have learnt to add the tail to the snake</p>
-<h2><a href=#examples-chapter-1 aria-hidden=true class=anchor id=examples-chapter-1></a>Examples – Chapter 1</h2>
+<h2><a href=#examples-chapter-1 aria-hidden=true class=anchor id=examples-chapter-1></a>Examples - Chapter 1</h2>
 <pre><code class=language-python># Make a quiz list
 quiz = [
     ("What is Batman's favourite colour", "black"),
@@ -1261,7 +1342,7 @@ if total_score==1:
     message = "point"
 print("You got", total_score, message)
 </code></pre>
-<h2><a href=#examples-chapter-2 aria-hidden=true class=anchor id=examples-chapter-2></a>Examples – Chapter 2</h2>
+<h2><a href=#examples-chapter-2 aria-hidden=true class=anchor id=examples-chapter-2></a>Examples - Chapter 2</h2>
 <pre><code class=language-python># Make a quiz list
 quiz = [
     ("What is Batman's favourite colour", "black"),
@@ -1301,7 +1382,7 @@ if total_score==1:
     message = "point"
 print("You got", total_score, message)
 </code></pre>
-<h2><a href=#examples-chapter-3 aria-hidden=true class=anchor id=examples-chapter-3></a>Examples – Chapter 3</h2>
+<h2><a href=#examples-chapter-3 aria-hidden=true class=anchor id=examples-chapter-3></a>Examples - Chapter 3</h2>
 <pre><code class=language-python># Make a quiz list
 quiz = [
     ("What is Batman's favourite colour", "black"),
@@ -1566,6 +1647,7 @@ while keep_playing:
         print()
         # actions[choice] picks out the chosen action
         # actions[choice][1] picks out the second part of the pair which will be the destination for the player
+        # This code includes the bonus challenge. The position of the item is saved so that they can be reset before the next game
         if choice==len(actions):
             player_items.append((place["item"],player_position))
             del place["item"]
