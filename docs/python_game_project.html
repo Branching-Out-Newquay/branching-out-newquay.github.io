@@ -94,6 +94,24 @@
 <li><a href=#step-41-give-the-snake-a-tail>Step 41 - Give the snake a tail</a></li>
 </ul>
 </li>
+<li><a href=#chapter-10-physical-effects-like-bouncing-and-gravity>Chapter 10 - Physical effects like bouncing and gravity</a>
+<ul>
+<li><a href=#step-42-bouncing-off-the-walls>Step 42 - Bouncing off the walls</a></li>
+<li><a href=#step-43-get-down-with-gravity>Step 43 - Get down with gravity</a></li>
+<li><a href=#step-44-throwing-the-ball>Step 44 - Throwing the ball</a></li>
+<li><a href=#step-45-throw-with-the-mouse>Step 45 - Throw with the mouse</a></li>
+<li><a href=#step-47-lots-of-balls>Step 47 - Lots of balls</a></li>
+<li><a href=#step-48-bouncing-against-the-balls>Step 48 - Bouncing against the balls</a></li>
+<li><a href=#step-49-get-creative>Step 49 - Get creative</a></li>
+</ul>
+</li>
+<li><a href=#chapter-11-another-classic-game-pac-man>Chapter 11 - Another classic game: Pac-Man</a>
+<ul>
+<li><a href=#step-50-a-map-of-tiles>Step 50 - A map of tiles</a></li>
+<li><a href=#step-51-move-the-player-on-the-grid>Step 51 - Move the player on the grid</a></li>
+<li><a href=#step-52-smooth-player-moves>Step 52 - Smooth player moves</a></li>
+</ul>
+</li>
 <li><a href=#examples-chapter-1>Examples - Chapter 1</a></li>
 <li><a href=#examples-chapter-2>Examples - Chapter 2</a></li>
 <li><a href=#examples-chapter-3>Examples - Chapter 3</a></li>
@@ -108,9 +126,11 @@
 <li><a href=#part-2-snake-with-images>Part 2 - Snake with images</a></li>
 </ul>
 </li>
+<li><a href=#examples-chapter-10>Examples - Chapter 10</a></li>
 </ul>
 </li>
 </ul>
+
 <h1><a href=#build-your-own-games-with-python aria-hidden=true class=anchor id=build-your-own-games-with-python></a>Build your own games with Python</h1>
 <h2><a href=#what-are-we-making aria-hidden=true class=anchor id=what-are-we-making></a>What are we making?</h2>
 <p>In this project you’ll learn how to make your own game in Python. We’ll start with simple text games (like quizzes and adventures) and later you can move on to games with graphics like the famous Snake! game.</p>
@@ -153,10 +173,10 @@ print("Your favourite colour is", player_answer)
 <p>How if and else work.</p>
 <pre><code class=language-python>if player_answer==correct_answer:
     # This block of code only runs if the answers match
-    print(“Well done!”)
+    print("Well done!")
 else:
     #This block of code only runs if the answers don’t match
-    print(“Wrong!”)
+    print("Wrong!")
 </code></pre>
 <p>Important things to notice:</p>
 <ul>
@@ -164,33 +184,33 @@ else:
 <li>The gap at the start of the lines (called indentation)</li>
 </ul>
 <p>Try a quiz question:</p>
-<pre><code class=language-python>player_answer=input(“What is Batman’s favourite colour?  &gt; ”)
-if player_answer==”black”: 
-    print(“Well done!”)
+<pre><code class=language-python>player_answer=input("What is Batman’s favourite colour?  &gt; ")
+if player_answer=="black": 
+    print("Well done!")
 else:
-    print(“Wrong!”)
+    print("Wrong!")
 </code></pre>
 <p><strong>Your turn:</strong> Make 3 quiz questions of your own. Examples:</p>
 <ul>
-<li>“What colour is the sky on a clear day?”</li>
-<li>“How many legs does a spider have?”</li>
-<li>“What sound does a cow make?”</li>
+<li>"What colour is the sky on a clear day?"</li>
+<li>"How many legs does a spider have?"</li>
+<li>"What sound does a cow make?"</li>
 </ul>
 <h3><a href=#step-3-keep-score aria-hidden=true class=anchor id=step-3-keep-score></a>Step 3 - keep score</h3>
 <p>Now let’s give the player points for correct answers:</p>
 <pre><code class=language-python># Start with the score at 0
 total_score=0
 # First question
-player_answer = input(“What is 2 + 2?  &gt; ”)
-if player_answer == ”4”:
-    print(“Well done!”)
+player_answer = input("What is 2 + 2?  &gt; ")
+if player_answer == "4":
+    print("Well done!")
     total_score = total_score+1
 else:
-    print(“Wrong!”)
+    print("Wrong!")
     total_score = total_score + 0
 # More questions can go here
-print(“Game Over!”)
-print(“Your points: ”, total_score)
+print("Game Over!")
+print("Your points: ", total_score)
 </code></pre>
 <p>Things to notice:</p>
 <ul>
@@ -214,8 +234,8 @@ def quiz_question( question, correct_answer):
 
 # Use the function
 total_score=0
-total_score+=quiz_question(“What is Batman’s favourite colour? &gt; ”, “black”)
-total_score+=quiz_question(“What is Barbie’s favourite colour? &gt; ”, “pink”)
+total_score+=quiz_question("What is Batman’s favourite colour? &gt; ", "black")
+total_score+=quiz_question("What is Barbie’s favourite colour? &gt; ", "pink")
 print("You got", total_score, "points")
 </code></pre>
 <p>Things to notice:</p>
@@ -230,18 +250,25 @@ print("You got", total_score, "points")
 <li>the way we use the function for our questions. We fill in the parameters and use the returned points.</li>
 </ul>
 <p><strong>Your turn:</strong> Add your own questions using the function (much less typing)</p>
+<blockquote>
+<p><strong>Bonus challenges:</strong> Make a smarter quiz_question function that can do things like:</p>
+<ul>
+<li>Add on the "? &gt; " parts to the end of the question so you don't have to add it on the end of every question</li>
+<li>Allow the player to use capitals or lower case and still get points. For example 'black', 'Black', 'BLACK' and 'bLACk' are all treated the same. Investigate Python string methods like lower() to do this.</li>
+</ul>
+</blockquote>
 <h3><a href=#step-5-keep-your-questions-in-a-list-super-organised aria-hidden=true class=anchor id=step-5-keep-your-questions-in-a-list-super-organised></a>Step 5 - Keep your questions in a list (Super organised)</h3>
 <p>A list can store all your questions and answers together:</p>
 <pre><code class=language-python># Make a quiz list
 quiz = [
-    ("What is Batman's favourite colour", "black"),
-    ("What is Barbie's favourite colour", "pink")
+    ("What is Batman's favourite colour? &gt;", "black"),
+    ("What is Barbie's favourite colour? &gt;", "pink")
 ]
 
 # Ask the questions using a loop:
 for (question, answer) in quiz:
     total_score+=quiz_question(question, answer)
-print(“You got”, total_score, “points”)
+print("You got", total_score, "points")
 </code></pre>
 <p>Things to notice:</p>
 <ul>
@@ -255,8 +282,8 @@ print(“You got”, total_score, “points”)
 <h2><a href=#chapter-2-give-the-player-more-control aria-hidden=true class=anchor id=chapter-2-give-the-player-more-control></a>Chapter 2 - Give the player more control</h2>
 <p>We will let the player give us special instructions as well as answers. Here are the instructions:</p>
 <ul>
-<li>“leave” - stops the game</li>
-<li>“pass” - skips the question</li>
+<li>"leave" - stops the game</li>
+<li>"pass" - skips the question</li>
 </ul>
 <p>We will have to make several changes to our quiz game. You can do this in one go (see the <a href=#examples-chapter-1>examples</a> at the end of this project) but you will learn more and be a more successful games programmer if you do this bit by bit and keep checking things work. Make sure you keep saving your program so you don't lose what you are doing.</p>
 <h3><a href=#step-6-get-instructions-from-the-player aria-hidden=true class=anchor id=step-6-get-instructions-from-the-player></a>Step 6 - Get instructions from the player</h3>
@@ -265,7 +292,7 @@ In the function there is code to return the number of points like this</p>
 <pre><code class=language-python>        return 1
 </code></pre>
 <p>Now we need to return points and an instruction like this:</p>
-<pre><code class=language-python>        return (1, “answer”)
+<pre><code class=language-python>        return (1, "answer")
 </code></pre>
 <p>When we use the function we need to handle the points and the instruction. Instead of this line:</p>
 <pre><code class=language-python>    total_score += quiz_question(question, answer)
@@ -281,7 +308,7 @@ In the function there is code to return the number of points like this</p>
 <p><strong>Your turn:</strong> We aren’t doing anything with the instruction yet but test your quiz now and check it works just as before</p>
 <h3><a href=#step-7-allow-valid-instructions aria-hidden=true class=anchor id=step-7-allow-valid-instructions></a>Step 7 - Allow valid instructions</h3>
 <p>In our quiz_question function we can have two results (or branches): right or wrong. Now we are going to need four results: right, wrong, pass or leave. Let’s change our function to allow this.</p>
-<pre><code class=language-python>    if player_answer==”leave”:
+<pre><code class=language-python>    if player_answer=="leave":
         print("OK. Come back and play another time.")
         return (0,"leave")
     elif player_answer=="pass":
@@ -342,7 +369,7 @@ quiz_round()
 <h3><a href=#step-10-play-many-quizzes aria-hidden=true class=anchor id=step-10-play-many-quizzes></a>Step 10 - Play many quizzes</h3>
 <p>We can now put the quiz_round into a loop to play many times like this:</p>
 <pre><code class=language-python>keep_playing=True
-while keep_playing==True:
+while keep_playing:
     print("Welcome to the amazing quiz game!")
     gamer_tag = input("Type in your nickname or gamer tag &gt; ")
     print("OK,", gamer_tag, "let's play.")
@@ -755,7 +782,7 @@ clock = pygame.time.Clock()
 running = True
 
 # Setup the start position for the game
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+player_pos = pygame.Vector2(screen.get_width()/2, screen.get_height()/2)
 
 while running:
     # poll for events
@@ -888,6 +915,23 @@ score_font = pygame.font.SysFont(None, 48)
     # Place the image on our screen
     screen.blit(score_image, (10,0))
 </code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>
+<p>font.render only accepts a single string to display so it isn't as flexible as python's print command which can handle lots of different parameters.</p>
+</li>
+<li>
+<p>We've used string addition to combine several parts into one</p>
+</li>
+<li>
+<p>String addition doesn't work with numbers so we have used the str() function to convert the score into text. This is the opposite of when we used int() to turn text input into a number.</p>
+</li>
+<li>
+<p>We could have used a template string to insert variables into our message like this:</p>
+<pre><code class=language-python>score_message = f"Score: {player_score}"
+</code></pre>
+</li>
+</ul>
 <p>When we hit a target we can add a point and reset the next target. We can use pygame's rectangle helper functions for this.</p>
 <pre><code class=language-python># Check of the player and target rectangles have collided
 if target_pos.colliderect(player_pos):
@@ -905,7 +949,7 @@ if target_pos.colliderect(player_pos):
 </ul>
 <p><strong>Your turn:</strong> Add in a hazard piece. Perhaps it moves faster than the target. Check if it hits the player and end the games.</p>
 <blockquote>
-<p><strong>Bonus challenge:</strong> At the end of the game display a message and wait for the player to close the window.</p>
+<p><strong>Bonus challenge:</strong> At the end of the game display a message and wait for the player to close the window. You can use a template string to include the final score in the game over message.</p>
 </blockquote>
 <h3><a href=#step-29-add-your-own-features-to-the-game aria-hidden=true class=anchor id=step-29-add-your-own-features-to-the-game></a>Step 29 - Add your own features to the game</h3>
 <p>With the building blocks in this chapter, you can make almost any 2D or flat screen game. In the next chapter we will work through a snake game but almost anything is possible.</p>
@@ -942,7 +986,7 @@ player_pos = pygame.Rect((screen.get_width()/2, screen.get_height()/2), (step_si
 if keys[pygame.K_UP]:
     player_pos.y -= step_size
 </code></pre>
-<p>The first thing we will change is to make the circle keep moving in a direction. We will setup a direction variable and use it to move the circle.</p>
+<p>The first thing we will change is to make the rectangle keep moving in a direction. We will setup a direction variable and use it to move the rectangle.</p>
 <pre><code class=language-python># Record direction as steps right and steps down. Negative numbers move left and up
 snake_direction = pygame.Vector2(step_size,0)
 
@@ -1313,6 +1357,419 @@ snake_tiles.insert(0, body_tiles[old_direction][snake_direction])
 <li>When eat some food we add one or more parts by copying the last part of the snake. For a short while, before the snake moves on, these news parts fill the same space. That wasn't a problem as they all had the same image. If we add the tail we may have to hide those overlapping parts. You can use the colliderect helper function in pygame and only draw parts of the body that don't collide with the tail.</li>
 </ul>
 <p><strong>Your turn:</strong> Use what you have learnt to add the tail to the snake</p>
+<h2><a href=#chapter-10-physical-effects-like-bouncing-and-gravity aria-hidden=true class=anchor id=chapter-10-physical-effects-like-bouncing-and-gravity></a>Chapter 10 - Physical effects like bouncing and gravity</h2>
+<p>We will leave the Snake game behind for a while and explore some features that will be useful in other types of game. Let's look at how to make things bounce and fall which we could use in platform type games.</p>
+<h3><a href=#step-42-bouncing-off-the-walls aria-hidden=true class=anchor id=step-42-bouncing-off-the-walls></a>Step 42 - Bouncing off the walls</h3>
+<p>Starting with our simple game template from <a href=#step-22-our-first-graphics-game>step 22</a>. We will start the ball in a random position and get it moving in a random direction. Unlike in the snake game the ball can move diagonally too. When the it hits one of the walls we will flip the direction so that it bounces.</p>
+<pre><code class=language-python># Import the random library
+import random
+
+    ...
+
+# Setup the random start position and direction for the game
+size = 20
+max_speed = 40
+random_x = 
+random_y = 
+player_pos = pygame.Vector2(
+    random.randint(screen.get_width()/4, screen.get_width()/4*3), 
+    random.randint(screen.get_height()/4, screen.get_height()/4*3)
+)
+
+player_direction = pygame.Vector2(
+    random.randint(-max_speed, max_speed), 
+    random.randint(-max_speed, max_speed)
+)
+
+    ...
+
+# Update the position each time in the game loop
+player_pos+=player_direction
+
+# Detect if we've reached a wall and then bounce.
+if (player_pos.x &lt; 0 or
+   player_pos.x &gt; screen.get_width() or
+   player_pos.y &lt; 0 or
+   player_pos.y &gt; screen.get_height()):
+    player_direction = -player_direction
+
+    ...
+
+# Draw the player
+    pygame.draw.circle(screen, "red", player_pos, size)
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>The parameters for setting up player_pos and player_direction are very long. The check for hitting the wall is also very long. We can spread these out over several lines and make them easier to read because they are within a pair of brackets.</li>
+<li>We've used our own maths and comparisons instead of the pygame helper functions. With some small changes we could switch to using rectangles and the helper functions. It is good to understand both so you can use either of them when needed.</li>
+<li>You can make your own helper functions and get the best of both. As a <strong>bonus challenge</strong> create a <code>hit_wall</code> helper function which takes an x,y pair as a parameter and returns True if the point has hit the wall.</li>
+</ul>
+<p><strong>Your turn:</strong> Setup the simple game template. Find the right places for the new code and see what it does. You will notice there are a few things that aren't quite right. That's ok. We can fix them next.</p>
+<p>The direction has two components. One for up-down motion and one for left-right motion. We should only flip one part of the direction depending upon what wall we hit. Also, we are checking the centre of the ball against the sides of the screen. We should consider the size of the ball too. Here is some better detect and bounce code</p>
+<pre><code class=language-python># Detect if we've reached a wall and then bounce.
+if (player_pos.y-size &lt; 0 or
+    player_pos.y+size &gt; screen.get_height()):
+    player_direction.y = -player_direction.y
+
+if (player_pos.x-size &lt; 0 or
+       player_pos.x+size &gt; screen.get_width()):
+    player_direction.x = -player_direction.x
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>Instead of checking the centre of the ball we've adjusted by the radius of the ball (distance from centre to the edge of the ball)</li>
+</ul>
+<p><strong>Your turn:</strong> Make the changes and check the rectangle bounces more realistically</p>
+<h3><a href=#step-43-get-down-with-gravity aria-hidden=true class=anchor id=step-43-get-down-with-gravity></a>Step 43 - Get down with gravity</h3>
+<p>Gravity makes things accelerate towards the ground. We can do something similar by making repeated small changes to the ball's direction.</p>
+<pre><code class=language-python># Gravity level
+gravity = 1
+
+    ...
+
+# Gravity effect
+player_direction.y+=gravity
+</code></pre>
+<p><strong>Your turn:</strong> Find the right places for this new code and see what happens.</p>
+<p><strong>Bonus challenge:</strong> Gravity physics is quite complicated and our simple code doesn't perfectly create the real effects. Your may see strange behaviour like the ball drifting off the bottom of the screen or the ball bouncing higher and higher over time. You can make things more realistic with some changes.</p>
+<ul>
+<li>If the ball has hit and edge adjust the position to make sure it doesn't move past the edge</li>
+<li>multiply the direction by a small amount like 0.9 as if there is some air resistance. Try other values</li>
+<li>multiply the direction by a small amount like 0.9 on each bounce as if some energy gets lost each time. Try other values</li>
+<li>experiment with applying these effects in different orders, before and after updating the player position.</li>
+</ul>
+<h3><a href=#step-44-throwing-the-ball aria-hidden=true class=anchor id=step-44-throwing-the-ball></a>Step 44 - Throwing the ball</h3>
+<p>Our game template still has some code for handling key presses. Try these with you bouncing ball game. We can change this slightly so that we can throw the ball.</p>
+<p><strong>Your turn:</strong> Change you code so that the key presses change the ball direction instead of the ball position.</p>
+<p><strong>Bonus Challenge:</strong> Look at the code for the snake game. Use the code that makes a list for the body and follow the head as it moves. This will create a trail behind the ball.</p>
+<h3><a href=#step-45-throw-with-the-mouse aria-hidden=true class=anchor id=step-45-throw-with-the-mouse></a>Step 45 - Throw with the mouse</h3>
+<p>pygame has functions for working with the mouse. Let's use these to throw the ball. Each time in our game loop we will remember the position of the mouse. If the player clicks the mouse button we can calculate how far the mouse has moved and use that to throw the ball.</p>
+<pre><code class=language-python># Variable to remember the mouse position
+old_mouse = pygame.Vector2(0,0)
+
+    ...
+
+# If mouse is clicked throw the ball
+if pygame.mouse.get_pressed()[0]:
+    new_mouse=pygame.Vector2(pygame.mouse.get_pos())
+    player_direction = new_mouse - old_mouse
+
+# Remember the new position
+old_mouse=pygame.Vector2(pygame.mouse.get_pos())
+</code></pre>
+<p><strong>Your turn:</strong> Add in the new code and test throwing the ball with a mouse click. You can use prints or pygame.font.render to display the mouse position if need to check the values</p>
+<h3><a href=#step-47-lots-of-balls aria-hidden=true class=anchor id=step-47-lots-of-balls></a>Step 47 - Lots of balls</h3>
+<p>We can use a list to hold the position and direction of lots balls and use loops to update and draw all of them each time. We can even use a loop to throw all of them at the same time!</p>
+<p>We can setup the balls like this:</p>
+<pre><code class=language-python>num_of_balls = 5
+balls = []
+
+for ball in range(num_of_balls):
+    ball_pos = pygame.Vector2(
+        random.randint(screen.get_width()/4, screen.get_width()/4*3),
+        random.randint(screen.get_height()/4, screen.get_height()/4*3)
+    )
+
+    ball_direction = pygame.Vector2(
+        random.randint(-max_speed, max_speed),
+        random.randint(-max_speed, max_speed)
+    )
+
+    balls.append((ball_pos, ball_direction))
+</code></pre>
+<p>We can draw the balls like this</p>
+<pre><code class=language-python>for ball_position, ball_direction in balls:
+    pygame.draw.circle(screen, "red", ball_position, size)
+</code></pre>
+<p>In places where we are updating the position and direction we need to be careful. Look at these examples</p>
+<pre><code class=language-python># Example 1
+for ball_position, ball_direction in balls:
+    new_position = ball_position+ball_direction
+    ball_position = new_position  
+
+# Example 2
+for ball_position, ball_direction in balls:
+    new_position = ball_position+ball_direction
+    ball_position.x, ball_position.y = new_position.x, new_position.y
+</code></pre>
+<p>These look like they are just two ways to do the same thing but there is a difference that is hard to spot. Try them and see. In both examples ball_position points to a pygame.Vector2. To start with it points to one of the vectors in the list but in example 1 we change it to point to the new_position vector. The one in the list isn't updated, we just aren't pointing to it any more. In the second example we update the details inside the vector without changing ball_position so we are actually changing the vector in the list, which is what we want. pygame provides an update() function that works like the second example and so do the special *= and += operators.</p>
+<pre><code class=language-python># Example 3 - works ok in pygame
+for ball_position, ball_direction in balls:
+    new_position = ball_position+ball_direction
+    ball_position.update(new_position)
+
+# Example 4 - works ok in pygame
+for ball_position, ball_direction in balls:
+    ball_position += ball_direction
+</code></pre>
+<p><strong>Your turn:</strong> Use these clues to change your code to handle more balls. Anywhere that you see player_pos or player_direction in your code is a clue that you may need to wrap in inside a ball loop, just as we did for drawing the balls.</p>
+<p><strong>Bonus challenge:</strong></p>
+<ul>
+<li>Use a list or some randomness to give the balls different colours</li>
+<li>Once you have wrapped some of your code inside a ball loop you may have some long lines and messy looking code. Move some of the code into helper functions to make things clearer and neater</li>
+</ul>
+<h3><a href=#step-48-bouncing-against-the-balls aria-hidden=true class=anchor id=step-48-bouncing-against-the-balls></a>Step 48 - Bouncing against the balls</h3>
+<p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
+<p>At the moment the balls ignore each other. Let's make them bump and bounce into each other. We will need to check each ball against the others. We can use a loop within a loop like this:</p>
+<pre><code class=language-python>for first_ball in balls:
+    for second_ball in balls:
+        # If first_ball hits second_ball then bounce them
+</code></pre>
+<p>This is almost right but there are a couple of problems:</p>
+<ul>
+<li>first_ball and second_ball could point to the same single ball and we don't want that to bounce off itself</li>
+<li>each ball will be compared to every other ball twice. That is a waste of effort an might mess up the bounce effects.</li>
+</ul>
+<p>Here is a different way to manage the loops</p>
+<pre><code class=language-python>for first_index in range(len(balls)-1):
+    for second_index in range(first_index+1, len(balls)):
+        # If balls[first_index] hits balls[second_index] then bounce them
+</code></pre>
+<p>Next we need to find out if the balls touch. The distance from the centre of the ball to its edge is <code>size</code>. If the distance between the centre of two balls is less than <code>size * 2</code> they must have hit. Draw a diagram to help if this doesn't make sense. pygame provides some functions to help with this: <code>first_position.distance_to(second_position)</code>.</p>
+<p>Finally we need create a bounce effect. The precise way to do this is complicated. We can create a fake bounce by reflecting the direction of the ball in the direction of the line between the balls. It won't be scientifically correct but it should look ok for a simple game.</p>
+<p><strong>Your turn:</strong> With these clues see if you can use the double loop, check if the two balls have hit and swap their directions if they do. You can play the game with just two balls and add in some prints to check things are working as you expect. If you get stuck you can check the <a href=#examples-chapter-10>example</a> at the end of the project.</p>
+<p><strong>Bonus challenge:</strong> When the balls hit adjust their positions so they don't overlap inside each other</p>
+<h3><a href=#step-49-get-creative aria-hidden=true class=anchor id=step-49-get-creative></a>Step 49 - Get creative</h3>
+<p>Think of a game that might use motion like this and have a try a making it. Start with something while this is still new. Here are some ideas you could try.</p>
+<ul>
+<li>Put a ball at one side of the screen and some targets at the other. Let the player set a direction for the ball with the mouse or keys and see if they can hit the targets and score points. You can replace the ball with images of sports balls, stones or energy ball. The targets could have images like a goal, castle or alien space ship. Perhaps the target moves or there are other obstacles that get in the way like crazy golf.</li>
+<li>Have a ball and player piece. Fire the ball randomly and the player tries to catch it or deflect it. Using images can give the game a different feel.</li>
+<li>Use two players and one ball for a simple tennis or squash game. If the player</li>
+</ul>
+<p><strong>Your turn:</strong> Make a simple game using what you have learnt and the examples in this chapter.</p>
+<h2><a href=#chapter-11-another-classic-game-pac-man aria-hidden=true class=anchor id=chapter-11-another-classic-game-pac-man></a>Chapter 11 - Another classic game: Pac-Man</h2>
+<p>In this chapter we will learn some more game building blocks my making a classic Pac-Man game. You can look online to see some images of what the game looks like and some of the common rules.</p>
+<h3><a href=#step-50-a-map-of-tiles aria-hidden=true class=anchor id=step-50-a-map-of-tiles></a>Step 50 - A map of tiles</h3>
+<p>Once again we can start with simple game template from <a href=#step-22-our-first-graphics-game>step 22</a></p>
+<p>We can setup a map as a grid of letters and use different letters to represent different things e.g.</p>
+<ul>
+<li>'w' for a wall</li>
+<li>' ' for an empty space</li>
+<li>'.' a space with a dot for pacman to eat</li>
+<li>'o' a space with a power up pellet</li>
+<li>'x' for the door to the ghosts</li>
+</ul>
+<p>We can setup the map in a list of lists (or a 2d-list):</p>
+<pre><code class=language-python>game_map = [
+    "wwwwwwwwwwwwwwwwwwwwwwwwwwww",
+    "w............ww............w",
+    "w.wwww.wwwww.ww.wwwww.wwww.w",
+    "wow  w.w   w.ww.w   w.w  wow",
+    "w.wwww.wwwww.ww.wwwww.wwww.w",
+    "w..........................w",
+    "w.wwww.ww.wwwwwwww.ww.wwww.w",
+    "w.wwww.ww.wwwwwwww.ww.wwww.w",
+    "w......ww....ww....ww......w",
+    "wwwwww.wwwww.ww.wwwww.wwwwww",
+    "     w.wwwww.ww.wwwww.w     ",
+    "     w.ww..........ww.w     ",
+    "wwwwww.ww.wwwxxwww.ww.wwwwww",
+    "      ....w      w....      ",
+    "wwwwww.ww.wwwwwwww.ww.wwwwww",
+    "     w.ww..........ww.w     ",
+    "     w.wwwww.ww.wwwww.w     ",
+    "wwwwww.wwwww.ww.wwwww.wwwwww",
+    "w......ww....ww....ww......w",
+    "w.wwww.ww.wwwwwwww.ww.wwww.w",
+    "w.wwww.ww.wwwwwwww.ww.wwww.w",
+    "w..........................w",
+    "w.wwww.wwwww.ww.wwwww.wwww.w",
+    "wow  w.w   w.ww.w   w.w  wow",
+    "w.wwww.wwwww.ww.wwwww.wwww.w",
+    "w............ww............w",
+    "wwwwwwwwwwwwwwwwwwwwwwwwwwww",
+]
+</code></pre>
+<p>When we draw our game screen we can use the map to draw the right shapes, symbols or images in the right place. Here is part of the code to do this.</p>
+<pre><code class=language-python>for row_num in range(len(game_map)):
+    for column_num in range(len(game_map[row_nun])):
+        topleft = pygame.Vector2(row_mum*size, column_num*size)
+        match game_map[row_num][column_num]:
+            case ' ':
+                pygame.draw.rect(
+                    screen,
+                    "black",
+                    pygame.Rect(topleft, (size, size))
+                )                
+            case 'w':
+                pygame.draw.rect(
+                    screen,
+                    "blue",
+                    pygame.Rect(topleft, (size, size))
+                )
+            case '.':
+                grid_rect = pygame.Rect(topleft, (size, size)
+                pygame.draw.rect(
+                    screen,
+                    "black",
+                    grid_rect
+                    )
+                )
+                pygame.draw.circle(
+                    screen,
+                    "white",
+                    grid_rect.center,
+                    size/4
+                )
+
+                ...
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>pygame screen and images are a list of columns and each one is a list of points. We reference points with (column, row). The game_map is a list of rows and each one is a list of cells so we access it with [row][column]. It is easy to mix these up.</li>
+<li>We are using a match case block. Python checks what is on the match line and runs the code in each case block which fits the pattern. We could do the same thing with if-elif-else blocks. It is good to practice with both so that can use either way when you need to.</li>
+<li>We have case blocks inside a match block inside a pair of for blocks. We've split the pygame.draw parameters across several lines to make it easier to read. It would be better to move some of this code into helper functions.</li>
+<li>We want to draw the dot in the centre of the rectangle so we can use the pygame helper <code>center</code> (USA spelling!) to get this.</li>
+</ul>
+<p><strong>Your turn:</strong> Use the simple game template to setup and draw the game_map. Add in the missing symbols to complete the map.</p>
+<blockquote>
+<p><strong>Bonus challenge:</strong></p>
+<ul>
+<li>Calculate the size of the screen you need from the map and use that in the display.set_mode function.</li>
+<li>Change the player circle to a nice pac-man yellow.</li>
+<li>Move some of the code inside the loops into helper functions to make the code clearer and neater.</li>
+</ul>
+</blockquote>
+<h3><a href=#step-51-move-the-player-on-the-grid aria-hidden=true class=anchor id=step-51-move-the-player-on-the-grid></a>Step 51 - Move the player on the grid</h3>
+<p><strong>Important note:</strong> Keep a copy of your game from Step 50 as we will need it later.</p>
+<p>At the moment the player can move anywhere, through wall or off the board completely. One way we can fix this is set our player position using a map position and then convert them into pygame positions. We do something like this to draw the game map. Here are some hints about the code to use.</p>
+<pre><code class=language-pygame># Set the player position to a space on the map. Pick a start point in your map that isn't a wall!
+player_pos = pygame.Vector2(13,15)
+
+    ...
+
+
+# Calculate a new position when keys are pressed
+        new_pos = player_pos+pygame.Vector2(-1,0) # Move left
+
+# Handle any portals where we reach the edge and jump over to the other side
+if new_pos.x &lt; 0:
+    new_pos.x = len(game_map[0])-1
+if new_pos.x == len(game_map[0]):
+    new_pos.x=0
+if new_pos.y &lt; 0:
+    new_pos.y = len(game_map)-1
+if new_pos.y == len(game_map):
+    new_pos.y=0
+
+    ...
+
+# Only use the new position if we do not end up in a wall
+# pygame.Vector2 can hold numbers with fractions. game_map indexes must be integers so we use int() to make sure.
+if game_map[int(new_pos.y)][int(new_pos.x)]!='w':
+    player_pos.update(new_pos)
+
+    ...
+
+# Convert the position and draw the player
+player_topleft = player_pos*size
+player_centre = player_topleft+pygame.Vector2(size,size)/2
+pygame.draw.circle(screen, "yellow", player_centre, size/2)
+</code></pre>
+<p>The code is already getting quite messy so it would be a good idea to use some helper functions like this:</p>
+<pre><code class=language-python>def moved_position(x,y):
+    return player_pos+pygame.Vector2(x,y)
+
+def left_position():
+    return moved_position(-1,0):
+</code></pre>
+<p>This can make you main code easier like this:</p>
+<pre><code class=language-python>if keys[pygame.K_LEFT]:
+    new_pos = left_position()
+</code></pre>
+<p>You can also make similar small helpers to wrap around the edges, check what is in the map and draw the player.</p>
+<p><strong>Your turn:</strong> Use the hints to update the code and test the way the player moves.</p>
+<h3><a href=#step-52-smooth-player-moves aria-hidden=true class=anchor id=step-52-smooth-player-moves></a>Step 52 - Smooth player moves</h3>
+<p>The player moves between the wall but it is quite fast and jerky. We can make smaller smoother moves using pygame positions but will have to take care as the players piece could cross over more than one tile on the game map. Let's work through this in some small steps.</p>
+<p>Go back to your game from step 50 that you saved earlier. We can set up the player position as a pygame rectangle and use that to draw it.</p>
+<pre><code class=language-python># Setup initial player position. Make sure it is not in a wall!
+player_pos = pygame.Rect((13*size, 15*size), (size,size))
+
+# function to draw the player
+def draw_pacman():
+    pygame.draw.circle(screen, "yellow", player_pos.center, size/2)
+
+    ...
+
+# Use the function after drawing the map
+    draw_pacman()
+</code></pre>
+<p><strong>Your turn:</strong> Check the player starts in a good place and moves smoothly. You can increase the clock.tick() and reduce the how much we add or subtract on the key presses to get the effect you want. The player will run through the walls but we will fix that later.</p>
+<p>Next we can make some functions to handle moves. Initially these won't do very much but when we add in more checks and calculations we only have to do them in one place.</p>
+<pre><code class=language-python>move_size = 5
+
+def move_pacman(x,y):
+    player_pos.move_ip((x*move_size,y*move_size))
+
+def pacman_left():
+    move_pacman(-1,0)
+
+def pacman_right():
+    move_pacman(1,0)
+
+def pacman_up():
+    move_pacman(0,-1)
+
+def pacman_down():
+    move_pacman(0,1)
+</code></pre>
+<p>You can use these functions when you check which keys are pressed</p>
+<pre><code class=language-python>if keys[pygame.K_LEFT]:
+    pacman_left()
+</code></pre>
+<p><strong>Your turn:</strong> Make these changes and test what happens. We haven't made the game do anything different but we have made it easier to add in the checks we need.</p>
+<p>Let's start to add in the wall checks and wrap the player at the edges of the screen. We can update the move_pacman function once and it will work for all the moves we make. We will just use the top left corner of the player to start with. This isn't quite right but it is a good start. We need to convert from pygame position to game map position. We can do this with integer division.</p>
+<pre><code class=language-python>def game_pos(pos):
+    return (pos.x//size, pos.y//size)
+
+def get_map(pos):
+    x,y=game_pos(pos)
+    return game_map[y][x]
+
+def wrap_pos_ip(pos):
+    if pos.x &lt; 0:
+        pos.x+= screen.get_width()
+    if pos.x &gt;= screen.get_width():
+        pos.x = pos.x-screen.get_width()
+    if pos.y &lt; 0:
+        pos.y+= screen.get_height()
+    if pos.y &gt;= screen.get_height():
+        pos.y = pos.y-screen.get_height()
+
+def move_pacman(x,y):
+    new_pos = player_pos.move((x*move_size, y*move_size))
+    wrap_pos_ip(new_pos)
+    if get_map(new_pos)!='w':
+        player_pos.update(new_pos)
+</code></pre>
+<p><strong>Your turn:</strong> Find the right places for this code and test the game. The player can still drift a little over the wall but the top left should stay within the playing area. Add in some prints of font.render to see some of the values if you are not sure what is going on inside the functions.</p>
+<p>Finally, we can check the four corners of the pacman to make sure they are valid positions.</p>
+<pre><code class=language-python>corners=[
+    (0,0),
+    (0,size-1),
+    (size-1,0),
+    (size-1, size-1)
+]
+
+def move_pacman(x,y):
+    new_pos = player_pos.move((x*move_size, y*move_size))
+    for corner_move in corners:
+        corner_pos = new_pos.move(corner_move)
+        wrap_pos_ip(corner_pos)
+        if get_map(corner_pos)=='w':
+            return
+    wrap_pos_ip(new_pos)
+    player_pos.update(new_pos)
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>We have used a list to hold the positions of the corners. We can't just use size as that will pick up the neighbouring parts of the map.</li>
+<li>If we find a wall we can return early (break out of the function). If we leave the function early we wont update the player position and we might not check all the corners.</li>
+</ul>
+<p><strong>Your turn:</strong> Make the changes and pacman should smoothly move inside the maze.</p>
+<blockquote>
+<p><strong>Bonus challenge:</strong> When the player wraps around the screen it moves smoothly off the right hand side of the screen but pops in and out on the left side. Can you fix this so that when the player is half off the side of the screen the other part of them appears on the other side. <strong>Clue:</strong> Sometime you draw the player twice with different positions!</p>
+</blockquote>
 <h2><a href=#examples-chapter-1 aria-hidden=true class=anchor id=examples-chapter-1></a>Examples - Chapter 1</h2>
 <pre><code class=language-python># Make a quiz list
 quiz = [
@@ -1675,7 +2132,7 @@ clock = pygame.time.Clock()
 running = True
 
 # Setup the start position for the game
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+player_pos = pygame.Vector2(screen.get_width()/2, screen.get_height()/2)
 
 # Set the shape and colour at the start
 shape="circle"
@@ -2250,6 +2707,164 @@ while running:
             waiting = False
         if keys[pygame.K_y]:
             waiting = False
+
+pygame.quit()
+</code></pre>
+<h2><a href=#examples-chapter-10 aria-hidden=true class=anchor id=examples-chapter-10></a>Examples - Chapter 10</h2>
+<pre><code class=language-python>import pygame
+import random
+import math
+
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+
+# Status of the game
+running = True
+old_mouse = pygame.Vector2(0,0)
+use_gravity = True
+use_friction = True
+use_collision = True
+
+# Game settings
+size = 40
+max_speed = 40
+gravity = 5
+num_of_balls = 20
+
+# Empty list of balls
+balls = []
+
+# Reset function
+def reset():
+    global balls
+    
+    balls=[]
+    for ball in range(num_of_balls):
+        ball_pos = pygame.Vector2(
+            random.randint(screen.get_width()/4, screen.get_width()/4*3),
+            random.randint(screen.get_height()/4, screen.get_height()/4*3)
+        )
+
+        random_right = 
+        random_down = 
+        ball_direction = pygame.Vector2(
+            random.randint(-max_speed, max_speed),
+            random.randint(-max_speed, max_speed)
+        )
+
+        balls.append((ball_pos, ball_direction))
+
+#Setup the game
+reset()
+
+while running:
+    # poll for events
+    # pygame.QUIT event means the user clicked X to close your window
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            
+    # Handle any user input
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_q] or keys[pygame.K_ESCAPE]:
+        running = False
+    if keys[pygame.K_q] or keys[pygame.K_ESCAPE]:
+        running = False
+    if keys[pygame.K_r]:
+        reset()
+    if keys[pygame.K_g]:
+        use_gravity = not use_gravity
+    if keys[pygame.K_f]:
+        use_friction = not use_friction
+    if keys[pygame.K_c]:
+        use_collision = not use_collision
+
+    # Perform other work such as game effects or non-player characters
+
+    # Work repeated for every ball is inside this loop
+    for ball_position, ball_direction in balls:    
+
+        if use_friction:
+            ball_direction*=0.98
+        if use_gravity:
+            ball_direction.y+=gravity
+
+        ball_position+=ball_direction
+
+        # Detect if we've reached a wall and then bounce
+        if (ball_position.y-size &lt; 0 or
+            ball_position.y+size &gt; screen.get_height()):
+            ball_direction.y = -ball_direction.y
+
+        if (ball_position.x-size &lt; 0 or
+               ball_position.x+size &gt; screen.get_width()):
+            ball_direction.x = -ball_direction.x
+            
+        # Don't let the ball go outside the edges
+        if ball_position.y+size &gt; screen.get_height():
+            ball_position.y = screen.get_height()-size
+        if ball_position.y-size &lt; 0:
+            ball_position.y = size
+        if ball_position.x+size &gt; screen.get_width():
+            ball_position.x = screen.get_width()-size
+        if ball_position.x-size &lt; 0:
+            ball_position.x = size
+        
+            
+        # If mouse is clicked throw the ball
+        if pygame.mouse.get_pressed()[0]:
+            new_mouse=pygame.Vector2(pygame.mouse.get_pos())
+            ball_direction.update(new_mouse - old_mouse)
+        
+    if use_collision:
+        # Loop in a loop to check each pair of balls once
+        for first_index in range(len(balls)-1):
+            for second_index in range(first_index+1, len(balls)):
+                # If balls[first_index] hits balls[second_index] then bounce them
+                first_pos, first_dir = balls[first_index]
+                second_pos, second_dir = balls[second_index]
+                distance = first_pos.distance_to(second_pos)
+                overlap = size*2-distance
+                if overlap &gt; 0:
+                    # Balls overlap so they must have hit
+                    
+                    # Swap directions
+                    old_first_dir = first_dir.copy()
+                    first_dir.update(second_dir)
+                    second_dir.update(old_first_dir)
+
+                    # Make sure the balls don't overlap
+                    # Get a line between the centre of the balls
+                    shift_vector = first_pos-second_pos
+                    # If the balls have the same centre add some randomness
+                    if shift_vector.length()==0:
+                        shift_vector=pygame.Vector2(
+                            random.randint(1,max_speed),
+                            random.randint(1, max_speed)
+                        )
+                    # Move each one away by half the overlap
+                    shift_vector.scale_to_length(overlap/2)
+                    first_pos+=shift_vector
+                    second_pos-=shift_vector
+
+    # Remember the new position
+    old_mouse=pygame.Vector2(pygame.mouse.get_pos())
+
+    # Fill the screen with a colour to wipe away anything from last frame
+    screen.fill("purple")
+
+    # Draw your game screen
+    for ball_position, ball_direction in balls:
+        pygame.draw.circle(screen, "red", ball_position, size)
+
+
+    # flip() the display to put your work on screen
+    pygame.display.flip()
+
+    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    clock.tick(20)
 
 pygame.quit()
 </code></pre>
