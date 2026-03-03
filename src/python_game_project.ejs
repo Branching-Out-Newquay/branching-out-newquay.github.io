@@ -2,6 +2,7 @@
 <%- include("partials/header.ejs", {page: "Python Games", description: "A project guide to show learners how to start making games using Python and Pygame" }) -%>
     <main>
         <h2>Build your own games with Python</h2>
+<!-- TOC -->
 <ul>
 <li><a href="#build-your-own-games-with-python">Build your own games with Python</a>
 <ul>
@@ -99,6 +100,12 @@
 <li><a href="#step-50-a-map-of-tiles">Step 50 - A map of tiles</a></li>
 <li><a href="#step-51-move-the-player-on-the-grid">Step 51 - Move the player on the grid</a></li>
 <li><a href="#step-52-smooth-player-moves">Step 52 - Smooth player moves</a></li>
+<li><a href="#step-53-collect-the-dots">Step 53 - Collect the dots</a></li>
+<li><a href="#step-54-win-a-level">Step 54 - Win a level</a></li>
+<li><a href="#step-55-add-in-a-ghost">Step 55 - Add in a ghost</a></li>
+<li><a href="#step-56-better-looking-pacman-and-ghosts">Step 56 - Better looking pacman and ghosts</a></li>
+<li><a href="#step-57-smarter-ghosts">Step 57 - Smarter ghosts</a></li>
+<li><a href="#step-57-lives-power-ups-and-game-states">Step 57 - Lives, power-ups and game states</a></li>
 </ul>
 </li>
 <li><a href="#examples-chapter-1">Examples - Chapter 1</a></li>
@@ -116,10 +123,16 @@
 </ul>
 </li>
 <li><a href="#examples-chapter-10">Examples - Chapter 10</a></li>
+<li><a href="#examples-chapter-11">Examples - Chapter 11</a>
+<ul>
+<li><a href="#part-1-pacman-image-generator">Part 1 - Pacman image generator</a></li>
+<li><a href="#part-2-pacman-game">Part 2 - Pacman Game</a></li>
 </ul>
 </li>
 </ul>
-<!- /TOC ->
+</li>
+</ul>
+<!-- /TOC -->
 <h1><a href="#build-your-own-games-with-python" aria-hidden="true" class="anchor" id="build-your-own-games-with-python"></a>Build your own games with Python</h1>
 <h2><a href="#what-are-we-making" aria-hidden="true" class="anchor" id="what-are-we-making"></a>What are we making?</h2>
 <p>In this project you’ll learn how to make your own game in Python. We’ll start with simple text games (like quizzes and adventures) and later you can move on to games with graphics like the famous Snake! game.</p>
@@ -274,7 +287,7 @@ print(&quot;You got&quot;, total_score, &quot;points&quot;)
 <li>&quot;leave&quot; - stops the game</li>
 <li>&quot;pass&quot; - skips the question</li>
 </ul>
-<p>We will have to make several changes to our quiz game. You can do this in one go (see the <a href="#examples-chapter-1">examples</a> at the end of this project) but you will learn more and be a more successful games programmer if you do this bit by bit and keep checking things work. Make sure you keep saving your program so you don't lose what you are doing.</p>
+<p>We will have to make several changes to our quiz game. You can do this in one go (see the <a href="#chapter-1-a-basic-quiz-game">examples</a> at the end of this project) but you will learn more and be a more successful games programmer if you do this bit by bit and keep checking things work. Make sure you keep saving your program so you don't lose what you are doing.</p>
 <h3><a href="#step-6-get-instructions-from-the-player" aria-hidden="true" class="anchor" id="step-6-get-instructions-from-the-player"></a>Step 6 - Get instructions from the player</h3>
 <p>Change the program so our quiz_question function can give back more information.
 In the function there is code to return the number of points like this</p>
@@ -597,7 +610,8 @@ while keep_playing:
         # There is an action list so we can use it to ask the player what to do
         actions = place[&quot;actions&quot;]
         print(&quot;What do you want to do next?&quot;)
-        # Loop through the available actions. action_number will count up from 0 and stop depending on the number of available actions in the list.
+        # Loop through the available actions.
+        # action_number will count up from 0 and stop depending on the number of available actions in the list.
         for action_number in range(len(actions)):
             # actions is our list of available actions.
             # actions[action_number] picks out one action
@@ -754,7 +768,8 @@ while running:
     # flip() the display to put your work on screen. Before this your work will be hidden
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
 
 pygame.quit()
@@ -802,7 +817,8 @@ while running:
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
 
 pygame.quit()
@@ -833,8 +849,7 @@ pygame.quit()
 <p>You can use the image as the screen background like this.</p>
 <pre><code class="language-python">screen.blit(your_image_variable, (0,0))
 </code></pre>
-<p>The (0,0) tells pygame where you want the top-left part of the image to appear on the screen.
-You can use the image as the player like this.</p>
+<p>The (0,0) tells pygame where you want the top-left part of the image to appear on the screen. You can use the image as the player like this.</p>
 <pre><code class="language-python">screen.blit(your_image_variable, player_pos, pygame.Rect((0,0), (40,40)))
 </code></pre>
 <p>We have put the top-left part of the image at the player position. We've also given pygame a rectangle so that the image is cut down to our player size. We make rectangle with pygame.Rect and set the start position and size of the rectangle. pygame has functions to stretch and shrink images. Investigate <code>pygame.transform</code> if you need this.</p>
@@ -1165,7 +1180,7 @@ body_image.set_colorkey(&quot;white&quot;)
 <blockquote>
 <p><strong>Bonus challenge:</strong> Find or make a background image for the game, load it, scale it and draw it in place of the purple background. The <a href="#examples-chapter-6">example for Chapter 6</a> includes some code you can use to help you.</p>
 </blockquote>
-<h3><a href="#step-38-get-the-head-moving-in-the-right-direction" aria-hidden="true" class="anchor" id="step-38-get-the-head-moving-in-the-right-direction"></a>Step 38 - Get the head  moving in the right direction</h3>
+<h3><a href="#step-38-get-the-head--moving-in-the-right-direction" aria-hidden="true" class="anchor" id="step-38-get-the-head--moving-in-the-right-direction"></a>Step 38 - Get the head  moving in the right direction</h3>
 <p>Let's get the head of the snake to turn in the right direction. The head_image contains 4 tiles for the four directions. We can use the direction to pick the right tile. One way to do this is with a dictionary that stores the position of the tile we want against the four directions.</p>
 <pre><code class="language-python">head_tiles = {
     &quot;UP&quot;: (0,0),
@@ -1180,8 +1195,7 @@ body_image.set_colorkey(&quot;white&quot;)
 </code></pre>
 <p><strong>Your turn:</strong> Add in the code to show the right head tile and test your game. It might be quite hard to see what is going on. You can change the step_size = 40 and clock.tick(5) to have bigger images that change slowly.</p>
 <h3><a href="#step-39-draw-the-right-body-images" aria-hidden="true" class="anchor" id="step-39-draw-the-right-body-images"></a>Step 39 - Draw the right body images</h3>
-<p>We will draw the body sections in the same way. The body is a bit more complicated because there are
-more tiles. First lets try to get the body right when the snake moves in a straight line. We can use another dictionary to hold the tile positions and change the body list to hold the body part position and the tile position together.</p>
+<p>We will draw the body sections in the same way. The body is a bit more complicated because there are more tiles. First lets try to get the body right when the snake moves in a straight line. We can use another dictionary to hold the tile positions and change the body list to hold the body part position and the tile position together.</p>
 <pre><code class="language-python">body_tiles = {
     &quot;UP&quot;: (0,0),
     &quot;LEFT&quot;: (0,step_size),
@@ -1523,7 +1537,7 @@ for ball_position, ball_direction in balls:
 <ul>
 <li>Put a ball at one side of the screen and some targets at the other. Let the player set a direction for the ball with the mouse or keys and see if they can hit the targets and score points. You can replace the ball with images of sports balls, stones or energy ball. The targets could have images like a goal, castle or alien space ship. Perhaps the target moves or there are other obstacles that get in the way like crazy golf.</li>
 <li>Have a ball and player piece. Fire the ball randomly and the player tries to catch it or deflect it. Using images can give the game a different feel.</li>
-<li>Use two players and one ball for a simple tennis or squash game. If the player</li>
+<li>Use two players and one ball for a simple tennis or squash game.</li>
 </ul>
 <p><strong>Your turn:</strong> Make a simple game using what you have learnt and the examples in this chapter.</p>
 <h2><a href="#chapter-11-another-classic-game-pac-man" aria-hidden="true" class="anchor" id="chapter-11-another-classic-game-pac-man"></a>Chapter 11 - Another classic game: Pac-Man</h2>
@@ -1541,6 +1555,8 @@ for ball_position, ball_direction in balls:
 <p>We can setup the map in a list of lists (or a 2d-list):</p>
 <pre><code class="language-python">game_map = [
     &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,    
     &quot;w............ww............w&quot;,
     &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
     &quot;wow  w.w   w.ww.w   w.w  wow&quot;,
@@ -1567,27 +1583,29 @@ for ball_position, ball_direction in balls:
     &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
     &quot;w............ww............w&quot;,
     &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
 ]
 </code></pre>
 <p>When we draw our game screen we can use the map to draw the right shapes, symbols or images in the right place. Here is part of the code to do this.</p>
 <pre><code class="language-python">for row_num in range(len(game_map)):
     for column_num in range(len(game_map[row_nun])):
-        topleft = pygame.Vector2(row_mum*size, column_num*size)
+        topleft = pygame.Vector2(row_mum*tile_size, column_num*tile_size)
         match game_map[row_num][column_num]:
             case ' ':
                 pygame.draw.rect(
                     screen,
                     &quot;black&quot;,
-                    pygame.Rect(topleft, (size, size))
+                    pygame.Rect(topleft, (tile_size, tile_size))
                 )                
             case 'w':
                 pygame.draw.rect(
                     screen,
                     &quot;blue&quot;,
-                    pygame.Rect(topleft, (size, size))
+                    pygame.Rect(topleft, (tile_size, tile_size))
                 )
             case '.':
-                grid_rect = pygame.Rect(topleft, (size, size)
+                grid_rect = pygame.Rect(topleft, (tile_size, tile_size)
                 pygame.draw.rect(
                     screen,
                     &quot;black&quot;,
@@ -1598,14 +1616,14 @@ for ball_position, ball_direction in balls:
                     screen,
                     &quot;white&quot;,
                     grid_rect.center,
-                    size/4
+                    tile_size/4
                 )
 
                 ...
 </code></pre>
 <p>Things to notice:</p>
 <ul>
-<li>pygame screen and images are a list of columns and each one is a list of points. We reference points with (column, row). The game_map is a list of rows and each one is a list of cells so we access it with [row][column]. It is easy to mix these up.</li>
+<li>pygame screen and images are a list of columns and each one is a list of points. We reference points with (column, row). The game_map is a list of rows and each one is a list of characters so we access it with <code>[row][column]</code>. It is easy to mix these up.</li>
 <li>We are using a match case block. Python checks what is on the match line and runs the code in each case block which fits the pattern. We could do the same thing with if-elif-else blocks. It is good to practice with both so that can use either way when you need to.</li>
 <li>We have case blocks inside a match block inside a pair of for blocks. We've split the pygame.draw parameters across several lines to make it easier to read. It would be better to move some of this code into helper functions.</li>
 <li>We want to draw the dot in the centre of the rectangle so we can use the pygame helper <code>center</code> (USA spelling!) to get this.</li>
@@ -1623,7 +1641,7 @@ for ball_position, ball_direction in balls:
 <p><strong>Important note:</strong> Keep a copy of your game from Step 50 as we will need it later.</p>
 <p>At the moment the player can move anywhere, through wall or off the board completely. One way we can fix this is set our player position using a map position and then convert them into pygame positions. We do something like this to draw the game map. Here are some hints about the code to use.</p>
 <pre><code class="language-pygame"># Set the player position to a space on the map. Pick a start point in your map that isn't a wall!
-player_pos = pygame.Vector2(13,15)
+player_pos = pygame.Vector2(13,17)
 
     ...
 
@@ -1644,16 +1662,17 @@ if new_pos.y == len(game_map):
     ...
 
 # Only use the new position if we do not end up in a wall
-# pygame.Vector2 can hold numbers with fractions. game_map indexes must be integers so we use int() to make sure.
+# pygame.Vector2 can hold numbers with fractions.
+# game_map indexes must be integers so we use int() to make sure.
 if game_map[int(new_pos.y)][int(new_pos.x)]!='w':
     player_pos.update(new_pos)
 
     ...
 
 # Convert the position and draw the player
-player_topleft = player_pos*size
-player_centre = player_topleft+pygame.Vector2(size,size)/2
-pygame.draw.circle(screen, &quot;yellow&quot;, player_centre, size/2)
+player_topleft = player_pos*tile_size
+player_centre = player_topleft+pygame.Vector2(tile_size,tile_size)/2
+pygame.draw.circle(screen, &quot;yellow&quot;, player_centre, tile_size/2)
 </code></pre>
 <p>The code is already getting quite messy so it would be a good idea to use some helper functions like this:</p>
 <pre><code class="language-python">def moved_position(x,y):
@@ -1671,48 +1690,58 @@ def left_position():
 <h3><a href="#step-52-smooth-player-moves" aria-hidden="true" class="anchor" id="step-52-smooth-player-moves"></a>Step 52 - Smooth player moves</h3>
 <p>The player moves between the wall but it is quite fast and jerky. We can make smaller smoother moves using pygame positions but will have to take care as the players piece could cross over more than one tile on the game map. Let's work through this in some small steps.</p>
 <p>Go back to your game from step 50 that you saved earlier. We can set up the player position as a pygame rectangle and use that to draw it.</p>
-<pre><code class="language-python"># Setup initial player position. Make sure it is not in a wall!
-player_pos = pygame.Rect((13*size, 15*size), (size,size))
+<pre><code class="language-python"># Helper function to find the rectangle for a map position. 
+# You may have made something like this already so you can keep using it instead
+def map_tile_rect(map_pos):
+    x,y = map_pos
+    return pygame.Rect((x*tile_size, y*tile_size), (tile_size,tile_size))
+
+# Setup initial player position. Make sure it is not in a wall!
+player_pos = map_tile_rect((13,17))
 
 # function to draw the player
 def draw_pacman():
-    pygame.draw.circle(screen, &quot;yellow&quot;, player_pos.center, size/2)
+    pygame.draw.circle(screen, &quot;yellow&quot;, player_pos.center, tile_size/2)
 
     ...
 
 # Use the function after drawing the map
     draw_pacman()
 </code></pre>
+<p>Next we can start to make a functions that will move the pacman and keep all the complex code in one place.</p>
 <p><strong>Your turn:</strong> Check the player starts in a good place and moves smoothly. You can increase the clock.tick() and reduce the how much we add or subtract on the key presses to get the effect you want. The player will run through the walls but we will fix that later.</p>
 <p>Next we can make some functions to handle moves. Initially these won't do very much but when we add in more checks and calculations we only have to do them in one place.</p>
-<pre><code class="language-python">move_size = 5
+<pre><code class="language-python">move_size = 3
+directions={
+    &quot;UP&quot;: (0,-move_size),
+    &quot;DOWN&quot;: (0, move_size),
+    &quot;LEFT&quot;: (-move_size,0),
+    &quot;RIGHT&quot;: (move_size,0)
+}
 
-def move_pacman(x,y):
-    player_pos.move_ip((x*move_size,y*move_size))
+player_direction = &quot;RIGHT&quot;;
 
-def pacman_left():
-    move_pacman(-1,0)
+def can_move(current_pos, direction):
+    return True
 
-def pacman_right():
-    move_pacman(1,0)
-
-def pacman_up():
-    move_pacman(0,-1)
-
-def pacman_down():
-    move_pacman(0,1)
+def move_pacman(dir):
+    player_pos.move_ip(directions[dir])
 </code></pre>
 <p>You can use these functions when you check which keys are pressed</p>
-<pre><code class="language-python">if keys[pygame.K_LEFT]:
-    pacman_left()
+<pre><code class="language-python">if keys[pygame.K_LEFT] and can_move(player_position, &quot;LEFT&quot;):
+    player_direction = &quot;LEFT&quot;    
 </code></pre>
-<p><strong>Your turn:</strong> Make these changes and test what happens. We haven't made the game do anything different but we have made it easier to add in the checks we need.</p>
+<p>And keep moving the player</p>
+<pre><code class="language-python">if can_move(player_position, player_direction):
+    move_pacman(player_direction)
+</code></pre>
+<p><strong>Your turn:</strong> Make these changes and test what happens. The player will keep moving in the direction we want but still go through walls.</p>
 <p>Let's start to add in the wall checks and wrap the player at the edges of the screen. We can update the move_pacman function once and it will work for all the moves we make. We will just use the top left corner of the player to start with. This isn't quite right but it is a good start. We need to convert from pygame position to game map position. We can do this with integer division.</p>
-<pre><code class="language-python">def game_pos(pos):
-    return (pos.x//size, pos.y//size)
+<pre><code class="language-python">def pos_map_tile(pos):
+    return (pos.x//tile_size, pos.y//tile_size)
 
-def get_map(pos):
-    x,y=game_pos(pos)
+def get_map_tile(map_pos):
+    x,y=map_pos
     return game_map[y][x]
 
 def wrap_pos_ip(pos):
@@ -1725,30 +1754,37 @@ def wrap_pos_ip(pos):
     if pos.y &gt;= screen.get_height():
         pos.y = pos.y-screen.get_height()
 
-def move_pacman(x,y):
-    new_pos = player_pos.move((x*move_size, y*move_size))
+def moved_pos(current_pos, dir):
+    new_pos = current_pos.move(directions[dir])
     wrap_pos_ip(new_pos)
-    if get_map(new_pos)!='w':
-        player_pos.update(new_pos)
+    return new_pos
+
+def can_move(current_pos, dir):
+    if get_map_tile(pos_map_tile(moved_pos(current_position, dir)))=='w':
+        return False
+    else:
+        return True
+
+def move_pacman(dir):
+    player_pos.update(moved_pos(player_pos, dir))
 </code></pre>
 <p><strong>Your turn:</strong> Find the right places for this code and test the game. The player can still drift a little over the wall but the top left should stay within the playing area. Add in some prints of font.render to see some of the values if you are not sure what is going on inside the functions.</p>
 <p>Finally, we can check the four corners of the pacman to make sure they are valid positions.</p>
 <pre><code class="language-python">corners=[
     (0,0),
-    (0,size-1),
-    (size-1,0),
-    (size-1, size-1)
+    (0,tile_size-1),
+    (tile_size-1,0),
+    (tile_size-1, tile_size-1)
 ]
 
-def move_pacman(x,y):
-    new_pos = player_pos.move((x*move_size, y*move_size))
+def can_move(current_pos, dir):
+    new_pos = moved_pos(current_pos, dir)
     for corner_move in corners:
         corner_pos = new_pos.move(corner_move)
         wrap_pos_ip(corner_pos)
-        if get_map(corner_pos)=='w':
-            return
-    wrap_pos_ip(new_pos)
-    player_pos.update(new_pos)
+        if get_map_tile(pos_map_tile(corner_pos))=='w':
+            return False
+    return True
 </code></pre>
 <p>Things to notice:</p>
 <ul>
@@ -1759,6 +1795,297 @@ def move_pacman(x,y):
 <blockquote>
 <p><strong>Bonus challenge:</strong> When the player wraps around the screen it moves smoothly off the right hand side of the screen but pops in and out on the left side. Can you fix this so that when the player is half off the side of the screen the other part of them appears on the other side. <strong>Clue:</strong> Sometime you draw the player twice with different positions!</p>
 </blockquote>
+<h3><a href="#step-53-collect-the-dots" aria-hidden="true" class="anchor" id="step-53-collect-the-dots"></a>Step 53 - Collect the dots</h3>
+<p>Lets add another feature. When the player passes over one of the small dots they score a point and the dot is removed. We've already covered displaying a scope in <a href="#step-27-catch-the-target-and-score-points">step 27</a> so you can go back and get a reminder if you need it. We can put all of our dot code in a function and use it in our game loop. We are only going to let the player have the dot if they are perfectly on the right square and not while they are moving between squares. We can use more integer division to check this - the % gives the remainder from integer division. Use print to try some examples if you are not sure what this means.</p>
+<pre><code class="language-python"># Function to update a position in the map
+def set_map_tile(map_pos, code):
+    x,y=map_pos
+    game_row = game_map[y]
+    game_map[y] = game_row[:x]+code+game_row[x+1:]
+
+# If the player is on a dot remove the dot and update the score
+def check_dots():
+    global player_score
+    # Check if player is fully on one square.
+    if player_pos.x % tile_size == 0 and player_pos.y % tile_size == 0:
+        # Check if the player is on a dot
+        if get_map_tile(pos_map_tile(player_pos)) == '.':
+            # Update score and remove dot
+            set_map_tile(pos_map_tile(player_pos), ' ')
+            player_score+=1
+
+# Draw score function. Don't forget to setup your score variable and load the font at the start
+def draw_score():
+    # Use our font to turn some text into an image
+    score_image = score_font.render(
+        f&quot;Score: {player_score}&quot;,
+        True,
+        &quot;white&quot;
+    )
+    # Place the image on our screen
+    screen.blit(score_image, map_tile_rect((1,1)))
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>We have stored our map as a list of strings. When we update the map we need to keep most of the row and just change one character. We can use the special [:] notation to get the parts of the row we want to keep.</li>
+<li>Our check dots function might need to update the player_score so we have used the global statement to tell python we are working with the main player_score and not a local variable that has the same name.</li>
+<li>We have used a template string with the f&quot;&quot; notation to make a score message.</li>
+</ul>
+<p><strong>Your turn:</strong> Add in the new feature and check that it works.</p>
+<h3><a href="#step-54-win-a-level" aria-hidden="true" class="anchor" id="step-54-win-a-level"></a>Step 54 - Win a level</h3>
+<p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
+<p>If pacman eats all of the dots we win the round move on to the next level. The steps we need to take are:</p>
+<ul>
+<li>Move the game loop into a function and use it in a game levels loop (that could also be a function in a loop if we let the player play again)</li>
+<li>Build game map from a template so we can restart each level. We will also change the structure slightly to make it easier to use.</li>
+<li>Keep count of the dots so we know when they are all gone</li>
+<li>Keep a count of levels and display these - we'll draw a shape for now but can swap to images that the classic pacman uses later</li>
+<li>End the level when all the dots are gone.</li>
+</ul>
+<p>Here are some hints about what changes to make.</p>
+<pre><code class="language-python"># Variables for the state of the game
+playing = True
+game_level = 1
+dots_remaining = 0
+working_map = []
+
+    ...
+
+# Function to reset the level and build the working map
+def reset_working_map():
+    global dots_remaining, working_map
+    dots_remaining = 0
+    working_map = []
+    for row in game_map:
+        # Convert the string into a list of characters and add it to working_map
+        working_map.append(list(row))
+        # Check each character in the row and count the dots
+        for code in row:
+            if code == '.':
+                dots_remaining+=1
+
+# We need to update places that reference game_map with working_map.
+# In most cases changing the name is enough. set_map_tile can be made simpler now
+def set_map_tile(map_pos, code):
+    x,y = map_pos
+    working_map[y][x]=code
+
+    ...
+
+# Draw levels
+def draw_levels():
+    drawing_row = len(working_map)-2
+    drawing_col = len(working_map[drawing_row])-2
+    level_rect = map_tile_rect((drawing_col, drawing_row))
+    for level in range(game_level):
+        pygame.draw.rect(screen, &quot;red&quot;, level_rect)
+        level_rect.move_ip(-tile_size, 0)
+
+    ...
+
+# Update dot count when updating the score
+def check_dots():
+    global player_score, dots_remaining
+    # Check if player is fully on one square.
+    if player_pos.x % tile_size == 0 and player_pos.y % tile_size == 0:
+        # Check if the player is on a dot
+        if get_map_tile(pos_map_tile(player_pos)) == '.':
+            # Update score and remove dot
+            set_map_tile(pos_map_tile(player_pos), ' ')
+            player_score+=1
+            dots_remaining-=1
+
+    ...
+
+# Finish the level when the dots are gone
+if dots_remaining == 0:
+    running = False
+
+    ...
+
+# Main loop for the levels
+while playing:
+    play_level()
+    if dots_remaining == 0:
+        # Finished a level 
+        game_level+=1
+    else:
+        # Must have been some other reason for finishing the level so stop
+        playing = False
+
+pygame.quit()
+
+</code></pre>
+<p><strong>Your turn:</strong> Use the hints to add in game levels</p>
+<h3><a href="#step-55-add-in-a-ghost" aria-hidden="true" class="anchor" id="step-55-add-in-a-ghost"></a>Step 55 - Add in a ghost</h3>
+<p>Now we can add in the ghosts to hunt the player, although to start with they won't be very clever hunters. We already have lots of the building blocks we need from the code to handle the players.</p>
+<p>The components for the ghosts will be:</p>
+<ul>
+<li>a list of rectangles for the positions and a colour - later this can become an image</li>
+<li>when a ghost is on a map tile (moving between tiles) we pick them at random until we find a valid one and take that</li>
+<li>if a ghost touches a player level is over</li>
+</ul>
+<p>Here are some hints for the code:</p>
+<pre><code class="language-python"># Variables for the ghost information
+ghosts = []
+
+    ...
+
+# Helper function to setup ghosts
+def new_ghost(pos, colour, direction):
+    return {
+        &quot;pos&quot;: map_tile_rect(pos),
+        &quot;col&quot;: colour,
+        &quot;dir&quot;: direction
+    }
+
+    ...
+
+# Setup ghosts whe we reset a level
+global ghosts
+ghosts = []
+ghosts.append(new_ghost((13,13), &quot;red&quot;, &quot;LEFT&quot;))
+ghosts.append(new_ghost((12,15), &quot;cyan&quot;, &quot;RIGHT&quot;))
+ghosts.append(new_ghost((13,15), &quot;pink&quot;, &quot;UP&quot;))
+ghosts.append(new_ghost((14,15), &quot;orange&quot;, &quot;DOWN&quot;))
+
+    ...
+
+
+# Function to find a new valid direction for the ghosts
+def get_random_direction(ghost):
+    # Make a list of directions
+    dir_list = list(directions)
+    # Mix the list of directions
+    random.shuffle(dir_list)
+    # Now pick the first valid one
+    for dir in dir_list:
+        if can_move(ghost[&quot;pos&quot;], dir):
+            return dir
+
+# Function we can use in our game loop to move the ghosts. Return true if we touch the player
+def move_ghosts():
+    for ghost in ghosts:
+        pos = ghost[&quot;pos&quot;]
+        dir = ghost[&quot;dir&quot;]
+        if pos.x % tile_size == 0 and pos.y % tile_size == 0:
+            # Fully on a tile so check directions
+            dir = get_random_direction(ghost)
+        # Keep moving
+        if can_move(pos, dir):
+            pos.update(moved_pos(pos, dir))
+        # Check for player
+        if pos.colliderect(player_pos):
+            return True
+        #save the direction for next time
+        ghost[&quot;dir&quot;]=dir
+    return False
+
+    ...
+
+# Draw the ghosts
+def draw_ghosts():
+    for ghost in ghosts:
+        pygame.draw.rect(screen, ghost[&quot;col&quot;], ghost[&quot;pos&quot;])
+
+    ...
+
+# Use the functions in the game loop
+if move_ghosts():
+    running = False
+
+draw_ghosts()
+</code></pre>
+<p><strong>Your turn:</strong> Uses these hints to add randomly moving ghosts into your game</p>
+<h3><a href="#step-56-better-looking-pacman-and-ghosts" aria-hidden="true" class="anchor" id="step-56-better-looking-pacman-and-ghosts"></a>Step 56 - Better looking pacman and ghosts</h3>
+<p>We'll make the ghosts a bit smarter later. First lets get rid of the boring shapes and use better images. We have already seen how to use images in the <a href="#chapter-9-a-more-realistic-snake">Snake game</a> and change the image based on direction. We will go further this time and use multiple images to animate our characters.</p>
+<p>First we need to find or make some images. You can use the program in the <a href="#part-1-pacman-image-generator">examples</a> to create a basic image file. The single file has 6 sets of images. 1 for pacman and 5 for ghosts. Each set has four rows for the four directions and each row has four variants to show in sequence to animate the characters.</p>
+<p>Look back at <a href="#step-38-get-the-head--moving-in-the-right-direction">step 37-39</a> to see how we can pick out an image from a set and draw it instead of a plain rectangle. Use those steps as a guide.</p>
+<p><strong>Your turn:</strong></p>
+<ul>
+<li>Load and scale the image so that the images tiles are the right size for your game.</li>
+<li>Work out the position for the top-left image for each set and use this to draw that image instead of the rectangles. If you use the example image generator the first pacman image will be at (0,0). The red ghost will be at (0, 8*tile_size). You may need to experiment a little to find the right positions to use. The characters won't point in the correct direction yet but this is a good first building block.</li>
+<li>Add a dictionary of directions and offsets so you can pick out the row in the set that is looking in the right direction and draw that. If you use the example image generator the offset for RIGHT will be (0,0), the offset for UP will be (0,tile_size). Now the player and ghosts will point in the correct direction but won't have any animated effects like pacman eating.</li>
+<li>Finally use a variable to count each time you go through the game loop and use that to work along the image rows to create an animation (e.g. pacman will open and close his mouth). <strong>Hint:</strong> <code>loop_count % 4</code> will create a repeating pattern of 0,1,2,3 which you can use to pick out one of the four animated images in each row. <strong>Hint:</strong> If the animation effect is too fast you can use integer division for a slower effect e.g. <code>(loop_count // 10) % 4</code></li>
+<li>Put some of these steps into functions to make them easier to use e.g. <code>def calc_image_rect(first_image_offset, direction, animation_step):</code></li>
+<li>If you get stuck you can use prints, font.render or blit so show what is going on inside the code. You can also get ideas from the <a href="#examples-chapter-11">example</a>.</li>
+</ul>
+<h3><a href="#step-57-smarter-ghosts" aria-hidden="true" class="anchor" id="step-57-smarter-ghosts"></a>Step 57 - Smarter ghosts</h3>
+<p>Now let's make the ghost moves a bit smarter.</p>
+<p>The first thing we can improve is to stop the ghosts hovering over the same spot. There are many things we could do but here is a simple one to try first. If the ghosts current direction is clear we can remove the opposite direction before shuffling.</p>
+<pre><code class="language-python"># dictionary of opposite directions
+opposite_dir = {
+    &quot;UP&quot;: &quot;DOWN&quot;,
+    &quot;DOWN&quot;: &quot;UP&quot;,
+    &quot;LEFT&quot;: &quot;RIGHT&quot;,
+    &quot;RIGHT&quot;: &quot;LEFT&quot;
+}
+
+def get_random_direction(ghost):
+    # Make a list of directions
+    dir_list = list(directions)
+
+    # Remove opposite direction if the current direction is clear
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;]):
+        dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+
+    # Mix the list of directions
+    random.shuffle(dir_list)
+
+    # Now pick the first valid one
+    for dir in dir_list:
+        if can_move(ghost[&quot;pos&quot;], dir):
+            return dir
+</code></pre>
+<p><strong>Your turn:</strong> Try these changes and check that the ghost movements are better</p>
+<p>We can make the ghosts even smarter by getting them to aim at the player. We can do that by calculating a score for each direction and picking the one with best score. The score could be the vertical distance + horizontal distance to the player. The smaller the distance the better. Here are some hints for this sort of code.</p>
+<pre><code class="language-python">def rect_distance(rect1, rect2):
+    return abs(rect1.x - rect2.x)+abs(rect1.y - rect2.y)
+
+def dir_sort_key(item):
+    dir, score = item
+    return score
+
+def get_shortest_direction(ghost):
+    # Get a list of valid directions with their distance scores
+    dir_list = []
+    for dir in directions:
+        if can_move(ghost[&quot;pos&quot;], dir):
+            dir_list.append(dir, rect_distance(player_pos, moved_pos(ghost[&quot;pos&quot;], dir))
+
+    # Remove opposite direction if the current direction is clear
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;]):
+        dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+
+    # Sort by distance
+    dir_list.sort(key=dir_sort_key)
+
+    # Return the shorted direction
+    dir,_ = dir_list[0]
+    return dir
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>We've used the abs() function. This is short for absolute and makes sure the distance is a positive value.</li>
+</ul>
+<p><strong>Your turn:</strong> Make the changes and test your smarter ghosts. Are they too smart and spoil the game?</p>
+<p><strong>Bonus challenge:</strong> Try out some adjustments to make the game challenging but not too hard to win. Here are some ideas:</p>
+<ul>
+<li>Give some or all of the ghosts a smaller move_size so the player has more chance to escape. Perhaps the ghosts can get faster at higher levels</li>
+<li>Use different functions for the ghosts e.g. some use the random one, some use the shortest distance or maybe a mixture. Perhaps you can use the game_level to make the ghosts start dumb and get smarter at higher levels.</li>
+<li>Use the loop_counter or pygame.time functions to delay when the ghosts can move out of their start area. Maybe the smart ghosts wait longer than the random ones. Perhaps the delay is shorter for higher levels.</li>
+</ul>
+<h3><a href="#step-57-lives-power-ups-and-game-states" aria-hidden="true" class="anchor" id="step-57-lives-power-ups-and-game-states"></a>Step 57 - Lives, power-ups and game states</h3>
+<p>This step is like a big <strong>bonus challenge</strong>. Add more features to your game by re-using the building blocks that you already have. Here are some suggestions but you can invent your own.</p>
+<ul>
+<li>Give the player 3 lives. When a ghost catches them they lose a life but can restart the level.</li>
+<li>Find or make images to use to indicate the level and number of lives</li>
+<li>Start with an instructions screen and end with a game-over screen.</li>
+<li>Use different maps for different levels</li>
+<li>Find or make images to draw more interesting maps e.g. curved corners.</li>
+<li>Add in the power pellets. When the player eats one of the four power pellets they get a power boost for a short time which means they can eat ghosts. Perhaps there are bonus points for the pellet and for eating a ghost. The ghosts can change image (e.g. use the blue image from the example images) and run away from the player (make a longest_distance function). Display a count down or warning when the power boost is out of time. Perhaps the power boost is shorter or random at higher levels.</li>
+<li>Add more images for smoother animation e.g. sequence of 8 images for pacmans mouth</li>
+</ul>
 <h2><a href="#examples-chapter-1" aria-hidden="true" class="anchor" id="examples-chapter-1"></a>Examples - Chapter 1</h2>
 <pre><code class="language-python"># Make a quiz list
 quiz = [
@@ -2078,7 +2405,8 @@ while keep_playing:
                 actions=place[carried_item]
                 break
         print(&quot;What do you want to do next?&quot;)
-        # Loop through the available actions. action_number will count up from 0 and stop depending on the number of available actions in the list.
+        # Loop through the available actions.
+        #action_number will count up from 0 and stop depending on the number of available actions in the list.
         for action_number in range(len(actions)):
             # actions is our list of available actions.
             # actions[action_number] picks out one action
@@ -2093,7 +2421,8 @@ while keep_playing:
         print()
         # actions[choice] picks out the chosen action
         # actions[choice][1] picks out the second part of the pair which will be the destination for the player
-        # This code includes the bonus challenge. The position of the item is saved so that they can be reset before the next game
+        # This code includes the bonus challenge.
+        #The position of the item is saved so that they can be reset before the next game
         if choice==len(actions):
             player_items.append((place[&quot;item&quot;],player_position))
             del place[&quot;item&quot;]
@@ -2192,7 +2521,8 @@ while running:
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
 
 pygame.quit()
@@ -2214,7 +2544,10 @@ clock = pygame.time.Clock()
 running = True
 
 def reset_target():
-    return pygame.Rect((screen.get_width(),random.randint(0,screen.get_height() - icon_size)), (icon_size, icon_size))
+    return pygame.Rect(
+        (screen.get_width(),random.randint(0,screen.get_height() - icon_size)),
+        (icon_size, icon_size)
+    )
 # Setup the start position for the game
 player_pos = pygame.Rect((icon_size, screen.get_height() / 2), (icon_size, icon_size))
 target_pos = reset_target()
@@ -2272,11 +2605,16 @@ while running:
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
 
 over_image = score_font.render(&quot;GAME OVER&quot;, True, &quot;black&quot;)
-screen.blit(over_image, ((screen.get_width()-over_image.get_rect().width)/2, (screen.get_height()-over_image.get_rect().height)/2))
+screen.blit(
+    over_image,
+    ((screen.get_width()-over_image.get_rect().width)/2,
+    (screen.get_height()-over_image.get_rect().height)/2)
+)
 pygame.display.flip()
 running = True
 while running:
@@ -2399,7 +2737,8 @@ while running:
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
 
 pygame.quit()
@@ -2417,7 +2756,7 @@ tile_size=200
 screen_size = [tile_size*4, tile_size*3]
 screen = pygame.display.set_mode(screen_size)
 
-pygame.display.set_caption(&quot;Example code for the draw module&quot;)
+pygame.display.set_caption(&quot;Snake game image maker&quot;)
 
 # Loop until the user clicks the close button.
 done = False
@@ -2640,7 +2979,11 @@ def play_game():
 
         # Draw your game screen
         for counter in range(len(snake_body)):
-            screen.blit(body_image, snake_body[counter], pygame.Rect(snake_tiles[counter],(step_size,step_size)))
+            screen.blit(
+                body_image,
+                snake_body[counter],
+                pygame.Rect(snake_tiles[counter],(step_size,step_size))
+            )
         tile_pos = head_tiles[snake_direction]
         screen.blit(head_image, snake_head_pos, pygame.Rect(tile_pos,(step_size,step_size)))
         pygame.draw.rect(screen, &quot;green&quot;, food_pos)
@@ -2653,7 +2996,8 @@ def play_game():
         # flip() the display to put your work on screen
         pygame.display.flip()
 
-        # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+        # Control how fast your game updates.
+        # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
         clock.tick(20)
     return player_score
 
@@ -2675,8 +3019,16 @@ def create_text_image(message_list):
     return whole_image
     
 def show_final_screen(score):        
-    over_image = create_text_image([(&quot;GAME OVER&quot;, &quot;black&quot;), (&quot;Final Score: &quot;+str(score), &quot;blue&quot;), (&quot;Play Again? Y/N&quot;, &quot;red&quot;)])
-    screen.blit(over_image, ((screen.get_width()-over_image.get_rect().width)/2, (screen.get_height()-over_image.get_rect().height)/2))
+    over_image = create_text_image([
+        (&quot;GAME OVER&quot;, &quot;black&quot;),
+        (&quot;Final Score: &quot;+str(score), &quot;blue&quot;),
+        (&quot;Play Again? Y/N&quot;, &quot;red&quot;)
+    ])
+    screen.blit(
+        over_image,
+        ((screen.get_width()-over_image.get_rect().width)/2,
+        (screen.get_height()-over_image.get_rect().height)/2)
+    )
     pygame.display.flip()
         
 running = True
@@ -2852,8 +3204,725 @@ while running:
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # Control how fast your game updates. 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
     clock.tick(20)
+
+pygame.quit()
+</code></pre>
+<h2><a href="#examples-chapter-11" aria-hidden="true" class="anchor" id="examples-chapter-11"></a>Examples - Chapter 11</h2>
+<h3><a href="#part-1-pacman-image-generator" aria-hidden="true" class="anchor" id="part-1-pacman-image-generator"></a>Part 1 - Pacman image generator</h3>
+<pre><code class="language-python">import pygame
+from math import pi
+
+# Initialize pygame
+pygame.init()
+
+# Set the height and width of the screen
+tile_size=50
+screen_size = [tile_size*4, tile_size*24]
+screen = pygame.display.set_mode(screen_size)
+
+pygame.display.set_caption(&quot;Pacman image maker&quot;)
+
+# Loop until the user clicks the close button.
+done = False
+clock = pygame.time.Clock()
+
+def make_pacman_image(size, mouth_angle, open_factor):
+    img = pygame.Surface((size,size))
+    img.fill(&quot;purple&quot;)
+    pygame.draw.circle(
+        img,
+        &quot;yellow&quot;,
+        (size/2, size/2),
+        size/2
+    )
+    pygame.draw.polygon(
+        img,
+        &quot;purple&quot;,
+        [
+            (size/2, size/2),
+            (size, size/2*(1-open_factor)),
+            (size, size/2*(1+open_factor))
+        ]
+    )
+    return pygame.transform.rotate(img, mouth_angle)
+
+def make_pacman_images(size):
+    imgs = pygame.Surface((size*4,size*4))
+    img = pygame.Surface((size,size))
+    img.fill(&quot;purple&quot;)
+    x=0
+    y=0
+    for ag in [0,90,180,270]:
+        for of in [0,.5,1,.5]:
+            imgs.blit(make_pacman_image(size, ag, of),[x,y])
+            x+=size
+        y+=size
+        x=0
+    imgs.set_colorkey(&quot;purple&quot;)
+    return imgs
+
+def draw_eyes(img, size, eye_offset):
+    down=.4*size
+    out=.15*size
+    x,y=eye_offset
+    pygame.draw.circle(
+        img,
+        &quot;white&quot;,
+        (size/2-out, down),
+        size/6
+    )
+    pygame.draw.circle(
+        img,
+        &quot;black&quot;,
+        (size/2-out+x, down+y),
+        size/8
+    )
+    pygame.draw.circle(
+        img,
+        &quot;white&quot;,
+        (size/2+out, down),
+        size/6
+    )
+    pygame.draw.circle(
+        img,
+        &quot;black&quot;,
+        (size/2+out+x, down+y),
+        size/8
+    )
+
+def draw_skirt(img, size, skirt_offset):
+    ripple=.1*size
+    out=.15*size
+    pygame.draw.circle(
+        img,
+        &quot;purple&quot;,
+        (size/2-out+skirt_offset, size),
+        ripple
+    )
+    pygame.draw.circle(
+        img,
+        &quot;purple&quot;,
+        (size/2+out+skirt_offset, size),
+        ripple
+    )
+        
+    
+def make_ghost_image(size, colour, eye_offset, skirt_offset):
+    img = pygame.Surface((size,size))
+    img.fill(&quot;purple&quot;)
+    pygame.draw.circle(
+        img,
+        colour,
+        (size/2, size/3),
+        size/3
+    )
+    pygame.draw.rect(
+        img,
+        colour,
+        ((size/6,size/3),(size*2/3, size*4/6))
+    )
+    draw_eyes(img, size, eye_offset)
+    draw_skirt(img, size, skirt_offset)
+    return img
+
+def make_ghost_images(size, colour):
+    imgs = pygame.Surface((size*4,size*4))
+    img = pygame.Surface((size,size))
+    img.fill(&quot;purple&quot;)
+    x=0
+    y=0
+    for eox, eoy in [(1,0),(0,-1),(-1,0),(0,1)]:
+        for so in [0,size/10,0,-size/10]:
+            imgs.blit(make_ghost_image(size, colour, (eox*size/15, eoy*size/15), so),[x,y])
+            x+=size
+        y+=size
+        x=0
+    imgs.set_colorkey(&quot;purple&quot;)
+    return imgs
+
+def make_ghosts_images(size):
+    imgs = pygame.Surface((size*4, size*24))
+    imgs.fill(&quot;purple&quot;)
+    for y,colour in [
+        (4, &quot;blue&quot;),
+        (8, &quot;red&quot;),
+        (12, &quot;cyan&quot;),
+        (16, &quot;pink&quot;),
+        (20, &quot;orange&quot;)]:
+        imgs.blit(make_ghost_images(size, colour), (0,y*size))
+    imgs.set_colorkey(&quot;purple&quot;)
+    return imgs
+
+game_images = pygame.Surface(screen_size)
+game_images.fill(&quot;purple&quot;)
+game_images.blit(make_pacman_images(tile_size), (0,0))
+game_images.blit(make_ghosts_images(tile_size), (0, 0))
+
+pygame.image.save(game_images, &quot;pacmanimages.png&quot;)
+
+while not done:
+    # This limits the while loop to a max of 60 times per second.
+    # Leave this out and we will use all CPU we can.
+    clock.tick(60)
+
+    for event in pygame.event.get():  # User did something
+        if event.type == pygame.QUIT:  # If user clicked close
+            done = True  # Flag that we are done so we exit this loop
+
+    # Clear the screen and set the screen background
+    screen.fill(&quot;purple&quot;)
+
+    # This draws a triangle using the polygon command
+    screen.blit(game_images, (0,0))
+    
+    pygame.display.flip()
+
+# Be IDLE friendly
+pygame.quit()
+</code></pre>
+<h3><a href="#part-2-pacman-game" aria-hidden="true" class="anchor" id="part-2-pacman-game"></a>Part 2 - Pacman Game</h3>
+<pre><code class="language-python">import pygame
+import os
+import random
+
+# Game settings
+# =============
+
+tile_size=30
+player_move_size = 3
+game_FPS = 60
+power_up_duration = 15
+
+# Game map
+game_map = [
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;w............ww............w&quot;,
+    &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
+    &quot;wow  w.w   w.ww.w   w.w  wow&quot;,
+    &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
+    &quot;w..........................w&quot;,
+    &quot;w.wwww.ww.wwwwwwww.ww.wwww.w&quot;,
+    &quot;w.wwww.ww.wwwwwwww.ww.wwww.w&quot;,
+    &quot;w......ww....ww....ww......w&quot;,
+    &quot;wwwwww.wwwww.ww.wwwww.wwwwww&quot;,
+    &quot;     w.wwwww.ww.wwwww.w     &quot;,
+    &quot;     w.ww..........ww.w     &quot;,
+    &quot;wwwwww.ww.wwwxxwww.ww.wwwwww&quot;,
+    &quot;      ....wggggggw....      &quot;,
+    &quot;wwwwww.ww.wwwwwwww.ww.wwwwww&quot;,
+    &quot;     w.ww..........ww.w     &quot;,
+    &quot;     w.wwwww.ww.wwwww.w     &quot;,
+    &quot;wwwwww.wwwww.ww.wwwww.wwwwww&quot;,
+    &quot;w......ww....ww....ww......w&quot;,
+    &quot;w.wwww.ww.wwwwwwww.ww.wwww.w&quot;,
+    &quot;w.wwww.ww.wwwwwwww.ww.wwww.w&quot;,
+    &quot;w..........................w&quot;,
+    &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
+    &quot;wow  w.w   w.ww.w   w.w  wow&quot;,
+    &quot;w.wwww.wwwww.ww.wwwww.wwww.w&quot;,
+    &quot;w............ww............w&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+    &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
+]
+
+directions={
+    &quot;UP&quot;: (0,-1),
+    &quot;DOWN&quot;: (0, 1),
+    &quot;LEFT&quot;: (-1,0),
+    &quot;RIGHT&quot;: (1,0)
+}
+
+opposite_dir = {
+    &quot;UP&quot;: &quot;DOWN&quot;,
+    &quot;DOWN&quot;: &quot;UP&quot;,
+    &quot;LEFT&quot;: &quot;RIGHT&quot;,
+    &quot;RIGHT&quot;: &quot;LEFT&quot;
+}
+
+corners=[
+    (0,0),
+    (0,tile_size-1),
+    (tile_size-1,0),
+    (tile_size-1, tile_size-1)
+]
+
+# pygame setup
+# ============
+
+# pygame uses SDL, tell SDL to create the game window in the middle of the display
+os.environ['SDL_VIDEO_CENTERED'] = '1'
+
+pygame.init()
+screen = pygame.display.set_mode((tile_size*len(game_map[0]), tile_size*len(game_map)))
+clock = pygame.time.Clock()
+
+
+# Game assets and resources
+# =========================
+
+# Load font
+score_font = pygame.font.SysFont(None, tile_size-2)
+
+# Load the images from the image file
+game_images=pygame.image.load(&quot;pacmanimages.png&quot;)
+
+# Resize the images to the size we need. The files contain several tiles so we need to make room for these
+game_images=pygame.transform.scale(game_images, (4 * tile_size,24 * tile_size))
+
+# Tell pygame about the background colour so it can remove this when we use the images
+game_images.set_colorkey(&quot;purple&quot;)
+
+# Game state
+# ==========
+
+player_direction=&quot;RIGHT&quot;
+animation_offset=0
+player_pos=pygame.Rect((0,0),(0,0))
+player_score=0
+playing=True
+game_level=1
+player_lives=3
+dots_remaining=0
+working_map=[]
+ghosts=[]
+power_up = 0
+
+# Map helper functions
+# ====================
+
+def map_tile_rect(map_pos):
+    x,y=map_pos
+    return pygame.Rect((x*tile_size, y*tile_size),(tile_size,tile_size))
+
+def get_map_tile(map_pos):
+    x,y = map_pos
+    return working_map[y][x]
+
+def draw_grid_tile(pos):
+    match get_map_tile(pos):
+        case 'w':
+            pygame.draw.rect(screen, &quot;blue&quot;, map_tile_rect(pos))
+        case '.':
+            rect = map_tile_rect(pos)
+            pygame.draw.rect(screen, &quot;black&quot;, rect)
+            pygame.draw.circle(screen, &quot;white&quot;, rect.center, tile_size/8)
+        case 'o':
+            rect = map_tile_rect(pos)
+            pygame.draw.rect(screen, &quot;black&quot;, rect)
+            pygame.draw.circle(screen, &quot;pink&quot;, rect.center, tile_size/3)
+        case 'x':
+            rect = map_tile_rect(pos)
+            pygame.draw.rect(screen, &quot;black&quot;, rect)
+            pygame.draw.rect(screen, &quot;grey&quot;, rect.inflate(0,-tile_size/2))
+        case _:
+            pygame.draw.rect(screen, &quot;black&quot;, map_tile_rect(pos))                
+
+def draw_map():
+    for row_num in range(len(working_map)):
+        for column_num in range(len(working_map[row_num])):
+            draw_grid_tile((column_num, row_num))
+            
+def pos_map_tile(pos):
+    return (pos.x//tile_size, pos.y//tile_size)
+
+def set_map_tile(map_pos, code):
+    x,y=map_pos
+    working_map[y][x]=code
+
+def wrap_pos_ip(pos):
+    if pos.x &lt; 0:
+        pos.x+= screen.get_width()
+    if pos.x &gt;= screen.get_width():
+        pos.x = pos.x-screen.get_width()
+    if pos.y &lt; 0:
+        pos.y+= screen.get_height()
+    if pos.y &gt;= screen.get_height():
+        pos.y = pos.y-screen.get_height()
+
+def moved_pos(curr_pos, dir, size):
+    x,y=directions[dir]
+    new_pos = curr_pos.move((x*size, y*size))
+    wrap_pos_ip(new_pos)
+    return new_pos
+
+def can_move(curr_pos, dir, size, block=&quot;wx&quot;):
+    new_pos = moved_pos(curr_pos, dir, size)
+    for corner_move in corners:
+        corner_pos = new_pos.move(corner_move)
+        wrap_pos_ip(corner_pos)
+        if get_map_tile(pos_map_tile(corner_pos)) in block:
+            return False
+    return True
+
+def rect_distance(rect1, rect2):
+    return abs(rect1.x - rect2.x)+abs(rect1.y - rect2.y)
+
+# Image helper functions
+# ======================
+
+def calc_image_rect(first_image_offset, direction, animation_step):
+    return pygame.Rect(
+        (animation_step*tile_size, first_image_offset+dir_offset[direction]),
+        (tile_size,tile_size)
+    )
+
+dir_offset={
+    &quot;RIGHT&quot;: 0,
+    &quot;UP&quot;: tile_size,
+    &quot;LEFT&quot;: 2*tile_size,
+    &quot;DOWN&quot;: 3*tile_size
+}
+
+def create_text_image(message_list):
+    max_width = 0
+    total_height = 0
+    image_list = []
+    for message,colour in message_list:
+        next_image = score_font.render(message, True, colour)
+        image_list.append(next_image)
+        max_width = max(max_width, next_image.get_rect().width)
+        total_height+=next_image.get_rect().height + 10
+    whole_image = pygame.Surface((max_width, total_height), flags=pygame.SRCALPHA)
+    whole_image.fill((0,0,0,0))
+    current_y=0
+    for image in image_list:
+        whole_image.blit(image, ((max_width - image.get_rect().width)/2,current_y))
+        current_y+=image.get_rect().height + 10
+    return whole_image
+    
+# Setup functions
+# ===============
+
+def new_ghost(pos, image_offset, direction, type, speed):
+    return {
+        &quot;pos&quot;: map_tile_rect(pos),
+        &quot;img&quot;: image_offset,
+        &quot;dir&quot;: direction,
+        &quot;type&quot;: type,
+        &quot;speed&quot;: speed
+    }
+
+def reset_working_map():
+    global dots_remaining, working_map, ghosts
+    dots_remaining = 0
+    working_map = []
+    for row in game_map:
+        # Convert the string into a list of characters and add it to working_map
+        working_map.append(list(row))
+        # Check each character in the row and count the dots
+        for code in row:
+            if code == '.':
+                dots_remaining+=1
+                
+    ghosts = []
+    ghosts.append(new_ghost((13,13), 8*tile_size, &quot;LEFT&quot;, &quot;random&quot;, 2))
+    ghosts.append(new_ghost((12,15), 12*tile_size, &quot;RIGHT&quot;, &quot;random&quot;, 3))
+    ghosts.append(new_ghost((13,15), 16*tile_size, &quot;UP&quot;, &quot;shortest&quot;, 1))
+    ghosts.append(new_ghost((14,15), 20*tile_size, &quot;DOWN&quot;, &quot;shortest&quot;, 2))
+
+# Game functions
+# ==============
+
+def draw_score():
+    # Use our font to turn some text into an image
+    score_image = score_font.render(
+        f&quot;Score: {player_score}&quot;,
+        True,
+        &quot;white&quot;
+    )
+    # Place the image on our screen
+    screen.blit(score_image, map_tile_rect((1,1)))
+    
+def move_pacman(dir):
+    player_pos.update(moved_pos(player_pos, dir, player_move_size))
+    
+# function to draw the player
+def draw_pacman():
+    screen.blit(game_images, player_pos, calc_image_rect(0, player_direction, animation_step))
+    if screen.get_width()-player_pos.x&lt;tile_size:
+        screen.blit(
+            game_images,
+            player_pos.move((-screen.get_width(),0)),
+            calc_image_rect(0, player_direction, animation_step)
+        )
+    if screen.get_height()-player_pos.y&lt;tile_size:
+        screen.blit(
+            game_images,
+            player_pos.move((0, -screen.get_height())),
+            calc_image_rect(0, player_direction, animation_step)
+        )
+    
+def check_dots():
+    global player_score, dots_remaining
+    # Check if player is fully on one square.
+    if player_pos.x % tile_size == 0 and player_pos.y % tile_size == 0:
+        # Check if the player is on a dot
+        if get_map_tile(pos_map_tile(player_pos)) == '.':
+            # Update score and remove dot
+            set_map_tile(pos_map_tile(player_pos), ' ')
+            player_score+=1
+            dots_remaining-=1
+            
+def check_pellets():
+    global player_score, power_up
+    
+    if player_pos.x % tile_size == 0 and player_pos.y % tile_size == 0:
+        # Check if the player is on a pellet
+        if get_map_tile(pos_map_tile(player_pos)) == 'o':
+            # Update score and remove dot
+            set_map_tile(pos_map_tile(player_pos), ' ')
+            player_score+=10
+            power_up = power_up_duration * game_FPS
+                
+def draw_levels():
+    drawing_row = len(working_map)-2
+    drawing_col = len(working_map[drawing_row])-2
+    level_rect = map_tile_rect((drawing_col, drawing_row))
+    pygame.draw.rect(
+        screen,
+        &quot;black&quot;,
+        pygame.Rect(level_rect.move((-4*tile_size,0)).topleft, (5*tile_size, tile_size))
+    )
+    for level in range(game_level):
+        pygame.draw.circle(screen, &quot;red&quot;, level_rect.center, tile_size/2)
+        level_rect.move_ip(-tile_size, 0)
+        
+def draw_lives():
+    drawing_row = len(working_map)-2
+    drawing_col = 1
+    level_rect = map_tile_rect((drawing_col, drawing_row))
+    pygame.draw.rect(screen, &quot;black&quot;, pygame.Rect(level_rect.topleft, (3*tile_size, tile_size)))
+    for level in range(player_lives):
+        pygame.draw.circle(screen, &quot;yellow&quot;, level_rect.center, tile_size/2)
+        level_rect.move_ip(tile_size, 0)
+        
+def draw_power_up():
+    if power_up &gt; 0:
+        power_col = &quot;red&quot;
+        if power_up &gt; 5 * game_FPS:
+            power_col = &quot;orange&quot;
+        power_image = score_font.render(
+            str(power_up*10//game_FPS/10),
+            True,
+            power_col
+        )
+        # Place the image on our screen
+        screen.blit(power_image, map_tile_rect((len(game_map[0])-3,1)))
+        
+        
+def get_random_direction(ghost):
+    # Make a list of directions
+    dir_list = list(directions)
+    # Remove opposite direction if the current direction is clear
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;], ghost[&quot;speed&quot;]):
+        dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+    # Mix the list of directions
+    random.shuffle(dir_list)
+    # Now pick the first valid one
+    for dir in dir_list:
+        if can_move(ghost[&quot;pos&quot;], dir, ghost[&quot;speed&quot;]):
+            return dir
+        
+def dir_sort_key(item):
+    dir, score = item
+    return score
+
+def get_by_distance(ghost, rev):
+    dir_list = list(directions)
+    
+    # Remove opposite direction if the current direction is clear
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;], ghost[&quot;speed&quot;]):
+        dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+    
+    # Get a list of valid directions with their distance scores
+    dist_list = []
+    for dir in dir_list:
+        if can_move(ghost[&quot;pos&quot;], dir, ghost[&quot;speed&quot;]):
+            dist_list.append((dir, rect_distance(player_pos, moved_pos(ghost[&quot;pos&quot;], dir, ghost[&quot;speed&quot;]))))
+    # Sort by distance
+    dist_list.sort(reverse=rev, key=dir_sort_key)
+    # Return the shorted direction
+    dir,_ = dist_list[0]
+    return dir
+
+def get_shortest_direction(ghost):
+    return get_by_distance(ghost, False)
+
+def run_away_direction(ghost):
+    return get_by_distance(ghost, True)
+
+def move_ghosts():
+    global player_score
+    
+    for ghost in ghosts:
+        pos = ghost[&quot;pos&quot;]
+        dir = ghost[&quot;dir&quot;]
+        if pos.x % tile_size == 0 and pos.y % tile_size == 0:
+            # Fully on a tile so check directions
+            # Leave the centre area first
+            if get_map_tile(pos_map_tile(pos)) in &quot;gx&quot; and can_move(pos, &quot;UP&quot;, ghost[&quot;speed&quot;],&quot;w&quot;):
+                dir = &quot;UP&quot;
+            # Run away during power ups
+            elif power_up &gt; 0:
+                dir = run_away_direction(ghost)
+            # Use the ghost type
+            elif ghost[&quot;type&quot;]==&quot;random&quot;:
+                dir = get_random_direction(ghost)
+            else:
+                dir = get_shortest_direction(ghost)
+        # Keep moving
+        if can_move(pos, dir, ghost[&quot;speed&quot;], &quot;w&quot;):
+            pos.update(moved_pos(pos, dir, ghost[&quot;speed&quot;]))
+        # Check for player
+        if pos.colliderect(player_pos):
+            if power_up &gt; 0:
+                # Eaten by player in power up mode
+                player_score += 50
+                ghost[&quot;pos&quot;]=map_tile_rect((13,15))
+            else:
+                # Catch player, end this round
+                return True
+        #save the direction for next time
+        ghost[&quot;dir&quot;]=dir
+    return False
+
+def draw_ghosts():
+    for ghost in ghosts:
+        image = ghost[&quot;img&quot;]
+        if power_up &gt; 0:
+            image = 4*tile_size
+        screen.blit(
+            game_images,
+            ghost[&quot;pos&quot;],
+            calc_image_rect(image, ghost[&quot;dir&quot;], animation_step)
+        )
+        
+def show_game_over():        
+    over_image = create_text_image([
+        (&quot;GAME OVER&quot;, &quot;white&quot;),
+        (&quot;Final Score: &quot;+str(player_score), &quot;cyan&quot;),
+        (&quot;Play Again? Y/N&quot;, &quot;yellow&quot;)
+    ])
+    screen.blit(
+        over_image,
+        ((screen.get_width()-over_image.get_rect().width)/2,
+        (screen.get_height()-over_image.get_rect().height)/2)
+    )
+    draw_lives()
+    pygame.display.flip()
+
+# Main game loop
+# ==============
+
+def play_level():
+    global player_pos, player_direction, animation_step, power_up
+    # Setup initial player position. Make sure it is not in a wall!
+    player_pos = pygame.Rect((13*tile_size, 17*tile_size), (tile_size,tile_size))
+    player_direction = &quot;RIGHT&quot;
+    running = True
+    reset_working_map()
+    loop_count=0
+    power_up=0
+    
+    while running:
+        loop_count+=1
+        if power_up &gt; 0:
+            power_up-=1
+        animation_step = (loop_count//10)%4
+        # poll for events
+        # pygame.QUIT event means the user clicked X to close your window
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # Handle any user input
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
+            if can_move(player_pos, &quot;UP&quot;, player_move_size):
+                player_direction = &quot;UP&quot;
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+            if can_move(player_pos, &quot;DOWN&quot;, player_move_size):
+                player_direction = &quot;DOWN&quot;
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+            if can_move(player_pos, &quot;LEFT&quot;, player_move_size):
+                player_direction = &quot;LEFT&quot;
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+            if can_move(player_pos, &quot;RIGHT&quot;, player_move_size):
+                player_direction = &quot;RIGHT&quot;
+        if keys[pygame.K_q] or keys[pygame.K_ESCAPE]:
+            running = False
+
+        # Perform other work such as game effects or non-player characters
+        if can_move(player_pos, player_direction, player_move_size):
+            move_pacman(player_direction)
+        
+        check_dots()
+        check_pellets()
+        if dots_remaining == 0:
+            running = False
+            
+        if move_ghosts():
+            running = False
+
+        
+        # Fill the screen with a colour to wipe away anything from last frame
+        screen.fill(&quot;purple&quot;)
+
+        # Draw your game screen
+        draw_map()
+        
+        draw_ghosts()
+                
+        draw_pacman()
+        
+        draw_score()
+        
+        draw_levels()
+        
+        draw_lives()
+        
+        draw_power_up()
+        
+        # flip() the display to put your work on screen
+        pygame.display.flip()
+
+        # Control how fast your game updates.
+        #20 frames per second is quite slow for modern games but is easier to control when we are starting.
+        clock.tick(game_FPS)
+        
+# Main loop for the levels
+# ========================
+
+while playing:
+    play_level()
+    if dots_remaining == 0:
+        game_level+=1
+    else:
+        player_lives-=1
+        if player_lives == 0:
+            show_game_over()
+            waiting = True
+            while waiting:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                         playing = False
+                         waiting = False
+                     
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_q] or keys[pygame.K_ESCAPE] or keys[pygame.K_n]:
+                    playing = False
+                    waiting = False
+                if keys[pygame.K_y]:
+                    waiting = False
+                    game_level=1
+                    player_lives=3
+                    player_score=0
 
 pygame.quit()
 </code></pre>
