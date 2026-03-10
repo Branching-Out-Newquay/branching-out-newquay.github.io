@@ -130,7 +130,7 @@ nav {
         display: inline-block;
         margin: 0 2px 0;
         border-width: 2px;
-        padding: 1px 6px 1px;
+        padding: 1px 6px 1.2px;
         border-color: var(--branch-color);
         color: var(--logo-text-color);
         background-color: color-mix(in srgb, var(--flower-color), var(--background-color));
@@ -159,7 +159,7 @@ nav {
         a {
             margin: 0;
             font-family: 'Arial Narrow', sans-serif;
-            padding: 1px 3px 1px;
+            padding: 1px 3px 1.2px;
         }
     }
 }
