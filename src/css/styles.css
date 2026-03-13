@@ -100,14 +100,14 @@ header {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--background-color);
 
     aside {
         display: inline-block;
     }
 
-    img {
+    .logo {
         width: 128px;
         margin: 0 20px 0 0;
     }
@@ -121,6 +121,13 @@ header {
         color: var(--title-text-color);
         margin: 0;
     }
+
+        @media only screen and (max-width: 490px){
+        .opt {
+            display:none;
+        }
+    }
+
 }
 
 nav {
