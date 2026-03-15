@@ -90,22 +90,34 @@
 <li><a href="#step-43-get-down-with-gravity">Step 43 - Get down with gravity</a></li>
 <li><a href="#step-44-throwing-the-ball">Step 44 - Throwing the ball</a></li>
 <li><a href="#step-45-throw-with-the-mouse">Step 45 - Throw with the mouse</a></li>
-<li><a href="#step-47-lots-of-balls">Step 47 - Lots of balls</a></li>
-<li><a href="#step-48-bouncing-against-the-balls">Step 48 - Bouncing against the balls</a></li>
-<li><a href="#step-49-get-creative">Step 49 - Get creative</a></li>
+<li><a href="#step-46-lots-of-balls">Step 46 - Lots of balls</a></li>
+<li><a href="#step-47-bouncing-against-the-balls">Step 47 - Bouncing against the balls</a></li>
+<li><a href="#step-48-get-creative">Step 48 - Get creative</a></li>
 </ul>
 </li>
 <li><a href="#chapter-11-another-classic-game-pac-man">Chapter 11 - Another classic game: Pac-Man</a>
 <ul>
-<li><a href="#step-50-a-map-of-tiles">Step 50 - A map of tiles</a></li>
-<li><a href="#step-51-move-the-player-on-the-grid">Step 51 - Move the player on the grid</a></li>
-<li><a href="#step-52-smooth-player-moves">Step 52 - Smooth player moves</a></li>
-<li><a href="#step-53-collect-the-dots">Step 53 - Collect the dots</a></li>
-<li><a href="#step-54-win-a-level">Step 54 - Win a level</a></li>
-<li><a href="#step-55-add-in-a-ghost">Step 55 - Add in a ghost</a></li>
-<li><a href="#step-56-better-looking-pacman-and-ghosts">Step 56 - Better looking pacman and ghosts</a></li>
-<li><a href="#step-57-smarter-ghosts">Step 57 - Smarter ghosts</a></li>
-<li><a href="#step-57-lives-power-ups-and-game-states">Step 57 - Lives, power-ups and game states</a></li>
+<li><a href="#step-49-a-map-of-tiles">Step 49 - A map of tiles</a></li>
+<li><a href="#step-50-move-the-player-on-the-grid">Step 50 - Move the player on the grid</a></li>
+<li><a href="#step-51-smooth-player-moves">Step 51 - Smooth player moves</a></li>
+<li><a href="#step-52-make-things-organised-and-simple">Step 52 - Make things organised and simple</a></li>
+<li><a href="#step-53-avoiding-the-walls">Step 53 - Avoiding the walls</a></li>
+<li><a href="#step-54-collect-the-dots">Step 54 - Collect the dots</a></li>
+<li><a href="#step-55-win-a-level">Step 55 - Win a level</a></li>
+<li><a href="#step-56-add-in-a-ghost">Step 56 - Add in a ghost</a></li>
+<li><a href="#step-57-better-looking-pacman-and-ghosts">Step 57 - Better looking pacman and ghosts</a></li>
+<li><a href="#step-58-smarter-ghosts">Step 58 - Smarter ghosts</a></li>
+<li><a href="#step-59-lives-power-ups-and-game-states">Step 59 - Lives, power-ups and game states</a></li>
+</ul>
+</li>
+<li><a href="#chapter-12-mazes-rules-and-problem-solving">Chapter 12 - Mazes, rules and problem solving</a>
+<ul>
+<li><a href="#step-60-a-plan-for-a-game-with-mazes">Step 60 - A plan for a game with mazes</a></li>
+<li><a href="#step-61-building-blocks-for-a-game-with-mazes">Step 61 - Building blocks for a game with mazes</a></li>
+<li><a href="#step-62-first-attempt-at-a-random-maze">Step 62 - First attempt at a random maze</a></li>
+<li><a href="#step-63-better-maze-maker">Step 63 - Better maze maker</a></li>
+<li><a href="#step-64-a-maze-solver">Step 64 - A maze solver</a></li>
+<li><a href="#step-65-have-fun-with-mazes-and-solvers">Step 65 - Have fun with mazes and solvers</a></li>
 </ul>
 </li>
 <li><a href="#examples-chapter-1">Examples - Chapter 1</a></li>
@@ -129,6 +141,7 @@
 <li><a href="#part-2-pacman-game">Part 2 - Pacman Game</a></li>
 </ul>
 </li>
+<li><a href="#examples-chapter-12">Examples - Chapter 12</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +165,7 @@
 <li>investigate and solve problems</li>
 <li>search for help and ideas - even professional programers do this every day</li>
 </ul>
-<p>To make these games you will need some kind of Python app. If you are not sure get someone to help you set up <a href="https://github.com/thonny/thonny/releases">Thonny</a> or another Python app on your computer. You can use a website like <a href="https://editor.raspberrypi.org/en-US/projects/blank-python-starter">the raspberry pi editor</a> to get started but some of the exercises won't work in an online editor.</p>
+<p>To make these games you will need some kind of Python app. If you are not sure get someone to help you set up <a href="https://thonny.org/">Thonny</a> or another Python app on your computer. You can use a website like <a href="https://editor.raspberrypi.org/en-US/projects/blank-python-starter">the raspberry pi editor</a> to get started but some of the exercises won't work in an online editor.</p>
 <p>There are also some other great <a href="https://projects.raspberrypi.org/en/interests/games">Python game projects on the raspberry pi website</a></p>
 <h2><a href="#chapter-1-a-basic-quiz-game" aria-hidden="true" class="anchor" id="chapter-1-a-basic-quiz-game"></a>Chapter 1 - A basic quiz game</h2>
 <h3><a href="#step-1-ask-a-question-and-remember-the-answer" aria-hidden="true" class="anchor" id="step-1-ask-a-question-and-remember-the-answer"></a>Step 1 - Ask a question (and remember the answer)</h3>
@@ -172,19 +185,18 @@ print(&quot;Your favourite colour is&quot;, player_answer)
 </ul>
 <h3><a href="#step-2-check-the-answer-right-or-wrong" aria-hidden="true" class="anchor" id="step-2-check-the-answer-right-or-wrong"></a>Step 2 - Check the answer (right or wrong)</h3>
 <p>Games need to react to what the player types. We do this with if and else.</p>
-<p>How if and else work.</p>
-<pre><code class="language-python">if player_answer==correct_answer:
+<p>Here is an example so how if and else work. Important things to notice:</p>
+<ul>
+<li>The : (called a colon) at the end of if and else</li>
+<li>The gap at the start of the lines (called indentation)</li>
+</ul>
+<pre><code class="language-python">if player_answer==&quot;the correct answer&quot;:
     # This block of code only runs if the answers match
     print(&quot;Well done!&quot;)
 else:
     #This block of code only runs if the answers don’t match
     print(&quot;Wrong!&quot;)
 </code></pre>
-<p>Important things to notice:</p>
-<ul>
-<li>The : (called a colon) at the end of if and else</li>
-<li>The gap at the start of the lines (called indentation)</li>
-</ul>
 <p>Try a quiz question:</p>
 <pre><code class="language-python">player_answer=input(&quot;What is Batman’s favourite colour?  &gt; &quot;)
 if player_answer==&quot;black&quot;: 
@@ -219,7 +231,7 @@ print(&quot;Your points: &quot;, total_score)
 <li>Code which starts with # are comments for programers to read and Python ignores them. As your game gets bigger and more complicated comments can help you remember how the code works.</li>
 <li>The blocks of code for if and else can have lots of lines in them. The indentations tell Python where the blocks start and finish.</li>
 <li>The print(&quot;Game Over!&quot;) line isn't part of the else block because it isn't indented the same as the other lines.</li>
-<li>We have a line that says <code>total_score = total_score + 0</code>. In this game that won't make any difference and we could miss it out. If you wanted to give the player a penalty for a wrong answer you could change this line to reduce their score.</li>
+<li>We have a line that says <code>total_score = total_score + 0</code>. In this game that won't make any difference and we could miss it out. If you wanted to give the player a penalty for a wrong answer you could change this line to take points away.</li>
 </ul>
 <p><strong>Your turn:</strong> Add scores into your quiz game. If the score isn't changing the way you expect, you can add in prints to see what Python is actually doing <code>print(&quot;Score is now:&quot; total_score)</code></p>
 <h3><a href="#step-4-tidy-up-stop-writing-the-same-code-over-and-over" aria-hidden="true" class="anchor" id="step-4-tidy-up-stop-writing-the-same-code-over-and-over"></a>Step 4 - Tidy up (stop writing the same code over and over)</h3>
@@ -242,7 +254,7 @@ print(&quot;You got&quot;, total_score, &quot;points&quot;)
 </code></pre>
 <p>Things to notice:</p>
 <ul>
-<li>def is short for define a function</li>
+<li>def tells Python that this code defines a function</li>
 <li>the brackets () after the function name</li>
 <li>the list of parameters inside the brackets. These are a way to pass information into the function. That way our function can handle any question and answer.</li>
 <li>the : (colon) at the end of the def line</li>
@@ -255,7 +267,7 @@ print(&quot;You got&quot;, total_score, &quot;points&quot;)
 <blockquote>
 <p><strong>Bonus challenges:</strong> Make a smarter quiz_question function that can do things like:</p>
 <ul>
-<li>Add on the &quot;? &gt; &quot; parts to the end of the question so you don't have to add it on the end of every question</li>
+<li>Get your function to add on the &quot;? &gt; &quot; parts so you don't have to type it on the end of every question</li>
 <li>Allow the player to use capitals or lower case and still get points. For example 'black', 'Black', 'BLACK' and 'bLACk' are all treated the same. Investigate Python string methods like lower() to do this.</li>
 </ul>
 </blockquote>
@@ -305,9 +317,9 @@ In the function there is code to return the number of points like this</p>
 </code></pre>
 <p>Things to notice:</p>
 <ul>
-<li>How we use () (brackets) and , (commas) to send and receive the information back from the function. If you want to check this is work you can add in prints <code>print(&quot;Points:&quot;, points, &quot; Instructions:&quot;, instructions&quot;)</code>.</li>
+<li>How we use () and , to send and receive the information back from the function. If you want to check this is working you can add in prints inside your code to see what is happening <code>print(&quot;Points:&quot;, points, &quot; Instructions:&quot;, instructions&quot;)</code>.</li>
 </ul>
-<p><strong>Your turn:</strong> We aren’t doing anything with the instruction yet but test your quiz now and check it works just as before</p>
+<p><strong>Your turn:</strong> Change you program so that your function sends back a score and the word &quot;answer&quot;. There are two <code>return</code> lines to change. Change the line where we use the function so we can get the score and the instruction and then use the score to update the players total. We aren’t doing anything with the instruction yet. That's ok for this step. Test your quiz now and check it works just as before.</p>
 <h3><a href="#step-7-allow-valid-instructions" aria-hidden="true" class="anchor" id="step-7-allow-valid-instructions"></a>Step 7 - Allow valid instructions</h3>
 <p>In our quiz_question function we can have two results (or branches): right or wrong. Now we are going to need four results: right, wrong, pass or leave. Let’s change our function to allow this.</p>
 <pre><code class="language-python">    if player_answer==&quot;leave&quot;:
@@ -326,11 +338,11 @@ In the function there is code to return the number of points like this</p>
 <p>Important things to notice:</p>
 <ul>
 <li>the if, else and elif (short for &quot;else if&quot;) lines</li>
-<li>the colons at the end of some of the lines</li>
+<li>the : at the end of some of the lines</li>
 <li>how some lines have more indentation than others</li>
 <li>how we make the player lose a point for a wrong answer</li>
 </ul>
-<p><strong>Your turn:</strong> The program gives the player a message but the leave instruction doesn't stop the game yet. That's ok. Check the rest of your quiz game is still working.</p>
+<p><strong>Your turn:</strong> Make these changed inside your quiz loop. The program gives the player the right messages but the leave instruction doesn't stop the game yet. That's ok. Check the rest of your quiz game is still working.</p>
 <h3><a href="#step-8-leave-the-game" aria-hidden="true" class="anchor" id="step-8-leave-the-game"></a>Step 8 - Leave the game</h3>
 <p>We can add two lines to handle the leave instruction and finish the game early like this:</p>
 <pre><code class="language-python">    if instruction==&quot;leave&quot;:
@@ -610,7 +622,7 @@ while keep_playing:
         # There is an action list so we can use it to ask the player what to do
         actions = place[&quot;actions&quot;]
         print(&quot;What do you want to do next?&quot;)
-        # Loop through the available actions.
+        # Loop through the available actions. 
         # action_number will count up from 0 and stop depending on the number of available actions in the list.
         for action_number in range(len(actions)):
             # actions is our list of available actions.
@@ -1372,8 +1384,6 @@ import random
 # Setup the random start position and direction for the game
 size = 20
 max_speed = 40
-random_x = 
-random_y = 
 player_pos = pygame.Vector2(
     random.randint(screen.get_width()/4, screen.get_width()/4*3), 
     random.randint(screen.get_height()/4, screen.get_height()/4*3)
@@ -1422,7 +1432,7 @@ if (player_pos.x-size &lt; 0 or
 <ul>
 <li>Instead of checking the centre of the ball we've adjusted by the radius of the ball (distance from centre to the edge of the ball)</li>
 </ul>
-<p><strong>Your turn:</strong> Make the changes and check the rectangle bounces more realistically</p>
+<p><strong>Your turn:</strong> Make the changes and check the ball bounces more realistically</p>
 <h3><a href="#step-43-get-down-with-gravity" aria-hidden="true" class="anchor" id="step-43-get-down-with-gravity"></a>Step 43 - Get down with gravity</h3>
 <p>Gravity makes things accelerate towards the ground. We can do something similar by making repeated small changes to the ball's direction.</p>
 <pre><code class="language-python"># Gravity level
@@ -1442,7 +1452,7 @@ player_direction.y+=gravity
 <li>experiment with applying these effects in different orders, before and after updating the player position.</li>
 </ul>
 <h3><a href="#step-44-throwing-the-ball" aria-hidden="true" class="anchor" id="step-44-throwing-the-ball"></a>Step 44 - Throwing the ball</h3>
-<p>Our game template still has some code for handling key presses. Try these with you bouncing ball game. We can change this slightly so that we can throw the ball.</p>
+<p>Our game template still has some code for handling key presses. Try these with your bouncing ball game. We can change this slightly so that we can throw the ball.</p>
 <p><strong>Your turn:</strong> Change you code so that the key presses change the ball direction instead of the ball position.</p>
 <p><strong>Bonus Challenge:</strong> Look at the code for the snake game. Use the code that makes a list for the body and follow the head as it moves. This will create a trail behind the ball.</p>
 <h3><a href="#step-45-throw-with-the-mouse" aria-hidden="true" class="anchor" id="step-45-throw-with-the-mouse"></a>Step 45 - Throw with the mouse</h3>
@@ -1461,7 +1471,7 @@ if pygame.mouse.get_pressed()[0]:
 old_mouse=pygame.Vector2(pygame.mouse.get_pos())
 </code></pre>
 <p><strong>Your turn:</strong> Add in the new code and test throwing the ball with a mouse click. You can use prints or pygame.font.render to display the mouse position if need to check the values</p>
-<h3><a href="#step-47-lots-of-balls" aria-hidden="true" class="anchor" id="step-47-lots-of-balls"></a>Step 47 - Lots of balls</h3>
+<h3><a href="#step-46-lots-of-balls" aria-hidden="true" class="anchor" id="step-46-lots-of-balls"></a>Step 46 - Lots of balls</h3>
 <p>We can use a list to hold the position and direction of lots balls and use loops to update and draw all of them each time. We can even use a loop to throw all of them at the same time!</p>
 <p>We can setup the balls like this:</p>
 <pre><code class="language-python">num_of_balls = 5
@@ -1484,7 +1494,7 @@ for ball in range(num_of_balls):
 <pre><code class="language-python">for ball_position, ball_direction in balls:
     pygame.draw.circle(screen, &quot;red&quot;, ball_position, size)
 </code></pre>
-<p>In places where we are updating the position and direction we need to be careful. Look at these examples</p>
+<p><strong>Important:</strong> In places where we are updating the position and direction we need to be careful. Look at these examples</p>
 <pre><code class="language-python"># Example 1
 for ball_position, ball_direction in balls:
     new_position = ball_position+ball_direction
@@ -1511,7 +1521,7 @@ for ball_position, ball_direction in balls:
 <li>Use a list or some randomness to give the balls different colours</li>
 <li>Once you have wrapped some of your code inside a ball loop you may have some long lines and messy looking code. Move some of the code into helper functions to make things clearer and neater</li>
 </ul>
-<h3><a href="#step-48-bouncing-against-the-balls" aria-hidden="true" class="anchor" id="step-48-bouncing-against-the-balls"></a>Step 48 - Bouncing against the balls</h3>
+<h3><a href="#step-47-bouncing-against-the-balls" aria-hidden="true" class="anchor" id="step-47-bouncing-against-the-balls"></a>Step 47 - Bouncing against the balls</h3>
 <p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
 <p>At the moment the balls ignore each other. Let's make them bump and bounce into each other. We will need to check each ball against the others. We can use a loop within a loop like this:</p>
 <pre><code class="language-python">for first_ball in balls:
@@ -1532,7 +1542,7 @@ for ball_position, ball_direction in balls:
 <p>Finally we need create a bounce effect. The precise way to do this is complicated. We can create a fake bounce by reflecting the direction of the ball in the direction of the line between the balls. It won't be scientifically correct but it should look ok for a simple game.</p>
 <p><strong>Your turn:</strong> With these clues see if you can use the double loop, check if the two balls have hit and swap their directions if they do. You can play the game with just two balls and add in some prints to check things are working as you expect. If you get stuck you can check the <a href="#examples-chapter-10">example</a> at the end of the project.</p>
 <p><strong>Bonus challenge:</strong> When the balls hit adjust their positions so they don't overlap inside each other</p>
-<h3><a href="#step-49-get-creative" aria-hidden="true" class="anchor" id="step-49-get-creative"></a>Step 49 - Get creative</h3>
+<h3><a href="#step-48-get-creative" aria-hidden="true" class="anchor" id="step-48-get-creative"></a>Step 48 - Get creative</h3>
 <p>Think of a game that might use motion like this and have a try a making it. Start with something while this is still new. Here are some ideas you could try.</p>
 <ul>
 <li>Put a ball at one side of the screen and some targets at the other. Let the player set a direction for the ball with the mouse or keys and see if they can hit the targets and score points. You can replace the ball with images of sports balls, stones or energy ball. The targets could have images like a goal, castle or alien space ship. Perhaps the target moves or there are other obstacles that get in the way like crazy golf.</li>
@@ -1542,7 +1552,7 @@ for ball_position, ball_direction in balls:
 <p><strong>Your turn:</strong> Make a simple game using what you have learnt and the examples in this chapter.</p>
 <h2><a href="#chapter-11-another-classic-game-pac-man" aria-hidden="true" class="anchor" id="chapter-11-another-classic-game-pac-man"></a>Chapter 11 - Another classic game: Pac-Man</h2>
 <p>In this chapter we will learn some more game building blocks my making a classic Pac-Man game. You can look online to see some images of what the game looks like and some of the common rules.</p>
-<h3><a href="#step-50-a-map-of-tiles" aria-hidden="true" class="anchor" id="step-50-a-map-of-tiles"></a>Step 50 - A map of tiles</h3>
+<h3><a href="#step-49-a-map-of-tiles" aria-hidden="true" class="anchor" id="step-49-a-map-of-tiles"></a>Step 49 - A map of tiles</h3>
 <p>Once again we can start with simple game template from <a href="#step-22-our-first-graphics-game">step 22</a></p>
 <p>We can setup a map as a grid of letters and use different letters to represent different things e.g.</p>
 <ul>
@@ -1552,7 +1562,7 @@ for ball_position, ball_direction in balls:
 <li>'o' a space with a power up pellet</li>
 <li>'x' for the door to the ghosts</li>
 </ul>
-<p>We can setup the map in a list of lists (or a 2d-list):</p>
+<p>We can setup the map in a list of strings:</p>
 <pre><code class="language-python">game_map = [
     &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
     &quot;wwwwwwwwwwwwwwwwwwwwwwwwwwww&quot;,
@@ -1589,8 +1599,8 @@ for ball_position, ball_direction in balls:
 </code></pre>
 <p>When we draw our game screen we can use the map to draw the right shapes, symbols or images in the right place. Here is part of the code to do this.</p>
 <pre><code class="language-python">for row_num in range(len(game_map)):
-    for column_num in range(len(game_map[row_nun])):
-        topleft = pygame.Vector2(row_mum*tile_size, column_num*tile_size)
+    for column_num in range(len(game_map[row_num])):
+        topleft = pygame.Vector2(column_num*tile_size, row_num*tile_size)
         match game_map[row_num][column_num]:
             case ' ':
                 pygame.draw.rect(
@@ -1605,12 +1615,11 @@ for ball_position, ball_direction in balls:
                     pygame.Rect(topleft, (tile_size, tile_size))
                 )
             case '.':
-                grid_rect = pygame.Rect(topleft, (tile_size, tile_size)
+                grid_rect = pygame.Rect(topleft, (tile_size, tile_size))
                 pygame.draw.rect(
                     screen,
                     &quot;black&quot;,
                     grid_rect
-                    )
                 )
                 pygame.draw.circle(
                     screen,
@@ -1624,7 +1633,7 @@ for ball_position, ball_direction in balls:
 <p>Things to notice:</p>
 <ul>
 <li>pygame screen and images are a list of columns and each one is a list of points. We reference points with (column, row). The game_map is a list of rows and each one is a list of characters so we access it with <code>[row][column]</code>. It is easy to mix these up.</li>
-<li>We are using a match case block. Python checks what is on the match line and runs the code in each case block which fits the pattern. We could do the same thing with if-elif-else blocks. It is good to practice with both so that can use either way when you need to.</li>
+<li>We are using a match case block. Python checks what is on the match line and runs the code in each case block which fits the pattern. We could do the same thing with if-elif-else blocks. It is good to practice with both so that can use either way when you need to. <strong>Note:</strong> match-case blocks were added into Python version 3.10. If you have an older version you will get an error. You can use if-elif-else blocks instead or get a newer version of Python.</li>
 <li>We have case blocks inside a match block inside a pair of for blocks. We've split the pygame.draw parameters across several lines to make it easier to read. It would be better to move some of this code into helper functions.</li>
 <li>We want to draw the dot in the centre of the rectangle so we can use the pygame helper <code>center</code> (USA spelling!) to get this.</li>
 </ul>
@@ -1637,10 +1646,10 @@ for ball_position, ball_direction in balls:
 <li>Move some of the code inside the loops into helper functions to make the code clearer and neater.</li>
 </ul>
 </blockquote>
-<h3><a href="#step-51-move-the-player-on-the-grid" aria-hidden="true" class="anchor" id="step-51-move-the-player-on-the-grid"></a>Step 51 - Move the player on the grid</h3>
+<h3><a href="#step-50-move-the-player-on-the-grid" aria-hidden="true" class="anchor" id="step-50-move-the-player-on-the-grid"></a>Step 50 - Move the player on the grid</h3>
 <p><strong>Important note:</strong> Keep a copy of your game from Step 50 as we will need it later.</p>
 <p>At the moment the player can move anywhere, through wall or off the board completely. One way we can fix this is set our player position using a map position and then convert them into pygame positions. We do something like this to draw the game map. Here are some hints about the code to use.</p>
-<pre><code class="language-pygame"># Set the player position to a space on the map. Pick a start point in your map that isn't a wall!
+<pre><code class="language-python"># Set the player position to a space on the map. Pick a start point in your map that isn't a wall!
 player_pos = pygame.Vector2(13,17)
 
     ...
@@ -1662,7 +1671,7 @@ if new_pos.y == len(game_map):
     ...
 
 # Only use the new position if we do not end up in a wall
-# pygame.Vector2 can hold numbers with fractions.
+# pygame.Vector2 can hold numbers with fractions
 # game_map indexes must be integers so we use int() to make sure.
 if game_map[int(new_pos.y)][int(new_pos.x)]!='w':
     player_pos.update(new_pos)
@@ -1679,7 +1688,7 @@ pygame.draw.circle(screen, &quot;yellow&quot;, player_centre, tile_size/2)
     return player_pos+pygame.Vector2(x,y)
 
 def left_position():
-    return moved_position(-1,0):
+    return moved_position(-1,0)
 </code></pre>
 <p>This can make you main code easier like this:</p>
 <pre><code class="language-python">if keys[pygame.K_LEFT]:
@@ -1687,10 +1696,10 @@ def left_position():
 </code></pre>
 <p>You can also make similar small helpers to wrap around the edges, check what is in the map and draw the player.</p>
 <p><strong>Your turn:</strong> Use the hints to update the code and test the way the player moves.</p>
-<h3><a href="#step-52-smooth-player-moves" aria-hidden="true" class="anchor" id="step-52-smooth-player-moves"></a>Step 52 - Smooth player moves</h3>
+<h3><a href="#step-51-smooth-player-moves" aria-hidden="true" class="anchor" id="step-51-smooth-player-moves"></a>Step 51 - Smooth player moves</h3>
 <p>The player moves between the wall but it is quite fast and jerky. We can make smaller smoother moves using pygame positions but will have to take care as the players piece could cross over more than one tile on the game map. Let's work through this in some small steps.</p>
 <p>Go back to your game from step 50 that you saved earlier. We can set up the player position as a pygame rectangle and use that to draw it.</p>
-<pre><code class="language-python"># Helper function to find the rectangle for a map position. 
+<pre><code class="language-python"># Helper function to find the rectangle for a map position.
 # You may have made something like this already so you can keep using it instead
 def map_tile_rect(map_pos):
     x,y = map_pos
@@ -1710,6 +1719,7 @@ def draw_pacman():
 </code></pre>
 <p>Next we can start to make a functions that will move the pacman and keep all the complex code in one place.</p>
 <p><strong>Your turn:</strong> Check the player starts in a good place and moves smoothly. You can increase the clock.tick() and reduce the how much we add or subtract on the key presses to get the effect you want. The player will run through the walls but we will fix that later.</p>
+<h3><a href="#step-52-make-things-organised-and-simple" aria-hidden="true" class="anchor" id="step-52-make-things-organised-and-simple"></a>Step 52 - Make things organised and simple</h3>
 <p>Next we can make some functions to handle moves. Initially these won't do very much but when we add in more checks and calculations we only have to do them in one place.</p>
 <pre><code class="language-python">move_size = 3
 directions={
@@ -1719,7 +1729,7 @@ directions={
     &quot;RIGHT&quot;: (move_size,0)
 }
 
-player_direction = &quot;RIGHT&quot;;
+player_direction = &quot;RIGHT&quot;
 
 def can_move(current_pos, direction):
     return True
@@ -1727,16 +1737,17 @@ def can_move(current_pos, direction):
 def move_pacman(dir):
     player_pos.move_ip(directions[dir])
 </code></pre>
-<p>You can use these functions when you check which keys are pressed</p>
-<pre><code class="language-python">if keys[pygame.K_LEFT] and can_move(player_position, &quot;LEFT&quot;):
+<p>You can use these functions when you check which keys are pressed like this:</p>
+<pre><code class="language-python">if keys[pygame.K_LEFT] and can_move(player_pos, &quot;LEFT&quot;):
     player_direction = &quot;LEFT&quot;    
 </code></pre>
-<p>And keep moving the player</p>
-<pre><code class="language-python">if can_move(player_position, player_direction):
+<p>And keep moving the player like this:</p>
+<pre><code class="language-python">if can_move(player_pos, player_direction):
     move_pacman(player_direction)
 </code></pre>
 <p><strong>Your turn:</strong> Make these changes and test what happens. The player will keep moving in the direction we want but still go through walls.</p>
-<p>Let's start to add in the wall checks and wrap the player at the edges of the screen. We can update the move_pacman function once and it will work for all the moves we make. We will just use the top left corner of the player to start with. This isn't quite right but it is a good start. We need to convert from pygame position to game map position. We can do this with integer division.</p>
+<h3><a href="#step-53-avoiding-the-walls" aria-hidden="true" class="anchor" id="step-53-avoiding-the-walls"></a>Step 53 - Avoiding the walls</h3>
+<p>Let's start to add in the wall checks and wrap the player at the edges of the screen. We can update the move_pacman function once and it will work for all the moves we make. We will just use the top left corner of the player to start with. This isn't quite right but it is a good start. We will need to convert from pygame position (dots on the screen) to game map position (tiles on the map). We can do this with integer division.</p>
 <pre><code class="language-python">def pos_map_tile(pos):
     return (pos.x//tile_size, pos.y//tile_size)
 
@@ -1760,7 +1771,7 @@ def moved_pos(current_pos, dir):
     return new_pos
 
 def can_move(current_pos, dir):
-    if get_map_tile(pos_map_tile(moved_pos(current_position, dir)))=='w':
+    if get_map_tile(pos_map_tile(moved_pos(current_pos, dir)))=='w':
         return False
     else:
         return True
@@ -1795,7 +1806,7 @@ def can_move(current_pos, dir):
 <blockquote>
 <p><strong>Bonus challenge:</strong> When the player wraps around the screen it moves smoothly off the right hand side of the screen but pops in and out on the left side. Can you fix this so that when the player is half off the side of the screen the other part of them appears on the other side. <strong>Clue:</strong> Sometime you draw the player twice with different positions!</p>
 </blockquote>
-<h3><a href="#step-53-collect-the-dots" aria-hidden="true" class="anchor" id="step-53-collect-the-dots"></a>Step 53 - Collect the dots</h3>
+<h3><a href="#step-54-collect-the-dots" aria-hidden="true" class="anchor" id="step-54-collect-the-dots"></a>Step 54 - Collect the dots</h3>
 <p>Lets add another feature. When the player passes over one of the small dots they score a point and the dot is removed. We've already covered displaying a scope in <a href="#step-27-catch-the-target-and-score-points">step 27</a> so you can go back and get a reminder if you need it. We can put all of our dot code in a function and use it in our game loop. We are only going to let the player have the dot if they are perfectly on the right square and not while they are moving between squares. We can use more integer division to check this - the % gives the remainder from integer division. Use print to try some examples if you are not sure what this means.</p>
 <pre><code class="language-python"># Function to update a position in the map
 def set_map_tile(map_pos, code):
@@ -1832,7 +1843,7 @@ def draw_score():
 <li>We have used a template string with the f&quot;&quot; notation to make a score message.</li>
 </ul>
 <p><strong>Your turn:</strong> Add in the new feature and check that it works.</p>
-<h3><a href="#step-54-win-a-level" aria-hidden="true" class="anchor" id="step-54-win-a-level"></a>Step 54 - Win a level</h3>
+<h3><a href="#step-55-win-a-level" aria-hidden="true" class="anchor" id="step-55-win-a-level"></a>Step 55 - Win a level</h3>
 <p><strong>Big Step:</strong> This step is harder than usual - take your time and don't be afraid to get help</p>
 <p>If pacman eats all of the dots we win the round move on to the next level. The steps we need to take are:</p>
 <ul>
@@ -1843,15 +1854,15 @@ def draw_score():
 <li>End the level when all the dots are gone.</li>
 </ul>
 <p>Here are some hints about what changes to make.</p>
+<p>We will need to add in some variables for the new things we need like dots, levels and a working copy of the map.</p>
 <pre><code class="language-python"># Variables for the state of the game
 playing = True
 game_level = 1
 dots_remaining = 0
 working_map = []
-
-    ...
-
-# Function to reset the level and build the working map
+</code></pre>
+<p>We will need to refresh the working copy of the map and get things ready for a new level</p>
+<pre><code class="language-python"># Function to reset the level and build the working map
 def reset_working_map():
     global dots_remaining, working_map
     dots_remaining = 0
@@ -1863,16 +1874,14 @@ def reset_working_map():
         for code in row:
             if code == '.':
                 dots_remaining+=1
-
-# We need to update places that reference game_map with working_map.
-# In most cases changing the name is enough. set_map_tile can be made simpler now
-def set_map_tile(map_pos, code):
+</code></pre>
+<p>Lots of our code is working with the game_map but this is now our template and not the working copy. In most cases we can swap game_map for working_map but in some places we will need to make other changes e.g. set_map_tile can be simpler now</p>
+<pre><code class="language-python">def set_map_tile(map_pos, code):
     x,y = map_pos
     working_map[y][x]=code
-
-    ...
-
-# Draw levels
+</code></pre>
+<p>We will need to show the player what level they are on. We could write a number with font.render. The original pacman game used images so we can do something similar.</p>
+<pre><code class="language-python"># Draw levels
 def draw_levels():
     drawing_row = len(working_map)-2
     drawing_col = len(working_map[drawing_row])-2
@@ -1880,10 +1889,9 @@ def draw_levels():
     for level in range(game_level):
         pygame.draw.rect(screen, &quot;red&quot;, level_rect)
         level_rect.move_ip(-tile_size, 0)
-
-    ...
-
-# Update dot count when updating the score
+</code></pre>
+<p>As the player moves we can keep track of how may dots are left</p>
+<pre><code class="language-python"># Update dot count when updating the score
 def check_dots():
     global player_score, dots_remaining
     # Check if player is fully on one square.
@@ -1894,12 +1902,15 @@ def check_dots():
             set_map_tile(pos_map_tile(player_pos), ' ')
             player_score+=1
             dots_remaining-=1
-
-    ...
-
-# Finish the level when the dots are gone
+</code></pre>
+<p>The level will be over when the dots are all gone</p>
+<pre><code class="language-python"># Finish the level when the dots are gone
 if dots_remaining == 0:
     running = False
+</code></pre>
+<p>Most of our code will need to be put into a function for playing a level and then used in a level loop</p>
+<pre><code class="language-python">def play_level():
+    # Our main game loop code will move in here
 
     ...
 
@@ -1917,7 +1928,7 @@ pygame.quit()
 
 </code></pre>
 <p><strong>Your turn:</strong> Use the hints to add in game levels</p>
-<h3><a href="#step-55-add-in-a-ghost" aria-hidden="true" class="anchor" id="step-55-add-in-a-ghost"></a>Step 55 - Add in a ghost</h3>
+<h3><a href="#step-56-add-in-a-ghost" aria-hidden="true" class="anchor" id="step-56-add-in-a-ghost"></a>Step 56 - Add in a ghost</h3>
 <p>Now we can add in the ghosts to hunt the player, although to start with they won't be very clever hunters. We already have lots of the building blocks we need from the code to handle the players.</p>
 <p>The components for the ghosts will be:</p>
 <ul>
@@ -1941,13 +1952,17 @@ def new_ghost(pos, colour, direction):
 
     ...
 
-# Setup ghosts whe we reset a level
-global ghosts
-ghosts = []
-ghosts.append(new_ghost((13,13), &quot;red&quot;, &quot;LEFT&quot;))
-ghosts.append(new_ghost((12,15), &quot;cyan&quot;, &quot;RIGHT&quot;))
-ghosts.append(new_ghost((13,15), &quot;pink&quot;, &quot;UP&quot;))
-ghosts.append(new_ghost((14,15), &quot;orange&quot;, &quot;DOWN&quot;))
+# Setup ghosts whe we reset a level. Carefully pick the start column and row to fit with your game map
+def reset_working_map():
+
+    ...
+
+    global ghosts
+    ghosts = []
+    ghosts.append(new_ghost((13,13), &quot;red&quot;, &quot;LEFT&quot;))
+    ghosts.append(new_ghost((12,15), &quot;cyan&quot;, &quot;RIGHT&quot;))
+    ghosts.append(new_ghost((13,15), &quot;pink&quot;, &quot;UP&quot;))
+    ghosts.append(new_ghost((14,15), &quot;orange&quot;, &quot;DOWN&quot;))
 
     ...
 
@@ -1997,10 +2012,10 @@ if move_ghosts():
 draw_ghosts()
 </code></pre>
 <p><strong>Your turn:</strong> Uses these hints to add randomly moving ghosts into your game</p>
-<h3><a href="#step-56-better-looking-pacman-and-ghosts" aria-hidden="true" class="anchor" id="step-56-better-looking-pacman-and-ghosts"></a>Step 56 - Better looking pacman and ghosts</h3>
+<h3><a href="#step-57-better-looking-pacman-and-ghosts" aria-hidden="true" class="anchor" id="step-57-better-looking-pacman-and-ghosts"></a>Step 57 - Better looking pacman and ghosts</h3>
 <p>We'll make the ghosts a bit smarter later. First lets get rid of the boring shapes and use better images. We have already seen how to use images in the <a href="#chapter-9-a-more-realistic-snake">Snake game</a> and change the image based on direction. We will go further this time and use multiple images to animate our characters.</p>
 <p>First we need to find or make some images. You can use the program in the <a href="#part-1-pacman-image-generator">examples</a> to create a basic image file. The single file has 6 sets of images. 1 for pacman and 5 for ghosts. Each set has four rows for the four directions and each row has four variants to show in sequence to animate the characters.</p>
-<p>Look back at <a href="#step-38-get-the-head--moving-in-the-right-direction">step 37-39</a> to see how we can pick out an image from a set and draw it instead of a plain rectangle. Use those steps as a guide.</p>
+<p>Look back at <a href="#step-38-get-the-head--moving-in-the-right-direction">chapter 9</a> to see how we can pick out an image from a set and draw it instead of a plain rectangle. Use those steps as a guide.</p>
 <p><strong>Your turn:</strong></p>
 <ul>
 <li>Load and scale the image so that the images tiles are the right size for your game.</li>
@@ -2010,7 +2025,7 @@ draw_ghosts()
 <li>Put some of these steps into functions to make them easier to use e.g. <code>def calc_image_rect(first_image_offset, direction, animation_step):</code></li>
 <li>If you get stuck you can use prints, font.render or blit so show what is going on inside the code. You can also get ideas from the <a href="#examples-chapter-11">example</a>.</li>
 </ul>
-<h3><a href="#step-57-smarter-ghosts" aria-hidden="true" class="anchor" id="step-57-smarter-ghosts"></a>Step 57 - Smarter ghosts</h3>
+<h3><a href="#step-58-smarter-ghosts" aria-hidden="true" class="anchor" id="step-58-smarter-ghosts"></a>Step 58 - Smarter ghosts</h3>
 <p>Now let's make the ghost moves a bit smarter.</p>
 <p>The first thing we can improve is to stop the ghosts hovering over the same spot. There are many things we could do but here is a simple one to try first. If the ghosts current direction is clear we can remove the opposite direction before shuffling.</p>
 <pre><code class="language-python"># dictionary of opposite directions
@@ -2046,22 +2061,35 @@ def dir_sort_key(item):
     dir, score = item
     return score
 
-def get_shortest_direction(ghost):
-    # Get a list of valid directions with their distance scores
-    dir_list = []
-    for dir in directions:
-        if can_move(ghost[&quot;pos&quot;], dir):
-            dir_list.append(dir, rect_distance(player_pos, moved_pos(ghost[&quot;pos&quot;], dir))
-
+    dir_list = list(directions)
+    
     # Remove opposite direction if the current direction is clear
-    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;]):
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;], ghost[&quot;speed&quot;]):
         dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+    
+    # Get a list of valid directions with their distance scores
+    dist_list = []
+    for dir in dir_list:
+
+
+def get_shortest_direction(ghost):
+    dir_list = list(directions)
+    
+    # Remove opposite direction if the current direction is clear
+    if can_move(ghost[&quot;pos&quot;], ghost[&quot;dir&quot;], ghost[&quot;speed&quot;]):
+        dir_list.remove(opposite_dir[ghost[&quot;dir&quot;]])
+    
+    # Get a list of valid directions with their distance scores
+    dist_list = []
+    for dir in dir_list:
+        if can_move(ghost[&quot;pos&quot;], dir):
+            dist_list.append((dir, rect_distance(player_pos, moved_pos(ghost[&quot;pos&quot;], dir))))
 
     # Sort by distance
-    dir_list.sort(key=dir_sort_key)
+    dist_list.sort(key=dir_sort_key)
 
     # Return the shorted direction
-    dir,_ = dir_list[0]
+    dir,_ = dist_list[0]
     return dir
 </code></pre>
 <p>Things to notice:</p>
@@ -2075,7 +2103,7 @@ def get_shortest_direction(ghost):
 <li>Use different functions for the ghosts e.g. some use the random one, some use the shortest distance or maybe a mixture. Perhaps you can use the game_level to make the ghosts start dumb and get smarter at higher levels.</li>
 <li>Use the loop_counter or pygame.time functions to delay when the ghosts can move out of their start area. Maybe the smart ghosts wait longer than the random ones. Perhaps the delay is shorter for higher levels.</li>
 </ul>
-<h3><a href="#step-57-lives-power-ups-and-game-states" aria-hidden="true" class="anchor" id="step-57-lives-power-ups-and-game-states"></a>Step 57 - Lives, power-ups and game states</h3>
+<h3><a href="#step-59-lives-power-ups-and-game-states" aria-hidden="true" class="anchor" id="step-59-lives-power-ups-and-game-states"></a>Step 59 - Lives, power-ups and game states</h3>
 <p>This step is like a big <strong>bonus challenge</strong>. Add more features to your game by re-using the building blocks that you already have. Here are some suggestions but you can invent your own.</p>
 <ul>
 <li>Give the player 3 lives. When a ghost catches them they lose a life but can restart the level.</li>
@@ -2085,6 +2113,283 @@ def get_shortest_direction(ghost):
 <li>Find or make images to draw more interesting maps e.g. curved corners.</li>
 <li>Add in the power pellets. When the player eats one of the four power pellets they get a power boost for a short time which means they can eat ghosts. Perhaps there are bonus points for the pellet and for eating a ghost. The ghosts can change image (e.g. use the blue image from the example images) and run away from the player (make a longest_distance function). Display a count down or warning when the power boost is out of time. Perhaps the power boost is shorter or random at higher levels.</li>
 <li>Add more images for smoother animation e.g. sequence of 8 images for pacmans mouth</li>
+</ul>
+<h2><a href="#chapter-12-mazes-rules-and-problem-solving" aria-hidden="true" class="anchor" id="chapter-12-mazes-rules-and-problem-solving"></a>Chapter 12 - Mazes, rules and problem solving</h2>
+<p>In previous chapters we have made maps and mazes, used simple game rules and solved problems such as getting the ghosts to chase or escape from the pacman player. In this chapter we will add in more advanced examples such as:</p>
+<ul>
+<li>automatically generating mazes</li>
+<li>move complex rules that you might find in board games or card games</li>
+<li>automatic problem solving such as escaping from a maze or playing a board game against the player.</li>
+</ul>
+<h3><a href="#step-60-a-plan-for-a-game-with-mazes" aria-hidden="true" class="anchor" id="step-60-a-plan-for-a-game-with-mazes"></a>Step 60 - A plan for a game with mazes</h3>
+<p>Let's start with the simple game template back from <a href="#step-22-our-first-graphics-game">step 22</a> and use a grid of tiles for our maze. We'll keep things simple by drawing shapes but later we can swap these for the images that reflect the game e.g. stone for the wall of a dungeon adventure or trees and shrubs for a wilderness or jungle.</p>
+<p><strong>Your turn:</strong> We haven't given you any hints yet or example code so try to use what you have learnt from the other chapters. Make a list of small steps you could take such as:</p>
+<ul>
+<li>What information do you need to have?</li>
+<li>Is this simple information like a score or more complex like a map?</li>
+<li>What helper functions would be useful?</li>
+<li>What job does the helper function need to do?</li>
+<li>What information would you pass into the functions with parameters and what would come back with a return?</li>
+<li>What are the main steps that happen before the game loop?</li>
+<li>What are the main steps that need to happen inside the game loop?</li>
+</ul>
+<p>You can put this list into the game template as comments like this:</p>
+<pre><code class="language-python"># Variables needed
+# ------
+# size of the tiles in the maze
+# width and height of the maze e.g. how many tiles across and how many tiles down
+
+# Helper functions
+# ------
+# use the map of the maze to draw a grid on screen with gaps if there is a path between the tiles
+</code></pre>
+<p><strong>Bonus challenge:</strong> Keep going and start to put in the code that you need. If you need more help you can look at the next steps but, remember, there are many different ways to code this maze game. The next steps are just examples and they are not better or more correct than the code you make for yourself.</p>
+<h3><a href="#step-61-building-blocks-for-a-game-with-mazes" aria-hidden="true" class="anchor" id="step-61-building-blocks-for-a-game-with-mazes"></a>Step 61 - Building blocks for a game with mazes</h3>
+<p>You can skip this step if you have already have your own working code from step 60.</p>
+<p>Here are some examples you could use for the variables we need. It's ok if your own variables have different names or a structure. For example, you could hold the map size as a pair of values <code>(10,10)</code> or as a pygame.Vector2.</p>
+<pre><code class="language-python">tile_size = 60
+wall_thickness = 5
+door_width = 40
+maze_width = 10
+maze_height = 10
+maze_map = []
+wall_colour = &quot;grey&quot;
+floor_colour = &quot;white&quot;
+player_colour = &quot;red&quot;
+player_pos = pygame.Vector2(0,0)
+
+directions = {
+    &quot;UP&quot;: pygame.Vector2(0,-1),
+    &quot;DOWN&quot;: pygame.Vector2(0,1),
+    &quot;LEFT&quot;: pygame.Vector2(-1,0),
+    &quot;RIGHT&quot;: pygame.Vector2(1,0),
+}
+
+opposites = {
+    &quot;DOWN&quot;: &quot;UP&quot;,
+    &quot;UP&quot;: &quot;DOWN&quot;,
+    &quot;LEFT&quot;: &quot;RIGHT&quot;,
+    &quot;RIGHT&quot;: &quot;LEFT&quot;
+}
+</code></pre>
+<p>Here are some helper functions. It's ok if you have made different helper functions with different names and parameters.</p>
+<pre><code class="language-python">def maze_tile_rect(x,y):
+    return pygame.Rect((x*tile_size, y*tile_size), (tile_size, tile_size))
+
+def tile_floor_rect(x,y):
+    return pygame.Rect((
+        x*tile_size+wall_thickness,
+        y*tile_size+wall_thickness
+    ), (
+        tile_size-2*wall_thickness,
+        tile_size-2*wall_thickness
+    ))
+
+def tile_door_rect(x,y,dir):
+    tile_rect = maze_tile_rect(x,y)
+    door_edge = (tile_size-door_width)//2
+    match dir:
+        case &quot;UP&quot;:
+            tile_rect.width=door_width
+            tile_rect.height=wall_thickness
+            return tile_rect.move((door_edge,0))
+        case &quot;DOWN&quot;:
+            tile_rect.width=door_width
+            tile_rect.height=wall_thickness
+            return tile_rect.move((door_edge,tile_size-wall_thickness))
+        case &quot;LEFT&quot;:
+            tile_rect.width=wall_thickness
+            tile_rect.height=door_width
+            return tile_rect.move((0,door_edge))
+        case &quot;RIGHT&quot;:
+            tile_rect.width=wall_thickness
+            tile_rect.height=door_width
+            return tile_rect.move((tile_size-wall_thickness,door_edge))
+
+def make_initial_map():
+    # Make a list of columns
+    # Each column has a row of tiles
+    # Each tile shows if there is a door (True or False) in each direction
+    for column in range(maze_width):
+        row_list = []
+        for row in range(maze_height):
+            tile_details={}
+            for dir in directions:
+                tile_details[dir]=False
+            row_list.append(tile_details)
+        maze_map.append(row_list)
+
+def inside_maze(x,y):
+    if x&lt;0 or y&lt;0:
+        return False
+    if x&gt;=maze_width or y&gt;=maze_height:
+        return False
+    return True
+
+def can_move(x,y,dir):
+    return maze_map[x][y][dir]
+
+def make_door(x,y,dir):
+    next_x, next_y = directions[dir]
+    # Set the door for the tile to True
+    maze_map[int(x)][int(y)][dir]=True
+    # If the other side is in the maze also set that to True
+    if inside_maze(x+next_x, y+next_y):
+        maze_map[int(x+next_x)][int(y+next_y)][opposites[dir]]=True
+
+def draw_maze():
+    for column in range(maze_width):
+        for row in range(maze_height):
+            pygame.draw.rect(screen, wall_colour, maze_tile_rect(column, row))
+            pygame.draw.rect(screen, floor_colour, tile_floor_rect(column, row))
+            for dir in directions:
+                if maze_map[column][row][dir]:
+                    pygame.draw.rect(screen, floor_colour, tile_door_rect(column, row, dir))
+
+def draw_player():
+    x,y=player_pos
+    player_tile = maze_tile_rect(x,y)
+    pygame.draw.circle(screen, player_colour, player_tile.center, tile_size/3)
+</code></pre>
+<p><strong>Your turn:</strong> If you need to, add these variables and functions into your simple game template and use them to create a maze, draw it and let the player move around. Use make_door() a few times, otherwise the player will be stuck on one tile with nowhere to go!</p>
+<h3><a href="#step-62-first-attempt-at-a-random-maze" aria-hidden="true" class="anchor" id="step-62-first-attempt-at-a-random-maze"></a>Step 62 - First attempt at a random maze</h3>
+<p>We can make a maze by randomly picking tiles and directions and making doors. Try the hints below and see what the maze is like to explore</p>
+<pre><code class="language-python">import random
+
+    ...
+
+number_of_doors = 50
+
+    ...
+
+def design_maze():
+    for door in range(number_of_doors):
+        dir_list = list(directions)
+        make_door(random.randrange(maze_width), random.randrange(maze_height), dir_list[random.randrange(4)])
+</code></pre>
+<p><strong>Your turn:</strong> Experiment with the random maze. Try different numbers of doors to see what happens.</p>
+<h3><a href="#step-63-better-maze-maker" aria-hidden="true" class="anchor" id="step-63-better-maze-maker"></a>Step 63 - Better maze maker</h3>
+<p>Our first attempt made some interesting patterns but sometime the player will be stuck in a dead end and lots of the tiles are cut-off and can't be reached from the players position. Let's try something else. Instead of picking the tiles at random we'll start at the players positions and follow through the random doors to the next tile. We can keep note of which tiles we visit so that we don't go back into the same tile twice.</p>
+<pre><code class="language-python">def make_tile_tracker():
+    tiles=[]
+    for col in range(maze_width):
+        col=[]
+        for row in range(maze_width):
+            col.append(False)
+        tiles.append(col)
+    return tiles
+
+def explore_tile(pos,tracker):
+    tracker[int(pos.x)][int(pos.y)]=True
+    dir_list = list(directions)
+    random.shuffle(dir_list)
+    for dir in dir_list:
+        next_pos = pos+directions[dir]
+        # Only visit the next tile if it is inside the maze
+        if inside_maze(next_pos.x, next_pos.y):
+            # Only visit if we haven't already been there
+            if not tracker[int(next_pos.x)][int(next_pos.y)]:
+                # Make a door and explore further
+                make_door(pos.x, pos.y, dir)
+                explore_tile(next_pos, tracker)
+
+def design_maze():
+    tiles_visited=make_tile_tracker()
+    start_pos=pygame.Vector2(0,0)
+    explore_tile(start_pos, tiles_visited)
+</code></pre>
+<p><strong>Your turn:</strong> Add in these updates and see what the maze looks like now</p>
+<p>Things to notice:</p>
+<ul>
+<li>design_maze doesn't do very much work. It just sets up the start position and then lets explore_tile do all the work.</li>
+<li>Inside explore_tile we use explore_tile again. A function which uses itself. like this, is called recursive. This can be a very powerful technique but it can be quite hard to understand. To help see what is going on we can create a helper function and use it inside the dir loop in explore tile</li>
+</ul>
+<pre><code class="language-python">
+def animate_designer(pos):
+    for event in pygame.event.get():
+        pass
+    draw_maze()
+    pygame.draw.circle(screen, &quot;white&quot;, maze_tile_rect(pos.x, pos.y).center, tile_size/4)
+    pygame.display.flip()
+    clock.tick(60) 
+
+    ...
+
+    random.shuffle(dir_list)
+    for dir in dir_list:
+        animate_designer(pos)
+        next_pos = pos+directions[dir]
+        # Only visit the next tile if it is inside the maze
+</code></pre>
+<ul>
+<li>With the helper function you can see how each time we use explore_tile we are looking at a new part of the maze and, as we run out of valid moves, it back-tracks to the first tile and the first time we use explore_tile.</li>
+</ul>
+<p><strong>Your turn:</strong></p>
+<ul>
+<li>Add in the helper function and see how the maze is built up</li>
+<li>Add in some prints or use font.render to count how many times explore_tile is used and how many tiles we visit.</li>
+<li>Is every tile covered?</li>
+<li>Change the start_pos in design_maze(). Does it make much difference?</li>
+<li>See what happens if you remove the <code>random.shuffle(dir_list)</code>. Can you explain what is going on?</li>
+<li>Put back random.shuffle but now use <code>random.seed(10)</code> at the beginning of your program. What do you notice? Try different random seeds and go back to 10 again. Can you see you can have some control over the randomness if you needed it.</li>
+</ul>
+<h3><a href="#step-64-a-maze-solver" aria-hidden="true" class="anchor" id="step-64-a-maze-solver"></a>Step 64 - A maze solver</h3>
+<p>With some small changes we can turn our maze designer into a maze solver. First we will make a random solver and then use recursion to make something smarter.</p>
+<p>The first step is to use something called a generator to automatically make moves for our player. A generator is a special type of function. Normal functions just produce one result. Generators produce a list of results. Here is a simple random move generator</p>
+<pre><code class="language-python"># A function with a yield statement defines a generator
+def move_generator():
+    dir_list = list(directions)
+    while True:
+        yield dir_list[random.randrange(4)]
+
+# We actually get a generator we can use by calling the function
+player_move = move_generator()
+
+# We can also get the next move when we want
+dir = next(player_move)
+</code></pre>
+<p><strong>Your turn:</strong> Setup the move generator before the game loop and then use next() to get the moves inside the game loop. Check that the move is valid before moving the player.</p>
+<p>Our random solver doesn't get very far as it moves back in the maze as often as it moves forward. Let's use something smarter as we did for making the maze.</p>
+<pre><code class="language-python">def explorer_generator(pos, tracker):
+    tracker[int(pos.x)][int(pos.y)]=True
+    dir_list = list(directions)
+    random.shuffle(dir_list)
+    for dir in dir_list:
+        # Only visit the next tile if there is a door
+        if can_move(dir):
+            next_pos = pos+directions[dir]
+            # Only visit if we haven't already been there
+            if not tracker[int(next_pos.x)][int(next_pos.y)]:
+                # move and explore further
+                yield dir
+                yield from explorer_generator(next_pos, tracker)
+                yield opposites[dir]    
+
+def move_generator():
+    tiles_visited=make_tile_tracker()
+    start_pos=pygame.Vector2(0,0)
+    yield from explorer_generator(start_pos, tiles_visited)
+</code></pre>
+<p>Things to notice:</p>
+<ul>
+<li>The code looks very similar to our maze designer functions</li>
+<li>Like design_maze, move_generator doesn't do much work. It sets things up and uses <code>yield from</code> to let the explorer do everything</li>
+<li>The new explorer doesn't make doors now but checks if a door way is open before exploring further.</li>
+<li>If there is a doorway there are three yields. The first moves through the door, the next one explores further and finally we move back through the door</li>
+</ul>
+<p><strong>Your turn:</strong> Update your game with the smarter generator and see what</p>
+<p><strong>Bonus challenge:</strong> You may notice that the player explores the whole map, gets back to the beginning and then produces an error. We haven't given the player any way to win. Change the game so that far corner of the maze from where the player starts is the exit. Check if the player has reached the exit and leave the game.</p>
+<h3><a href="#step-65-have-fun-with-mazes-and-solvers" aria-hidden="true" class="anchor" id="step-65-have-fun-with-mazes-and-solvers"></a>Step 65 - Have fun with mazes and solvers</h3>
+<p>What games could you make with these building blocks? Here are some ideas that you can try out</p>
+<ul>
+<li>Replace the rectangles and circles with some images to create games with different themes such as a rabbit warren, a haunted mansion, space station or magical forest.</li>
+<li>Use small, smooth moves as we did in the pacman game.</li>
+<li>Add some random doors to create short-cuts and loops in the maze.</li>
+<li>Place treasure or other items to collect in the map as you did for our text adventure game. Maybe you can only exit the maze if you have the right key, tool or spell</li>
+<li>Add some more codes to the maze_map. Instead of just having True or False for open doorways and wall you could have letter or number codes for different things e.g. closed doors, secret doors or completely open walls to make larger rooms or chambers that cover several tiles</li>
+<li>Add opponents that start at the far side of the maze and use move generators to let them search the maze or hunt for the player. Perhaps the player has to race the computer opponents to get the prize in the centre of the maze and escape.</li>
+<li>Maybe the opponents can sense the direction of the player or player leaves foot prints or scent in the maze which the opponents can track. <strong>Hint:</strong> Instead of shuffling the list of directions they could be sorted as we did for the ghosts in the pacman game.</li>
+<li>Perhaps the maze has floors with stairways between them. <strong>Hint:</strong> You may need a list of maze_maps and add <code>UPSTAIRS</code> and <code>DOWNSTAIRS</code> as possible directions.</li>
 </ul>
 <h2><a href="#examples-chapter-1" aria-hidden="true" class="anchor" id="examples-chapter-1"></a>Examples - Chapter 1</h2>
 <pre><code class="language-python"># Make a quiz list
@@ -2406,7 +2711,7 @@ while keep_playing:
                 break
         print(&quot;What do you want to do next?&quot;)
         # Loop through the available actions.
-        #action_number will count up from 0 and stop depending on the number of available actions in the list.
+        # action_number will count up from 0 and stop depending on the number of available actions in the list.
         for action_number in range(len(actions)):
             # actions is our list of available actions.
             # actions[action_number] picks out one action
@@ -2422,7 +2727,7 @@ while keep_playing:
         # actions[choice] picks out the chosen action
         # actions[choice][1] picks out the second part of the pair which will be the destination for the player
         # This code includes the bonus challenge.
-        #The position of the item is saved so that they can be reset before the next game
+        # The position of the item is saved so that they can be reset before the next game
         if choice==len(actions):
             player_items.append((place[&quot;item&quot;],player_position))
             del place[&quot;item&quot;]
@@ -3797,11 +4102,7 @@ def draw_ghosts():
         image = ghost[&quot;img&quot;]
         if power_up &gt; 0:
             image = 4*tile_size
-        screen.blit(
-            game_images,
-            ghost[&quot;pos&quot;],
-            calc_image_rect(image, ghost[&quot;dir&quot;], animation_step)
-        )
+        screen.blit(game_images, ghost[&quot;pos&quot;], calc_image_rect(image, ghost[&quot;dir&quot;], animation_step))
         
 def show_game_over():        
     over_image = create_text_image([
@@ -3893,7 +4194,7 @@ def play_level():
         pygame.display.flip()
 
         # Control how fast your game updates.
-        #20 frames per second is quite slow for modern games but is easier to control when we are starting.
+        # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
         clock.tick(game_FPS)
         
 # Main loop for the levels
@@ -3923,6 +4224,221 @@ while playing:
                     game_level=1
                     player_lives=3
                     player_score=0
+
+pygame.quit()
+</code></pre>
+<h2><a href="#examples-chapter-12" aria-hidden="true" class="anchor" id="examples-chapter-12"></a>Examples - Chapter 12</h2>
+<pre><code class="language-python">import pygame
+import random
+
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+running = True
+
+tile_size = 40
+wall_thickness = 5
+door_width = 10
+maze_width = 30
+maze_height = 20
+maze_map = []
+wall_colour = &quot;black&quot;
+floor_colour = &quot;grey&quot;
+player_colour = &quot;red&quot;
+player_pos = pygame.Vector2(0,0)
+
+directions = {
+    &quot;DOWN&quot;: (0,1),
+    &quot;RIGHT&quot;: (1,0),
+    &quot;UP&quot;: (0,-1),
+    &quot;LEFT&quot;: (-1,0)
+}
+
+opposites = {
+    &quot;DOWN&quot;: &quot;UP&quot;,
+    &quot;UP&quot;: &quot;DOWN&quot;,
+    &quot;LEFT&quot;: &quot;RIGHT&quot;,
+    &quot;RIGHT&quot;: &quot;LEFT&quot;
+}
+
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((maze_width*tile_size, maze_height*tile_size))
+clock = pygame.time.Clock()
+running = True
+
+def maze_tile_rect(x,y):
+    return pygame.Rect((x*tile_size, y*tile_size), (tile_size, tile_size))
+
+def tile_floor_rect(x,y):
+    return pygame.Rect((
+        x*tile_size+wall_thickness,
+        y*tile_size+wall_thickness
+    ), (
+        tile_size-2*wall_thickness,
+        tile_size-2*wall_thickness
+    ))
+
+def tile_door_rect(x,y,dir):
+    tile_rect = maze_tile_rect(x,y)
+    door_edge = (tile_size-door_width)//2
+    match dir:
+        case &quot;UP&quot;:
+            tile_rect.width=door_width
+            tile_rect.height=wall_thickness
+            return tile_rect.move((door_edge,0))
+        case &quot;DOWN&quot;:
+            tile_rect.width=door_width
+            tile_rect.height=wall_thickness
+            return tile_rect.move((door_edge,tile_size-wall_thickness))
+        case &quot;LEFT&quot;:
+            tile_rect.width=wall_thickness
+            tile_rect.height=door_width
+            return tile_rect.move((0,door_edge))
+        case &quot;RIGHT&quot;:
+            tile_rect.width=wall_thickness
+            tile_rect.height=door_width
+            return tile_rect.move((tile_size-wall_thickness,door_edge))
+
+def make_initial_map():
+    # Make a list of columns
+    # Each column has a row of tiles
+    # Each tile shows if there is a door (True or False) in each direction
+    for column in range(maze_width):
+        row_list = []
+        for row in range(maze_height):
+            tile_details={}
+            for dir in directions:
+                tile_details[dir]=False
+            row_list.append(tile_details)
+        maze_map.append(row_list)
+
+def inside_maze(x,y):
+    if x&lt;0 or y&lt;0:
+        return False
+    if x&gt;=maze_width or y&gt;=maze_height:
+        return False
+    return True
+
+def can_move(dir):
+    return maze_map[int(player_pos.x)][int(player_pos.y)][dir]
+
+def make_door(x,y,dir):
+    next_x, next_y = directions[dir]
+    # Set the door for the tile to True
+    maze_map[int(x)][int(y)][dir]=True
+    # If the other side is in the maze also set that to True
+    if inside_maze(x+next_x, y+next_y):
+        maze_map[int(x+next_x)][int(y+next_y)][opposites[dir]]=True
+
+def draw_maze():
+    for column in range(maze_width):
+        for row in range(maze_height):
+            pygame.draw.rect(screen, wall_colour, maze_tile_rect(column, row))
+            pygame.draw.rect(screen, floor_colour, tile_floor_rect(column, row))
+            for dir in directions:
+                if maze_map[column][row][dir]:
+                    pygame.draw.rect(screen, floor_colour, tile_door_rect(column, row, dir))
+
+def draw_player():
+    x,y=player_pos
+    player_tile = maze_tile_rect(x,y)
+    pygame.draw.circle(screen, player_colour, player_tile.center, tile_size/3)
+
+def make_tile_tracker():
+    tiles=[]
+    for col in range(maze_width):
+        col=[]
+        for row in range(maze_width):
+            col.append(False)
+        tiles.append(col)
+    return tiles
+
+def animate_designer(pos):
+    for event in pygame.event.get():
+        pass
+    draw_maze()
+    pygame.draw.circle(screen, &quot;white&quot;, maze_tile_rect(pos.x, pos.y).center, tile_size/4)
+    pygame.display.flip()
+    clock.tick(60)    
+
+def explore_tile(pos,tracker):
+    tracker[int(pos.x)][int(pos.y)]=True
+    dir_list = list(directions)
+    random.shuffle(dir_list)
+    for dir in dir_list:
+        animate_designer(pos)
+        next_pos = pos+directions[dir]
+        # Only visit the next tile if it is inside the maze
+        if inside_maze(next_pos.x, next_pos.y):
+            # Only visit if we haven't already been there
+            if not tracker[int(next_pos.x)][int(next_pos.y)]:
+                # Make a door and explore further
+                make_door(pos.x, pos.y, dir)
+                explore_tile(next_pos, tracker)
+
+def design_maze():
+    tiles_visited=make_tile_tracker()
+    start_pos=pygame.Vector2(0,0)
+    explore_tile(start_pos, tiles_visited)
+
+make_initial_map()
+design_maze()
+
+# A function with a yield statement defines a generator
+def explorer_generator(pos, tracker):
+    tracker[int(pos.x)][int(pos.y)]=True
+    dir_list = list(directions)
+    random.shuffle(dir_list)
+    for dir in dir_list:
+        # Only visit the next tile if there is a door
+        if can_move(dir):
+            next_pos = pos+directions[dir]
+            # Only visit if we haven't already been there
+            if not tracker[int(next_pos.x)][int(next_pos.y)]:
+                # move and explore further
+                yield dir
+                yield from explorer_generator(next_pos, tracker)
+                yield opposites[dir]    
+
+def move_generator():
+    tiles_visited=make_tile_tracker()
+    yield from explorer_generator(player_pos, tiles_visited)
+
+# We actually get a generator we can use by calling the function
+player_move = move_generator()
+
+while running:
+    # poll for events
+    # pygame.QUIT event means the user clicked X to close your window
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    dir = next(player_move)
+    if can_move(dir):
+        player_pos+=directions[dir]
+        if player_pos.x==maze_width-1 and player_pos.y==maze_height-1:
+            running=False
+    else:
+        print(&quot;Error. Tried to move:&quot;, dir)
+
+    # Perform other work such as game effects or non-player characters
+
+    # Fill the screen with a colour to wipe away anything from last frame
+    screen.fill(&quot;purple&quot;)
+    
+    draw_maze()
+
+    draw_player()
+
+    # flip() the display to put your work on screen
+    pygame.display.flip()
+
+    # Control how fast your game updates.
+    # 20 frames per second is quite slow for modern games but is easier to control when we are starting.
+    clock.tick(20)
 
 pygame.quit()
 </code></pre>
