@@ -1,3 +1,7 @@
+---
+page: Python Games
+description: A project guide to show learners how to start making games using Python and Pygame
+---
 # Build your own games with Python
 
 [[toc]]
