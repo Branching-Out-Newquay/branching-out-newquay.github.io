@@ -8,7 +8,7 @@
     "start": "parcel src/index.ejs src/404.ejs",
     "prebuild": "rm docs/*.* || true",
     "build": "parcel build --dist-dir docs",
-    "postbuild":"touch docs/.nojekyll"
+    "postbuild": "touch docs/.nojekyll"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,9 @@
   "devDependencies": {
     "ejs": "^3.1.10",
     "parcel": "^2.16.0",
-    "parcel-transformer-ejs": "^1.0.1"
-  }
+    "parcel-transformer-ejs": "^1.0.1",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.1",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-table-of-contents": "^1.1.0"  }
 }
