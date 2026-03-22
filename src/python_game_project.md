@@ -40,8 +40,7 @@ Try this:
 input("What is your favourite colour?  > ")
 ```
 
-This asks a question - but it doesn’t save the answer anywhere.
-This is better:
+This asks a question - but it doesn’t save the answer anywhere. This is better:
 
 ```python
 player_answer =input("What is your favourite colour?  > ")
