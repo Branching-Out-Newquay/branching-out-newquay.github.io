@@ -13,7 +13,7 @@
 
 html {
     -webkit-text-size-adjust: 100%;
-
+    text-size-adjust: 100%;
     background-image: url("../img/watermark.png");
     background-size: contain;
     resize: both;
